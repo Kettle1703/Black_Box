@@ -7,14 +7,28 @@
         mc:Ignorable="d"
         Title="Буквоед" Height="450" Width="800">
     <Grid>
-        <Canvas>
-            <Button Content="Алгоритм" Canvas.Top="100" Canvas.Right="300" FontSize="22" Width="181" Height="40" />
-            <Button Content="Опыт" Canvas.Top="150" Canvas.Right="300" FontSize="22" Width="181" Height="40" />
-            <Button Content="Дневник" Canvas.Top="200" Canvas.Right="300" FontSize="22" Width="181" Height="40" />
-            <Button Content="Экзамен" Canvas.Top="250" Canvas.Right="300" FontSize="22" Width="181" Height="40" />
-            <Button Content="Калькулятор" Canvas.Top="300" Canvas.Right="300" FontSize="22" Width="181" Height="40" />
-        </Canvas>
-
-
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\HP\Desktop\универ\проект\проект\bykvi.jpg"></ImageBrush>
+        </Grid.Background>
+        <Border MinWidth="350" MaxWidth="700" Background="white" Padding="30" CornerRadius="15" VerticalAlignment="Top" HorizontalAlignment="Center" >
+            <StackPanel>
+                <TextBlock Text="Буквоед" FontSize="40" FontWeight="Bold" Margin="0 0 0 20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <Grid Margin="0 20 0 0">
+                    <Button Content="Алгоритм" HorizontalAlignment="Center" FontSize="20" MinWidth="150"/>
+                </Grid>
+                <Grid Margin="0 20 0 0">
+                    <Button Content="Опыт" HorizontalAlignment="Center" FontSize="20" MinWidth="150"/>
+                </Grid>
+                <Grid Margin="0 20 0 0">
+                    <Button Content="Экзамен" HorizontalAlignment="Center" FontSize="20" MinWidth="150"/>
+                </Grid>
+                <Grid Margin="0 20 0 0">
+                    <Button Content="Дневник" HorizontalAlignment="Center" FontSize="20" MinWidth="150"/>
+                </Grid>
+                <Grid Margin="0 20 0 0">
+                    <Button Content="Калькулятор" HorizontalAlignment="Center" FontSize="20" MinWidth="150"/>
+                </Grid>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>
