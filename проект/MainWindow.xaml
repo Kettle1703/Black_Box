@@ -8,7 +8,7 @@
         Title="Буквоед" Height="450" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\bykvi.jpg"></ImageBrush>
+            <ImageBrush ImageSource="background.jpg"></ImageBrush>
         </Grid.Background>
         <Border MinWidth="350" MaxWidth="700" Background="white" Padding="30" CornerRadius="15" VerticalAlignment="Top" HorizontalAlignment="Center" >
             <StackPanel>
