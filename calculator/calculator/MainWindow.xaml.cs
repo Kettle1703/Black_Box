@@ -55,7 +55,19 @@ namespace calculator
             else
                 return false;
         }
-
+        
+        private static bool Detailed_verification(string str)
+        {
+            bool flag = true;
+            for (int i = 0; i < str.Length; i++) 
+            {
+                int n = str[i];
+                if ((n < 35) || (n == 36) || (37 < n && n < 40) || (n == 44) || (57 < n && n < 1040) || (n > 1103))
+                    flag = false;
+            }
+            return flag;
+        }
+        
         private void Button_Click(object sender, RoutedEventArgs e)  // метод обрабазывающий нажатие кнопок 
         {
             string str = (string)((Button)e.OriginalSource).Content;
@@ -70,7 +82,7 @@ namespace calculator
             if (str == "=")
             {
                     
-                if (MainWindow.Сorrect_brackets(textbox.Text))
+                if (MainWindow.Сorrect_brackets(textbox.Text) && MainWindow.Detailed_verification(textbox.Text))
                 {
                     string value = new DataTable().Compute(textbox.Text, null).ToString();
                     textbox.Text = value;
@@ -91,11 +103,6 @@ namespace calculator
                 }
                 else
                     textbox.Text += str;
-
-
-            
-            
-
         }
 
         public MainWindow()
@@ -105,7 +112,17 @@ namespace calculator
             {
                 if (elem is Button)  
                     ((Button)elem).Click += Button_Click;
-                
+                 
+            }
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            //
+            if (e.Key == Key.Enter)
+            {
+                label.Content = "n";
+                //Button_Click(sender, e);
             }
         }
     }
