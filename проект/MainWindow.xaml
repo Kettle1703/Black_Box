@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:проект"
         mc:Ignorable="d"
-        Title="Буквоед" Height="450" Width="800">
+    Title="Буквоед" Height="450" Width="800">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="background.jpg"></ImageBrush>
@@ -14,21 +14,22 @@
             <StackPanel>
                 <TextBlock Text="Буквоед" FontSize="40" FontWeight="Bold" Margin="0 0 0 20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                 <Grid Margin="0 20 0 0">
-                    <Button Content="Алгоритм" HorizontalAlignment="Center" FontSize="20" MinWidth="150"/>
+                    <Button x:Name="Algorithm" Click="Algorithm_Click" Content="Алгоритм" HorizontalAlignment="Center" FontSize="20" MinWidth="150"/>
                 </Grid>
                 <Grid Margin="0 20 0 0">
-                    <Button Content="Опыт" HorizontalAlignment="Center" FontSize="20" MinWidth="150"/>
+                    <Button x:Name="Experience" Click="Experience_Click" Content="Опыт" HorizontalAlignment="Center" FontSize="20" MinWidth="150"/>
                 </Grid>
                 <Grid Margin="0 20 0 0">
-                    <Button Content="Экзамен" HorizontalAlignment="Center" FontSize="20" MinWidth="150"/>
+                    <Button x:Name="Exam" Click="Exam_Click" Content="Экзамен" HorizontalAlignment="Center" FontSize="20" MinWidth="150"/>
                 </Grid>
                 <Grid Margin="0 20 0 0">
-                    <Button Content="Дневник" HorizontalAlignment="Center" FontSize="20" MinWidth="150"/>
+                    <Button x:Name="Diary" Click="Diary_Click" Content="Дневник" HorizontalAlignment="Center" FontSize="20" MinWidth="150"/>
                 </Grid>
                 <Grid Margin="0 20 0 0">
-                    <Button Content="Калькулятор" HorizontalAlignment="Center" FontSize="20" MinWidth="150"/>
+                    <Button x:Name="Calculator" Click="Calculator_Click" Content="Калькулятор" HorizontalAlignment="Center" FontSize="20" MinWidth="150"/>
                 </Grid>
             </StackPanel>
         </Border>
+        <Frame x:Name="MainPage"></Frame>
     </Grid>
 </Window>

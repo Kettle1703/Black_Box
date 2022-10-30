@@ -7,6 +7,38 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="algorithm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="calculator.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="diary.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="exam.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="experience.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="algorithm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="calculator.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="diary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="exam.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="experience.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
