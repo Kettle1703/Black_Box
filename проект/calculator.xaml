@@ -5,10 +5,13 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:проект"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800" KeyDown="Window_KeyDown"
+      d:DesignHeight="450" d:DesignWidth="800" 
       Title="calculator">
 
-    <Grid x:Name="Buttonlist" Background="#FF969494" >
+    <Grid x:Name="Buttonlist" >
+        <Grid.Background>
+            <ImageBrush ImageSource="calc_background.jpg"></ImageBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
@@ -25,29 +28,29 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <!--<TextBlock Grid.Row="0" Grid.Column="0" Text="" FontSize="35" Grid.ColumnSpan="5" x:Name="textbox" VerticalAlignment="Stretch" Margin="10,15,10,0"/>-->
-        <TextBox Grid.Row="0" Grid.Column="0" FontSize="35" x:Name="textbox" Text="" Grid.ColumnSpan="6" Margin="5,0,5,0" TextAlignment="Left" SelectionTextBrush="#FF969494" BorderBrush="#FF969494" SelectionBrush="#FF969494" Background="{x:Null}" Foreground="Black" ></TextBox>
-        <Button Grid.Row="1" Grid.Column="0" FontSize="35">1</Button>
-        <Button Grid.Row="1" Grid.Column="1" FontSize="35">2</Button>
-        <Button Grid.Row="1" Grid.Column="2" FontSize="35">3</Button>
-        <Button Grid.Row="2" Grid.Column="0" FontSize="35">4</Button>
-        <Button Grid.Row="2" Grid.Column="1" FontSize="35">5</Button>
-        <Button Grid.Row="2" Grid.Column="2" FontSize="35">6</Button>
-        <Button Grid.Row="3" Grid.Column="0" FontSize="35">7</Button>
-        <Button Grid.Row="3" Grid.Column="1" FontSize="35">8</Button>
-        <Button Grid.Row="3" Grid.Column="2" FontSize="35">9</Button>
-        <Button Grid.Row="4" Grid.Column="1" FontSize="35">0</Button>
-        <Button Grid.Row="1" Grid.Column="3" FontSize="35">+</Button>
-        <Button Grid.Row="2" Grid.Column="3" FontSize="35">-</Button>
-        <Button Grid.Row="3" Grid.Column="3" FontSize="35">*</Button>
-        <Button Grid.Row="4" Grid.Column="3" FontSize="35">/</Button>
-        <Button Grid.Row="4" Grid.Column="2" FontSize="35">=</Button>
-        <Button Grid.Row="1" Grid.Column="5" FontSize="35">AC</Button>
-        <Button Grid.Row="1" Grid.Column="4" FontSize="35">C</Button>
-        <Button Grid.Row="2" Grid.Column="4" FontSize="35">(</Button>
-        <Button Grid.Row="2" Grid.Column="5" FontSize="35">)</Button>
-        <Button Grid.Row="3" Grid.Column="5" FontSize="35">%</Button>
-        <Button Grid.Row="3" Grid.Column="4" FontSize="35">#</Button>
-        <Button Grid.Row="4" Grid.Column="0" FontSize="35">.</Button>
+        <TextBox Grid.Row="0" Grid.Column="0" FontSize="35" x:Name="textbox" Text="" Grid.ColumnSpan="6" Margin="2,0,2,0" TextAlignment="Left" SelectionTextBrush="#FF969494" BorderBrush="#FF969494" SelectionBrush="#FF969494" Background="{x:Null}" Foreground="Black" ></TextBox>
+        <Button Grid.Row="1" Grid.Column="0" FontSize="35" Margin="2">1</Button>
+        <Button Grid.Row="1" Grid.Column="1" FontSize="35" Margin="2">2</Button>
+        <Button Grid.Row="1" Grid.Column="2" FontSize="35" Margin="2">3</Button>
+        <Button Grid.Row="2" Grid.Column="0" FontSize="35" Margin="2">4</Button>
+        <Button Grid.Row="2" Grid.Column="1" FontSize="35" Margin="2">5</Button>
+        <Button Grid.Row="2" Grid.Column="2" FontSize="35" Margin="2">6</Button>
+        <Button Grid.Row="3" Grid.Column="0" FontSize="35" Margin="2">7</Button>
+        <Button Grid.Row="3" Grid.Column="1" FontSize="35" Margin="2">8</Button>
+        <Button Grid.Row="3" Grid.Column="2" FontSize="35" Margin="2">9</Button>
+        <Button Grid.Row="4" Grid.Column="1" FontSize="35" Margin="2">0</Button>
+        <Button Grid.Row="1" Grid.Column="3" FontSize="35" Margin="2">+</Button>
+        <Button Grid.Row="2" Grid.Column="3" FontSize="35" Margin="2">-</Button>
+        <Button Grid.Row="3" Grid.Column="3" FontSize="35" Margin="2">*</Button>
+        <Button Grid.Row="4" Grid.Column="3" FontSize="35" Margin="2">/</Button>
+        <Button Grid.Row="4" Grid.Column="2" FontSize="35" Margin="2">=</Button>
+        <Button Grid.Row="1" Grid.Column="5" FontSize="35" Margin="2">AC</Button>
+        <Button Grid.Row="1" Grid.Column="4" FontSize="35" Margin="2">C</Button>
+        <Button Grid.Row="2" Grid.Column="4" FontSize="35" Margin="2">(</Button>
+        <Button Grid.Row="2" Grid.Column="5" FontSize="35" Margin="2">)</Button>
+        <Button Grid.Row="3" Grid.Column="5" FontSize="35" Margin="2">%</Button>
+        <Button Grid.Row="3" Grid.Column="4" FontSize="35" Margin="2">#</Button>
+        <Button Grid.Row="4" Grid.Column="0" FontSize="35" Margin="2">.</Button>
         <Label Grid.Column="4" Content="j" x:Name="label" HorizontalAlignment="Left" FontSize="35" Margin="0,0,0,0" Grid.Row="4" VerticalAlignment="Center"/>
     </Grid>
 </Page>

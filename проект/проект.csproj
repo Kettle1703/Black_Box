@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <None Remove="background.jpg" />
+    <None Remove="calc_background.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,6 +17,7 @@
 
   <ItemGroup>
     <Resource Include="background.jpg" />
+    <Resource Include="calc_background.jpg" />
   </ItemGroup>
 
   <ItemGroup>

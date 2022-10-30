@@ -76,3 +76,15 @@ C:\Users\HP\Documents\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\exa
 C:\Users\HP\Documents\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\experience.baml
 C:\Users\HP\Documents\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\проект.Properties.Resources.resources
 C:\Users\HP\Documents\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\проект.csproj.GenerateResource.cache
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\algorithm.g.cs
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\calculator.g.cs
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\diary.g.cs
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\exam.g.cs
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\experience.g.cs
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\algorithm.baml
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\calculator.baml
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\diary.baml
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\exam.baml
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\experience.baml
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\проект.Properties.Resources.resources
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\проект.csproj.GenerateResource.cache

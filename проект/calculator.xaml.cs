@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -56,14 +57,52 @@ namespace проект
             else
                 return false;
         }
+
+        private static bool Belong_doubtful(string str, int index, bool oper)
+        {
+            int n = str[index];
+            if(oper)  // выбор 
+            {
+                if ((n == 37) || (n == 42) || (n == 43) || (n == 45) || (n == 47))
+                    return true;  // это + - * / %
+                else
+                    return false;
+            }
+            else
+            {
+                if (n >= 1072 && n <= 1103)
+                    return true; // a - я
+                else
+                    return false;
+            }
+            
+        }
         private static bool Detailed_verification(string str)
         {
             bool flag = true;
-            for (int i = 0; i < str.Length; i++)
+            int len = str.Length;
+            for (int i = 0; i < len; i++)
             {
                 int n = str[i];
-                if ((n < 35) || (n == 36) || (37 < n && n < 40) || (n == 44) || (57 < n && n < 1040) || (n > 1103))
-                    flag = false;
+                if ((n < 35) || (n == 36) || (37 < n && n < 40) || (n == 44) || (57 < n && n < 1072) || (n > 1103))
+                    flag = false; // в строке только числа, символы и русские буквы
+                if (i != (len - 1))
+                {
+                    if (str[i] == '#' && calculator.Belong_doubtful(str, (i + 1), true))
+                        flag = false; // после # нельзя операторы
+                    if (calculator.Belong_doubtful(str, i, true) && calculator.Belong_doubtful(str, (i + 1), true))
+                        flag = false;  // после операторов нельзя операторы
+                    if (calculator.Belong_doubtful(str, i, true) && calculator.Belong_doubtful(str, (i + 1), false))
+                        flag = false;  // после операторов нельзя буквы
+                    if (str[i] == '#' && str[i + 1] == '#')
+                        flag = false;  // после # нельзя #
+                    if (calculator.Belong_doubtful(str, i, false) && calculator.Belong_doubtful(str, (i + 1), false))
+                        flag = false; ;  // после букв нельзя буквы
+                    if (calculator.Belong_doubtful(str, i, false) && str[i + 1] == '#')
+                        flag = false; ;  // после букв нельзя #
+                    // обработать граничные состояния операторы не должны быть в начале или в конце строки
+                }
+               
             }
             return flag;
         }
@@ -82,7 +121,7 @@ namespace проект
 
             if (str == "=")
             {
-
+                textbox.Text = textbox.Text.ToLower();  // все большие буквы становяться маленькими
                 if (calculator.Сorrect_brackets(textbox.Text) && calculator.Detailed_verification(textbox.Text))
                 {
                     string value = new DataTable().Compute(textbox.Text, null).ToString();
@@ -117,7 +156,7 @@ namespace проект
         }
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
-            //
+            //KeyDown="Window_KeyDown" ( верни если используешь! )
             if (e.Key == Key.Enter)
             {
                 label.Content = "n";
