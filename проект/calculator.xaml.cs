@@ -21,7 +21,7 @@ namespace проект
     /// </summary>
     public partial class calculator : Page
     {
-        private bool have_syntactic_mistake = false;  // поле хранящее информацию о начилии синтактической ошибки 
+        //private bool have_syntactic_mistake = false;  // поле хранящее информацию о начилии синтактической ошибки 
         private static int Quantity_search(string str, char letter)  // метод, считающий количество вхождений переданного символа в строку
         {
             int result = 0;
@@ -70,8 +70,8 @@ namespace проект
             }
             else
             {
-                if (n >= 1072 && n <= 1103)
-                    return true; // a - я
+                if (n >= 1072 && n <= 1103 || n == 1105)
+                    return true; // a - я, кроме буквы ё и ё на 1105 позичии
                 else
                     return false;
             }
@@ -84,8 +84,9 @@ namespace проект
             for (int i = 0; i < len; i++)
             {
                 int n = str[i];
-                if ((n < 35) || (n == 36) || (37 < n && n < 40) || (n == 44) || (57 < n && n < 1072) || (n > 1103))
+                if ((n < 35) || (n == 36) || (37 < n && n < 40) || (n == 44) || (57 < n && n < 1072) || (n == 1104) || (n > 1105))
                     flag = false; // в строке только числа, символы и русские буквы
+                /*
                 if (i != (len - 1))
                 {
                     if (str[i] == '#' && calculator.Belong_doubtful(str, (i + 1), true))
@@ -101,48 +102,83 @@ namespace проект
                     if (calculator.Belong_doubtful(str, i, false) && str[i + 1] == '#')
                         flag = false; ;  // после букв нельзя #
                     // обработать граничные состояния операторы не должны быть в начале или в конце строки
+                    // проще сначало изменить все # с буквами на числа а потом делать эту фигню
                 }
+                */
                
             }
             return flag;
         }
-
+        
+        private static string Letter_numbers(string str)
+        {
+            string result = "";
+            int len = str.Length;
+            int i = 0;
+            for (; i < len; i++)
+            {
+                if (i != (len - 1) && str[i] == '#' && Belong_doubtful(str, i + 1, false))
+                {
+                    int number = str[i + 1];
+                    if(number >= 1072 && 1077 >= number)    
+                        number -= 1071;
+                    if (number == 1105)
+                        number = 7;
+                    if (number > 1077 && number <= 1103)
+                        number -= 1070;
+                    result += number.ToString();
+                    i += 1;
+                }
+                else
+                    result += str[i];
+            }
+            return result;
+        } 
+        // написать остальные функции проверки по плану
+        // написать функцию каскадной проверки вызывающая, написанные методы 
         private void Button_Click(object sender, RoutedEventArgs e)  // метод обрабазывающий нажатие кнопок 
         {
             string str = (string)((Button)e.OriginalSource).Content;
             if (str == "AC")
-                textbox.Text = "";
+            {
+                input.Text = "";
+                output.Text = "";
+            }
 
             if (str == "C")
             {
-                int len = textbox.Text.Length;
-                textbox.Text = textbox.Text.Remove(len - 1, 1);
+                int len = input.Text.Length;
+                input.Text = input.Text.Remove(len - 1, 1);
             }
 
             if (str == "=")
             {
-                textbox.Text = textbox.Text.ToLower();  // все большие буквы становяться маленькими
-                if (calculator.Сorrect_brackets(textbox.Text) && calculator.Detailed_verification(textbox.Text))
+                
+                if (calculator.Сorrect_brackets(input.Text) && calculator.Detailed_verification(input.Text))
                 {
-                    string value = new DataTable().Compute(textbox.Text, null).ToString();
-                    textbox.Text = value;
+                    input.Text = input.Text.ToLower();  // все большие буквы становяться маленькими
+                    input.Text = calculator.Letter_numbers(input.Text);
+                    string value = new DataTable().Compute(input.Text, null).ToString();
+                    output.Text = value;
                 }
                 else
-                {
-                    textbox.Text = "Синтактическая ошибка";
-                    have_syntactic_mistake = true;
-                }
+                    output.Text = "Синтактическая ошибка";
+                  
+                
             }
 
             if (str != "AC" && str != "C" && str != "=")
-                if (have_syntactic_mistake)
+                input.Text += str;
+            /*
+            if (have_syntactic_mistake)
                 {
                     have_syntactic_mistake = false;
                     textbox.Text = "";
                     textbox.Text += str;
                 }
                 else
-                    textbox.Text += str;
+            */
+                    
         }
         public calculator()
         {
