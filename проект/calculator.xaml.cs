@@ -188,7 +188,7 @@ namespace проект
         {
             
 
-            label.Content = e.Key.ToString();
+            //label.Content = e.Key.ToString();
             
             if (e.Key == Key.Enter)
             {

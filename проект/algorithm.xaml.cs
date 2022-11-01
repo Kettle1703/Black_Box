@@ -20,9 +20,41 @@ namespace проект
     /// </summary>
     public partial class algorithm : Page
     {
+        public static int algorithm_number = 1;
         public algorithm()
         {
             InitializeComponent();
+        }
+
+        private void Check_input()
+        {
+            int number;
+            bool flag = int.TryParse(input.Text, out number);
+            if(flag)
+            {
+                if (number >= 1 && number <= 29)
+                {
+                    algorithm_number = number;
+                    output.Content = $"Номер выбранного алгоритма {number}";
+                }
+                else
+                    output.Content = "Нет алгоритма с таким номером";
+            }
+            else
+                output.Content = "Не корректные входные данные";
+        }
+        private void Page_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                Check_input();
+            if(e.Key == Key.Escape)
+                AlgorihmBack_Click(sender, e);
+                
+        }
+
+        private void AlgorihmBack_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new menu());
         }
     }
 }

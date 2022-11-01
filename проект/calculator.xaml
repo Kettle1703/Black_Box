@@ -52,7 +52,8 @@
         <Button Grid.Row="4" Grid.Column="5" FontSize="35" Margin="2" Click="Button_Click">%</Button>
         <Button Grid.Row="4" Grid.Column="4" FontSize="35" Margin="2" Click="Button_Click">#</Button>
         <Button Grid.Row="5" Grid.Column="0" FontSize="35" Margin="2" Click="Button_Click">.</Button>
-        <Label Grid.Column="4" Content="j" x:Name="label" HorizontalAlignment="Left" FontSize="35" Margin="0,0,0,0" Grid.Row="5" VerticalAlignment="Center"/>
-        <Button Grid.Row ="5" Grid.Column="5" Content="Назад" VerticalAlignment="Center" Margin="2" HorizontalAlignment="Center" FontSize="30" x:Name="CalculatorBack" Click="CalculatorBack_Click" Height="75" Width="133"></Button>
+        <!--<Label Grid.Column="4" Content="j" x:Name="label" HorizontalAlignment="Left" FontSize="35" Margin="0,0,0,0" Grid.Row="5" VerticalAlignment="Center"/>-->
+        <Button Grid.Row="5" Grid.Column="5" FontSize="30" Margin="2" x:Name="CalculatorBack" Click="CalculatorBack_Click">Назад</Button>
+        <Button Grid.Row="5" Grid.Column="4" FontSize="30" Margin="2" x:Name="CalculatorExam" Click="CalculatorExam_Click">Экзамен</Button>
     </Grid>
 </Page>
