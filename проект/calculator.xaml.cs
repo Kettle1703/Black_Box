@@ -189,15 +189,21 @@ namespace проект
                     ((Button)elem).Click += Button_Click;
 
             }
+            
         }
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             //KeyDown="Window_KeyDown" ( верни если используешь! )
+
+            label.Content = e.Key.ToString();
+            
             if (e.Key == Key.Enter)
             {
-                label.Content = "n";
+                equality.Click += Button_Click;
                 //Button_Click(sender, e);
+                // назвать кнопку равества, определить её метод click и вызывать её тут по имени и методу клик
             }
+            
         }
     }
 }
