@@ -299,50 +299,45 @@ namespace проект
             else
             {
                 // пользователь ввёл строку и может использовать алгоритмы: 5. 6. 9. c 13 по 17. 25. 27. 29
-                if(Input_string(algorithm.algorithm_number))
+                
+                //output.Text = "okey";
+                switch (algorithm.algorithm_number)
                 {
-                    //output.Text = "okey";
-                    switch (algorithm.algorithm_number)
-                    {
-                        case 5:
-                            output.Text = _5(input.Text, 0).ToString();
-                            break;
-                        case 6:
-                            output.Text = _6(input.Text, 0).ToString();
-                            break;
-                        case 9:
-                            output.Text = _9(input.Text, 0).ToString();
-                            break;
-                        case 13:
-                            output.Text = _13(input.Text, "").ToString();
-                            break;
-                        case 14:
-                            output.Text = _14(input.Text, 0).ToString();
-                            break;
-                        case 15:
-                            output.Text = _15(input.Text, '0').ToString();
-                            break;
-                        case 16:
-                            output.Text = _16(input.Text, '0').ToString();
-                            break;
-                        case 17:
-                            output.Text = _17(input.Text, "").ToString();
-                            break;
-                        case 25:
+                    case 5:
+                        output.Text = _5(input.Text, 0).ToString();
+                        break;
+                    case 6:
+                        output.Text = _6(input.Text, 0).ToString();
+                        break;
+                    case 9:
+                        output.Text = _9(input.Text, 0).ToString();
+                        break;
+                    case 13:
+                        output.Text = _13(input.Text, "").ToString();
+                        break;
+                    case 14:
+                        output.Text = _14(input.Text, 0).ToString();
+                        break;
+                    case 15:
+                        output.Text = _15(input.Text, '0').ToString();
+                        break;
+                    case 16:
+                        output.Text = _16(input.Text, '0').ToString();
+                        break;
+                    case 17:
+                        output.Text = _17(input.Text, "").ToString();
+                        break;
+                    case 25:
                             
-                            break;
-                        case 27:
+                        break;
+                    case 27:
 
-                            break;
-                        case 29:
-                            output.Text = _29(input.Text).ToString();
-                            break;
-                    }
+                        break;
+                    case 29:
+                        output.Text = _29(input.Text).ToString();
+                        break;
                 }
-                else
-                {
-                    output.Text = $"Алгоритм {algorithm.algorithm_number} не обрабатывает числа";
-                }
+                
             }
         }
         public experience()

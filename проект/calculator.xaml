@@ -8,10 +8,10 @@
       d:DesignHeight="450" d:DesignWidth="800" KeyUp="Window_KeyUp" 
       Title="calculator">
 
-    <Grid x:Name="Buttonlist" >
-        <Grid.Background>
+    <Grid x:Name="Buttonlist" Background="#FFB0B9B9">
+        <!--<Grid.Background>
             <ImageBrush ImageSource="calc_background.jpg"></ImageBrush>
-        </Grid.Background>
+        </Grid.Background>-->
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
