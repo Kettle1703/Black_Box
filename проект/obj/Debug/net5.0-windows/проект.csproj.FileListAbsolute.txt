@@ -88,3 +88,5 @@ C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\
 C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\experience.baml
 C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\проект.Properties.Resources.resources
 C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\проект.csproj.GenerateResource.cache
+C:\Users\HP\Documents\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\menu.g.cs
+C:\Users\HP\Documents\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\menu.baml

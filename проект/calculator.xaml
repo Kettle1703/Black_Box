@@ -53,5 +53,6 @@
         <Button Grid.Row="4" Grid.Column="4" FontSize="35" Margin="2">#</Button>
         <Button Grid.Row="5" Grid.Column="0" FontSize="35" Margin="2">.</Button>
         <Label Grid.Column="4" Content="j" x:Name="label" HorizontalAlignment="Left" FontSize="35" Margin="0,0,0,0" Grid.Row="5" VerticalAlignment="Center"/>
+        <Button Content="Назад" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="20" x:Name="CalculatorBack" Click="CalculatorBack_Click"></Button>
     </Grid>
 </Page>

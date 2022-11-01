@@ -205,5 +205,15 @@ namespace проект
             }
             
         }
+
+        private void CalculatorBack_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new menu());
+        }
+
+        private void CalculatorExam_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new exam());
+        }
     }
 }
