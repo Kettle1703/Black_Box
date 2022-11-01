@@ -16,12 +16,28 @@ using System.Windows.Shapes;
 
 namespace проект
 {
-    /// <summary>
-    /// Логика взаимодействия для calculator.xaml
-    /// </summary>
+    
     public partial class calculator : Page
     {
         //private bool have_syntactic_mistake = false;  // поле хранящее информацию о начилии синтактической ошибки 
+
+        private void Click_AC(object sender, RoutedEventArgs e)
+        {
+            input.Text = "";
+            output.Text = "";
+        }
+
+        private void Click_C(object sender, RoutedEventArgs e)
+        {
+            int len = input.Text.Length;
+            input.Text = input.Text.Remove(len - 1, 1);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)  // метод обрабазывающий нажатие кнопок 
+        {
+            string symbol = (string)((Button)e.OriginalSource).Content;
+            input.Text += symbol;
+        }
         private static int Quantity_search(string str, char letter)  // метод, считающий количество вхождений переданного символа в строку
         {
             int result = 0;
@@ -77,7 +93,7 @@ namespace проект
             }
             
         }
-        private static bool Detailed_verification(string str)
+        private static bool Valid_simbol(string str)
         {
             bool flag = true;
             int len = str.Length;
@@ -136,72 +152,51 @@ namespace проект
         } 
         // написать остальные функции проверки по плану
         // написать функцию каскадной проверки вызывающая, написанные методы 
-        private void Button_Click(object sender, RoutedEventArgs e)  // метод обрабазывающий нажатие кнопок 
+        
+        
+
+        private static bool General_inspection(string str)
         {
-            string str = (string)((Button)e.OriginalSource).Content;
-            if (str == "AC")
-            {
-                input.Text = "";
-                output.Text = "";
-            }
+            
+            if (!Valid_simbol(str))
+                return false;
+            if (!Сorrect_brackets(str))
+                return false;
 
-            if (str == "C")
-            {
-                int len = input.Text.Length;
-                input.Text = input.Text.Remove(len - 1, 1);
-            }
-
-            if (str == "=")
-            {
-                
-                if (calculator.Сorrect_brackets(input.Text) && calculator.Detailed_verification(input.Text))
-                {
-                    input.Text = input.Text.ToLower();  // все большие буквы становяться маленькими
-                    input.Text = calculator.Letter_numbers(input.Text);
-                    string value = new DataTable().Compute(input.Text, null).ToString();
-                    output.Text = value;
-                }
-                else
-                    output.Text = "Синтактическая ошибка";
-                  
-                
-            }
-
-            if (str != "AC" && str != "C" && str != "=")
-                input.Text += str;
-            /*
-            if (have_syntactic_mistake)
-                {
-                    have_syntactic_mistake = false;
-                    textbox.Text = "";
-                    textbox.Text += str;
-                }
-                else
-            */
-                    
+            return true;
         }
+        private void Click_equality(object sender, RoutedEventArgs e)
+        {
+            if (calculator.General_inspection(input.Text))
+            {
+                input.Text = input.Text.ToLower();  // все большие буквы становяться маленькими
+                input.Text = calculator.Letter_numbers(input.Text);
+                string value = new DataTable().Compute(input.Text, null).ToString();
+                output.Text = value;
+            }
+            else
+                output.Text = "Синтактическая ошибка";
+        }
+        
         public calculator()
         {
             InitializeComponent();
-            foreach (UIElement elem in Buttonlist.Children)
-            {
-                if (elem is Button)
-                    ((Button)elem).Click += Button_Click;
-
-            }
+           
             
         }
-        private void Window_KeyDown(object sender, KeyEventArgs e)
+        private void Window_KeyUp(object sender, KeyEventArgs e)
         {
-            //KeyDown="Window_KeyDown" ( верни если используешь! )
+            
 
             label.Content = e.Key.ToString();
             
             if (e.Key == Key.Enter)
             {
-                equality.Click += Button_Click;
-                //Button_Click(sender, e);
-                // назвать кнопку равества, определить её метод click и вызывать её тут по имени и методу клик
+                Click_equality(sender, e);
+            }
+            if(e.Key == Key.Escape)
+            {
+                CalculatorBack_Click(sender, e);
             }
             
         }
