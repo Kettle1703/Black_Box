@@ -126,6 +126,7 @@ namespace проект
         }
         static char _15(string s, char S) //сделать с английскими
         {
+            s = s.ToLower();  // строка "AA" становиться "аа" и с английскими так же работает
             char str = 'а';
             foreach (char ch in s)
             {
@@ -227,10 +228,10 @@ namespace проект
         {
             int number;
             bool flag = int.TryParse(input.Text, out number);
-            if(flag)
+            if(!Input_string(algorithm.algorithm_number))
             {
                 // пользователь ввёл число и может использовать алгоритмы: 1. 2. 3. 4. 7. 8. 10. 11. 12. с 18 по 24. 26. 28
-                if(!Input_string(algorithm.algorithm_number))
+                if(flag)
                 {
                     //output.Text = "okey";
                     switch(algorithm.algorithm_number)
@@ -293,7 +294,7 @@ namespace проект
                 }
                 else
                 {
-                    output.Text = $"Алгоритм {algorithm.algorithm_number} не обрабатывает строки";
+                    output.Text = "Не могу";
                 }
             }
             else

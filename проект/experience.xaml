@@ -13,7 +13,7 @@
         <Label Content="Введите входные данные:" FontSize="20" HorizontalAlignment="Center" Margin="0 140 0 10" VerticalAlignment="Top"/>
         <TextBox x:Name="input" FontSize="20" HorizontalAlignment="Center"  TextWrapping="Wrap" Text="" Width="417" Height="39"/>
         <Label Content="Выходные данные:" FontSize="20" HorizontalAlignment="Center" Margin="0 10 0 10"/>
-        <TextBlock x:Name="output" FontSize="20" HorizontalAlignment="Center"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="417" Height="37"/>
+        <TextBlock x:Name="output" FontSize="20" HorizontalAlignment="Center"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="417" Height="37" TextAlignment="Center"/>
         </StackPanel>
     </Grid>
 </Page>
