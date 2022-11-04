@@ -18,27 +18,27 @@ namespace проект
 {
     public partial class experience : Page
     {
-        static int _1(int n, int N)
+        public static int _1(int n, int N)
         {
             N = n + 1;
             return N;
         }
-        static int _2(int n, int N)
+        public static int _2(int n, int N)
         {
             N = n * 2;
             return N;
         }
-        static int _3(int n, int N)
+        public static int _3(int n, int N)
         {
             N = n * 2 + 1;
             return N;
         }
-        static int _4(int n, int N)
+        public static int _4(int n, int N)
         {
             N = n * 2 - 1;
             return N;
         }
-        static int _5(string s, int N)
+        public static int _5(string s, int N)
         {
             N = 0;
             for (int i = 0; i < s.Length; i++)
@@ -48,7 +48,7 @@ namespace проект
             }
             return N;
         }
-        static int _6(string s, int N)
+        public static int _6(string s, int N)
         {
             N = 0;
             for (int i = 0; i < s.Length; i++)
@@ -58,17 +58,17 @@ namespace проект
             }
             return N;
         }
-        static int _7(int n, int N)
+        public static int _7(int n, int N)
         {
             N = n * 4;
             return N;
         }
-        static int _8(int n, int N)
+        public static int _8(int n, int N)
         {
             N = n * 4 - 1;
             return N;
         }
-        static int _9(string s, int N)
+        public static int _9(string s, int N)
         {
             N = 0;
             for (int i = 0; i < s.Length - 1; i++)
@@ -86,22 +86,22 @@ namespace проект
             }
             return N;
         }
-        static double _10(double n, double N)
+        public static double _10(double n, double N)
         {
             N = n / 2;
             return N;
         }
-        static double _11(double n, double N)
+        public static double _11(double n, double N)
         {
             N = n / 3;
             return N;
         }
-        static double _12(double n, double N)
+        public static double _12(double n, double N)
         {
             N = n / 2 - 1;
             return N;
         }
-        static string _13(string s, string S)
+        public static string _13(string s, string S)
         {
             int i;
             StringBuilder Text = new StringBuilder(s);
@@ -119,12 +119,12 @@ namespace проект
             S = Convert.ToString(Text);
             return S;
         }
-        static double _14(string s, double N)
+        public static double _14(string s, double N)
         {
             N = s.Length / 2;
             return N;
         }
-        static char _15(string s, char S) //сделать с английскими
+        public static char _15(string s, char S) //сделать с английскими
         {
             s = s.ToLower();  // строка "AA" становиться "аа" и с английскими так же работает
             char str = 'а';
@@ -136,7 +136,7 @@ namespace проект
             S = str;
             return S;
         }
-        static char _16(string s, char S) //сделать с английскими
+        public static char _16(string s, char S) //сделать с английскими
         {
             char str = 'я';
             foreach (char ch in s)
@@ -147,7 +147,7 @@ namespace проект
             S = str;
             return S;
         }
-        static string _17(string s, string S) //сделать с английскими
+        public static string _17(string s, string S) //сделать с английскими
         {
             char str1 = 'а';
             foreach (char ch in s)
@@ -164,7 +164,7 @@ namespace проект
             S = $"{str2}" + $"{str1}";
             return S;
         }
-        static int _18(int n, int N)
+        public static int _18(int n, int N)
         {
             N = 0;
             while (n > 9)
@@ -175,7 +175,7 @@ namespace проект
             N++;
             return N;
         }
-        static int _19(int n, int N)
+        public static int _19(int n, int N)
         {
             N = 0;
             while (n > 9)
@@ -186,7 +186,7 @@ namespace проект
             N += n;
             return N;
         }
-        static int _20(int n, int N)
+        public static int _20(int n, int N)
         {
             int min = 9;
             int max = 0;

@@ -75,6 +75,14 @@ namespace проект
                 return false;
         }
 
+        private static bool Brackets_empty(string str)
+        {
+            for (int i = 0; i < str.Length - 1; i++)
+                if (str[i] == '(' && str[i + 1] == ')')
+                    return true;
+            return false;
+        }
+
         private static bool Operator(object str) // это оператор ?
         {
             if (str is char result)
@@ -190,13 +198,50 @@ namespace проект
             }
             return true;
         }
-        private static bool General_inspection(ref string str)
+
+        private static bool Ban_operation(string str, int index)
+        {
+            if (str[index + 1] == '0')
+                return true;
+            else
+            {
+                if (str[index + 1] == '(')
+                {
+                    int counter = 1;
+                    string warning = "(";
+                    for (int i = index + 2; i < str.Length; i++)
+                    {
+                        if (str[i] == '(')
+                            counter++;
+                        if (str[i] == ')')
+                            counter--;
+                        warning += str[i];
+                        if (counter == 0)
+                        {
+                            string value = new DataTable().Compute(warning, null).ToString();
+                            if (value != "0")
+                                return false;
+                            else
+                                return true;
+                        }
+                    }
+                }
+                else
+                    return false;
+                
+            }
+            return false;
+        }
+        
+        private static bool General_inspection(ref string str, ref bool division_by_zero)
         {
             if (str == "")
                 return false;  // если строка пустая
             if (!Valid_simbol(str, true))
                 return false;  
             if (!Сorrect_brackets(str))
+                return false;
+            if (Brackets_empty(str))
                 return false;
             str = str.ToLower();  // все большие буквы становяться маленькими
             str = Letter_numbers(str);
@@ -205,20 +250,32 @@ namespace проект
             if (!Сhecking_operations(str))
                 return false;
             // если дошли до этого места, то строка полностью чиста и корректа, но до сих пор можно поделить на ноль или взять остаток от деления на ноль
+            for (int i = 1; i < str.Length - 1; i++)
+                if (str[i] == '/' || str[i] == '%')
+                    if (Ban_operation(str, i))
+                    {
+                        division_by_zero = true;
+                        return false;
+                    }
             return true;
         }
         private void Click_equality(object sender, RoutedEventArgs e)
         {
+            bool division_by_zero = false;
             string after = input.Text;
-            if (General_inspection(ref after))
+            if (General_inspection(ref after, ref division_by_zero))
             {
                 input.Text = after;
                 string value = new DataTable().Compute(input.Text, null).ToString();
                 float result = float.Parse(value);
                 output.Text = ((int)result).ToString();  // деление нацело
+                
             }
             else
-                output.Text = "Синтактическая ошибка";
+                if(division_by_zero)
+                    output.Text = "Деление на ноль";
+                else
+                    output.Text = "Синтактическая ошибка";
         }
         
         public calculator()
