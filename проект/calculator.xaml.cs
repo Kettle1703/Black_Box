@@ -99,18 +99,28 @@ namespace проект
 
         private static bool It_number(object str, bool left)  // это число ?
         {
-            if (str is string)
-                return true;
+            if (str is string res)
+            {
+                if (res.Length > 1)
+                {
+                    if (res[0] == '0')
+                        return false;
+                    else
+                        return true;
+                }
+                else
+                    return true;
+            }
             else {
                 if (str is char letter)
                 {
                     if(left)
-                        if (Char.IsLetter(letter) || letter == ')')
+                        if (letter == ')')
                             return true;
                         else
                             return false;
                     else
-                        if (Char.IsLetter(letter) || letter == '(')
+                        if (letter == '(')
                             return true;
                         else
                             return false;
