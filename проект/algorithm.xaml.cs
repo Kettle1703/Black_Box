@@ -35,13 +35,13 @@ namespace проект
                 if (number >= 1 && number <= 29)
                 {
                     algorithm_number = number;
-                    output.Content = $"Номер выбранного алгоритма {number}";
+                    output.Text = $"Номер выбранного алгоритма {number}";
                 }
                 else
-                    output.Content = "Нет алгоритма с таким номером";
+                    output.Text = "Нет алгоритма с таким номером";
             }
             else
-                output.Content = "Не корректные входные данные";
+                output.Text = "Не корректные входные данные";
         }
         private void Page_KeyUp(object sender, KeyEventArgs e)
         {

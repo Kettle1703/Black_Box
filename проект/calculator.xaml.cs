@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -74,66 +75,74 @@ namespace проект
                 return false;
         }
 
-        private static bool Belong_doubtful(string str, int index, bool oper)
+        private static bool Operator(object str) // это оператор ?
         {
-            int n = str[index];
-            if(oper)  // выбор 
+            if (str is char result)
             {
+                int n = result;
                 if ((n == 37) || (n == 42) || (n == 43) || (n == 45) || (n == 47))
                     return true;  // это + - * / %
                 else
                     return false;
             }
             else
-            {
-                if (n >= 1072 && n <= 1103 || n == 1105)
-                    return true; // a - я, кроме буквы ё и ё на 1105 позичии
+                return false;
+        }
+
+        private static bool It_number(object str, bool left)  // это число ?
+        {
+            if (str is string)
+                return true;
+            else {
+                if (str is char letter)
+                {
+                    if(left)
+                        if (Char.IsLetter(letter) || letter == ')')
+                            return true;
+                        else
+                            return false;
+                    else
+                        if (Char.IsLetter(letter) || letter == '(')
+                            return true;
+                        else
+                            return false;
+                }
                 else
                     return false;
             }
-            
         }
-        private static bool Valid_simbol(string str)
+        private static bool Valid_simbol(string str, bool first)  // в строке все символы допустимые ?
         {
-            bool flag = true;
-            int len = str.Length;
-            for (int i = 0; i < len; i++)
+            if (first)  
             {
-                int n = str[i];
-                if ((n < 35) || (n == 36) || (37 < n && n < 40) || (n == 44) || (57 < n && n < 1072) || (n == 1104) || (n > 1105))
-                    flag = false; // в строке только числа, символы и русские буквы
-                /*
-                if (i != (len - 1))
+                for (int i = 0; i < str.Length; i++)
                 {
-                    if (str[i] == '#' && calculator.Belong_doubtful(str, (i + 1), true))
-                        flag = false; // после # нельзя операторы
-                    if (calculator.Belong_doubtful(str, i, true) && calculator.Belong_doubtful(str, (i + 1), true))
-                        flag = false;  // после операторов нельзя операторы
-                    if (calculator.Belong_doubtful(str, i, true) && calculator.Belong_doubtful(str, (i + 1), false))
-                        flag = false;  // после операторов нельзя буквы
-                    if (str[i] == '#' && str[i + 1] == '#')
-                        flag = false;  // после # нельзя #
-                    if (calculator.Belong_doubtful(str, i, false) && calculator.Belong_doubtful(str, (i + 1), false))
-                        flag = false; ;  // после букв нельзя буквы
-                    if (calculator.Belong_doubtful(str, i, false) && str[i + 1] == '#')
-                        flag = false; ;  // после букв нельзя #
-                    // обработать граничные состояния операторы не должны быть в начале или в конце строки
-                    // проще сначало изменить все # с буквами на числа а потом делать эту фигню
+                    int n = str[i];
+                    if ((n < 35) || (n == 36) || (37 < n && n < 40) || (n == 44) || (n == 46) || (57 < n && n < 1072) || (n == 1104) || (n > 1105))
+                        return false; // в строке только числа, символы и русские буквы
                 }
-                */
-               
+                return true;
             }
-            return flag;
+            else
+            {
+                for (int i = 0; i < str.Length; i++)
+                {
+                    int n = str[i];
+                    if ((n == 35) || (n >= 1072 && n <= 1103) || (n == 1105))
+                        return false;  // не должно быть букв и #
+                }
+                return true;
+            }
         }
         
-        private static string Letter_numbers(string str)
+        private static string Letter_numbers(string str)  // в строке все #[буква] заменяются на порядковый номер буквы
         {
             string result = "";
             int len = str.Length;
             int i = 0;
             for (; i < len; i++)
             {
-                if (i != (len - 1) && str[i] == '#' && Belong_doubtful(str, i + 1, false))
+                if (i != (len - 1) && str[i] == '#' && Char.IsLetter(str[i + 1]))
                 {
                     int number = str[i + 1];
                     if(number >= 1072 && 1077 >= number)    
@@ -150,29 +159,63 @@ namespace проект
             }
             return result;
         } 
-        // написать остальные функции проверки по плану
-        // написать функцию каскадной проверки вызывающая, написанные методы 
         
-        
-
-        private static bool General_inspection(string str)
+        private static bool Сhecking_operations(string str)  // метод проверяющий возможность посчитать все операторы
         {
-            
-            if (!Valid_simbol(str))
-                return false;
+            ArrayList arr = new ArrayList();
+            string number = "";
+            for (int i = 0; i < str.Length; i++)
+                if (Char.IsDigit(str[i]))
+                    number += str[i];
+                else
+                    if (number != "")
+                {
+                    arr.Add(number);
+                    number = "";
+                    arr.Add(str[i]);
+                }
+                else
+                    arr.Add(str[i]);
+            if (number != "")
+                arr.Add(number);
+            int len = arr.Count;
+            if (Operator(arr[0]) || Operator(arr[len - 1]))
+                return false;  // оператор в начале или в конце строки
+            if(len >= 3)
+            {
+                for (int i = 1; i <= len - 2; i++)
+                    if (Operator(arr[i]))
+                        if (!It_number(arr[i - 1], true) || !It_number(arr[i + 1], false))
+                            return false;  // слева и справо от каждого оператора ложны быть числа или определённая скобка
+            }
+            return true;
+        }
+        private static bool General_inspection(ref string str)
+        {
+            if (str == "")
+                return false;  // если строка пустая
+            if (!Valid_simbol(str, true))
+                return false;  
             if (!Сorrect_brackets(str))
                 return false;
-
+            str = str.ToLower();  // все большие буквы становяться маленькими
+            str = Letter_numbers(str);
+            if (!Valid_simbol(str, false))
+                return false;
+            if (!Сhecking_operations(str))
+                return false;
+            // если дошли до этого места, то строка полностью чиста и корректа, но до сих пор можно поделить на ноль или взять остаток от деления на ноль
             return true;
         }
         private void Click_equality(object sender, RoutedEventArgs e)
         {
-            if (calculator.General_inspection(input.Text))
+            string after = input.Text;
+            if (General_inspection(ref after))
             {
-                input.Text = input.Text.ToLower();  // все большие буквы становяться маленькими
-                input.Text = calculator.Letter_numbers(input.Text);
+                input.Text = after;
                 string value = new DataTable().Compute(input.Text, null).ToString();
-                output.Text = value;
+                float result = float.Parse(value);
+                output.Text = ((int)result).ToString();  // деление нацело
             }
             else
                 output.Text = "Синтактическая ошибка";
