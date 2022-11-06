@@ -18,6 +18,7 @@ namespace проект
 {
     public partial class experience : Page
     {
+        public static string all_text;
         public static int _1(int n, int N)
         {
             N = n + 1;
@@ -224,8 +225,10 @@ namespace проект
                 return false;
         }
 
+       
         private void Check_input()
         {
+            
             int number;
             bool flag = int.TryParse(input.Text, out number);
             if(!Input_string(algorithm.algorithm_number))
@@ -233,7 +236,6 @@ namespace проект
                 // пользователь ввёл число и может использовать алгоритмы: 1. 2. 3. 4. 7. 8. 10. 11. 12. с 18 по 24. 26. 28
                 if(flag)
                 {
-                    //output.Text = "okey";
                     switch(algorithm.algorithm_number)
                     {
                         case 1:
@@ -300,8 +302,6 @@ namespace проект
             else
             {
                 // пользователь ввёл строку и может использовать алгоритмы: 5. 6. 9. c 13 по 17. 25. 27. 29
-                
-                //output.Text = "okey";
                 switch (algorithm.algorithm_number)
                 {
                     case 5:
@@ -349,7 +349,10 @@ namespace проект
         private void Page_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
+            {
                 Check_input();
+                all_text += $"{input.Text} - {output.Text}\n";
+            }
             if (e.Key == Key.Escape)
                 ExperienceBack_Click(sender, e);
         }

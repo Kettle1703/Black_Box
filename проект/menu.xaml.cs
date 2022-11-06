@@ -15,9 +15,7 @@ using System.Windows.Shapes;
 
 namespace проект
 {
-    /// <summary>
-    /// Логика взаимодействия для menu.xaml
-    /// </summary>
+    
     public partial class menu : Page
     {
         public menu()

@@ -15,14 +15,23 @@ using System.Windows.Shapes;
 
 namespace проект
 {
-    /// <summary>
-    /// Логика взаимодействия для diary.xaml
-    /// </summary>
+    
     public partial class diary : Page
     {
+        public void Update_diary()
+        {
+            story.Text = experience.all_text;
+        }
+
         public diary()
         {
             InitializeComponent();
+            Update_diary();
+        }
+
+        private void DiaryBack_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new menu());
         }
     }
 }

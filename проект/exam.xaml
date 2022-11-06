@@ -9,6 +9,12 @@
       Title="exam">
 
     <Grid Background="white">
-        <TextBlock Text="Экзамен" ></TextBlock>
+        <TextBlock x:Name="test" FontSize="20" HorizontalAlignment="Center" Margin="140" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBlock FontSize="20" HorizontalAlignment="Center" Margin="170" TextWrapping="Wrap" Text="Ваш ответ" VerticalAlignment="Top"/>
+        <TextBox x:Name="input_exam" FontSize="20" HorizontalAlignment="Center" Margin="200" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="259" Height="29"/>
+        <TextBlock x:Name="info" FontSize="20" HorizontalAlignment="Center" Margin="170" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom"/>
+
+
+
     </Grid>
 </Page>
