@@ -11,25 +11,103 @@
         <Grid.Background>
             <ImageBrush ImageSource="background.jpg"></ImageBrush>
         </Grid.Background>
-        <Border MinWidth="350" MaxWidth="700" Background="white" Padding="30" CornerRadius="15" VerticalAlignment="Top" HorizontalAlignment="Center" >
-            <StackPanel>
-                <TextBlock Text="Буквоед" FontSize="40" FontWeight="Bold" Margin="0 0 0 20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                <Grid Margin="0 20 0 0">
-                    <Button x:Name="Algorithm" Click="Algorithm_Click" Content="Алгоритм" HorizontalAlignment="Center" FontSize="20" MinWidth="150"/>
-                </Grid>
-                <Grid Margin="0 20 0 0">
-                    <Button x:Name="Experience" Click="Experience_Click" Content="Опыт" HorizontalAlignment="Center" FontSize="20" MinWidth="150"/>
-                </Grid>
-                <Grid Margin="0 20 0 0">
-                    <Button x:Name="Exam" Click="Exam_Click" Content="Экзамен" HorizontalAlignment="Center" FontSize="20" MinWidth="150"/>
-                </Grid>
-                <Grid Margin="0 20 0 0">
-                    <Button x:Name="Diary" Click="Diary_Click" Content="Дневник" HorizontalAlignment="Center" FontSize="20" MinWidth="150"/>
-                </Grid>
-                <Grid Margin="0 20 0 0">
-                    <Button x:Name="Calculator" Click="Calculator_Click" Content="Калькулятор" HorizontalAlignment="Center" FontSize="20" MinWidth="150"/>
-                </Grid>
-            </StackPanel>
-        </Border>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.2*"/>
+            <ColumnDefinition Width="1.6*"/>
+            <ColumnDefinition Width="1.2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1">
+            <Border 
+                Background="white" 
+                CornerRadius="0 0 50 50" 
+                Margin="0 0 0 15">
+                <StackPanel>
+                    <Border
+                        BorderBrush="#60BFC1" 
+                        BorderThickness="1.5"
+                        Margin="20 10 20 10">
+                        <TextBlock 
+                        Text="Буквоед" 
+                        Width="250"
+                        TextAlignment="Center"
+                        FontSize="50" 
+                        FontWeight="Bold" 
+                        FontFamily="Century Gothic"
+                        Foreground="#60BFC1"
+                        HorizontalAlignment="Center"
+                        >
+                        </TextBlock>
+                    </Border>
+
+                    <Button x:Name="Algorithm" Click="Algorithm_Click" 
+                            Content="Алгоритм" 
+                            HorizontalAlignment="Center" 
+                            Width="200"
+                            FontSize="30"
+                            FontFamily="Century Gothic"
+                            Background="White"
+                            BorderBrush="#C17779"
+                            BorderThickness="1.5"
+                            Foreground="#C17779"
+                            FontWeight="Bold"
+                            Margin="0 0 0 15"/>
+
+                    <Button x:Name="Experience" Click="Experience_Click" 
+                            Content="Опыт"
+                            HorizontalAlignment="Center"
+                            Width="200"
+                            FontSize="30"
+                            FontFamily="Century Gothic"
+                            Background="White"
+                            BorderBrush="#C17779"
+                            BorderThickness="1.5"
+                            Foreground="#C17779"
+                            FontWeight="Bold"
+                            Margin="0 0 0 15"/>
+
+                    <Button x:Name="Exam" Click="Exam_Click" 
+                            Content="Экзамен" 
+                            HorizontalAlignment="Center" 
+                            Width="200"
+                            FontSize="30" 
+                            FontFamily="Century Gothic"
+                            Background="White"
+                            BorderBrush="#C17779"
+                            BorderThickness="1.5"
+                            Foreground="#C17779"
+                            FontWeight="Bold"
+                            Margin="0 0 0 15"/>
+
+                    <Button x:Name="Diary" Click="Diary_Click" 
+                            Content="Дневник" 
+                            HorizontalAlignment="Center" 
+                            Width="200"
+                            FontSize="30" 
+                            FontFamily="Century Gothic"
+                            Background="White"
+                            BorderBrush="#C17779"
+                            BorderThickness="1.5"
+                            Foreground="#C17779"
+                            FontWeight="Bold"
+                            Margin="0 0 0 15"/>
+
+                    <Button x:Name="Calculator" Click="Calculator_Click" 
+                            Content="Калькулятор" 
+                            HorizontalAlignment="Center"
+                            Width="200"
+                            FontSize="30" 
+                            FontFamily="Century Gothic"
+                            Background="White"
+                            BorderBrush="#C17779"
+                            BorderThickness="1.5"
+                            Foreground="#C17779"
+                            FontWeight="Bold"
+                            Margin="0 0 0 15"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+        
     </Grid>
 </Page>

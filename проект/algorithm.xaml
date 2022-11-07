@@ -8,13 +8,55 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="algorithm" KeyUp="Page_KeyUp">
 
-    <Grid Background="white">
-        <StackPanel>
-            <Label Content="Введите номер алгоритма:" FontSize="20" HorizontalAlignment="Center" Margin="0,140,0,10" VerticalAlignment="Top"/>
-            <TextBox x:Name="input" FontSize="20" HorizontalAlignment="Center" TextWrapping="Wrap" Text=""  Width="249"/>
-            <TextBlock FontSize="20" x:Name="output" Text="" Height="37" Width="311" TextAlignment="Center" Margin="7"/>
-
-        </StackPanel>
-
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="background.jpg"></ImageBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1">
+            <Border
+                Background="white" 
+                CornerRadius="50" 
+                Margin="20">
+                <StackPanel>
+                    <Label 
+                        Content="Введите номер алгоритма:" 
+                        FontSize="25" 
+                        HorizontalAlignment="Center" 
+                        Margin="0,110,0,15"       
+                        VerticalAlignment="Center"
+                        FontWeight="Bold" 
+                        FontFamily="Century Gothic"
+                        Foreground="#60BFC1"/>
+                    <TextBox x:Name="input" 
+                             FontSize="20" 
+                             HorizontalAlignment="Center" 
+                             TextWrapping="Wrap" Text="" 
+                             Width="250" 
+                             FontFamily="Century Gothic" 
+                             Background="White"
+                             BorderBrush="#C17779"
+                             BorderThickness="1.5"
+                             Foreground="#C17779"
+                             FontWeight="Bold"
+                             Margin="0 0 0 15"/>
+                    <TextBlock 
+                        FontSize="25" 
+                        x:Name="output" 
+                        Text="" 
+                        Height="40" 
+                        Width="450" 
+                        TextAlignment="Center" 
+                        Margin="0 0 0 15"
+                        FontWeight="Bold" 
+                        FontFamily="Century Gothic"
+                        Foreground="#60BFC1"/>
+                </StackPanel>
+            </Border>
+        </Grid>
     </Grid>
 </Page>
