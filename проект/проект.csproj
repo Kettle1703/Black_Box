@@ -7,8 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Algoritmy_bek.jpg" />
     <None Remove="background.jpg" />
     <None Remove="calc_background.jpg" />
+    <None Remove="Kalkulyator_bek.jpg" />
+    <None Remove="Opyty_bek.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,8 +19,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="algoritmy_bek.jpg" />
     <Resource Include="background.jpg" />
     <Resource Include="calc_background.jpg" />
+    <Resource Include="kalkulyator_bek.jpg" />
+    <Resource Include="opyty_bek.jpg" />
   </ItemGroup>
 
   <ItemGroup>

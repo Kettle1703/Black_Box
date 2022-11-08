@@ -10,7 +10,7 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="Opyty_bek.jpg"></ImageBrush>
+            <ImageBrush ImageSource="opyty_bek.jpg"></ImageBrush>
         </Grid.Background>
         <StackPanel>
         <Label Content="Введите входные данные:" FontSize="20" HorizontalAlignment="Center" Margin="0 140 0 10" VerticalAlignment="Top"/>

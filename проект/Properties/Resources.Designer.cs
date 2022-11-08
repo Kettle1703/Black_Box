@@ -19,7 +19,7 @@ namespace проект.Properties {
     // с помощью такого средства, как ResGen или Visual Studio.
     // Чтобы добавить или удалить член, измените файл .ResX и снова запустите ResGen
     // с параметром /str или перестройте свой проект VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -63,9 +63,9 @@ namespace проект.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] Algoritmy_bek {
+        internal static byte[] algoritmy_bek {
             get {
-                object obj = ResourceManager.GetObject("Algoritmy_bek", resourceCulture);
+                object obj = ResourceManager.GetObject("algoritmy_bek", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace проект.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] Kalkulyator_bek {
+        internal static byte[] kalkulyator_bek {
             get {
-                object obj = ResourceManager.GetObject("Kalkulyator_bek", resourceCulture);
+                object obj = ResourceManager.GetObject("kalkulyator_bek", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace проект.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] Opyty_bek {
+        internal static byte[] opyty_bek {
             get {
-                object obj = ResourceManager.GetObject("Opyty_bek", resourceCulture);
+                object obj = ResourceManager.GetObject("opyty_bek", resourceCulture);
                 return ((byte[])(obj));
             }
         }
