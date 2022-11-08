@@ -125,7 +125,7 @@ namespace проект
             N = s.Length / 2;
             return N;
         }
-        public static char _15(string s, char S) //сделать с английскими
+        public static char _15(string s, char S)
         {
             s = s.ToLower();  // строка "AA" становиться "аа" и с английскими так же работает
             char str = 'а';
@@ -137,7 +137,7 @@ namespace проект
             S = str;
             return S;
         }
-        public static char _16(string s, char S) //сделать с английскими
+        public static char _16(string s, char S)
         {
             char str = 'я';
             foreach (char ch in s)
@@ -148,7 +148,7 @@ namespace проект
             S = str;
             return S;
         }
-        public static string _17(string s, string S) //сделать с английскими
+        public static string _17(string s, string S)
         {
             char str1 = 'а';
             foreach (char ch in s)
@@ -206,6 +206,130 @@ namespace проект
             N = max - min;
             return N;
         }
+        static int _21(int n, int N)
+        {
+            int min = 9;
+            int max = 0;
+            while (n > 9)
+            {
+                if (n % 10 < min)
+                    min = n % 10;
+                if (n % 10 > max)
+                    max = n % 10;
+                n /= 10;
+            }
+            if (n < min)
+                min = n;
+            if (n > max)
+                max = n;
+            N = max + min;
+            return N;
+        }
+        static int _22(int n, int N)
+        {
+            while (n % 2 == 0)
+                N = n / 2;
+            return N;
+        }
+        static int _23(int n, int N)
+        {
+            if (n % 2 == 0)
+                N = n / 2;
+            else
+                N = n * 2;
+            return N;
+        }
+        static string _24(int n, string str)
+        {
+            string s;
+            str = "";
+            s = n.ToString();
+            for (int i = 0; i < s.Length; i++)
+            {
+                if ((int)s[i] == 48)
+                    str = $"{str}" + $"{9}";
+                else
+                {
+                    str = $"{str}" + $"{(int)s[i] - 49}";
+                }
+            }
+            return str;
+        }
+        static int _25(string s, int N)
+        {
+            int kol = 0, kolEO = 0;
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (char.IsLetter(s[i]))
+                    kol++;
+            }
+            if (kol % 2 == 0)
+            {
+                foreach (char ch in s)
+                {
+                    if (ch == 'Е')
+                        kolEO++;
+                }
+            }
+            else
+                foreach (char ch in s)
+                {
+                    if (ch == 'О')
+                        kolEO++;
+                }
+            N = kolEO;
+            return N;
+        }
+        static int _26(string s, int N)
+        {
+            int kol = 0;
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (char.IsLetter(s[i]))
+                {
+                    if ((int)s[i] == 1025 || (int)s[i] == 1105)
+                        kol += 7;
+                    else
+                    {
+                        if ((int)s[i] < 1072 && (int)s[i] > 1045)
+                            kol += (int)s[i] - 1038;
+                        if ((int)s[i] <= 1045)
+                            kol += (int)s[i] - 1039;
+                        if ((int)s[i] > 1071 && (int)s[i] <= 1077)
+                            kol += ((int)s[i] - 1071);
+                        if ((int)s[i] > 1077)
+                            kol += ((int)s[i] - 1070);
+                    }
+                }
+            }
+            N = kol;
+            return N;
+        }
+        static int _27(string s, int N)
+        {
+            int kol = 0;
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (char.IsLetter(s[i]))
+                {
+                    if ((int)s[i] == 1025 || (int)s[i] == 1105)
+                        kol += 7;
+                    else
+                    {
+                        if ((int)s[i] < 1072 && (int)s[i] > 1045)
+                            kol += (int)s[i] - 1038;
+                        if ((int)s[i] <= 1045)
+                            kol += (int)s[i] - 1039;
+                        if ((int)s[i] > 1071 && (int)s[i] <= 1077)
+                            kol += ((int)s[i] - 1071);
+                        if ((int)s[i] > 1077)
+                            kol += ((int)s[i] - 1070);
+                    }
+                }
+            }
+            N = kol * 2;
+            return N;
+        }
         public static int _28(int number)
         {
             return number % 3;
@@ -233,7 +357,7 @@ namespace проект
             bool flag = int.TryParse(input.Text, out number);
             if(!Input_string(algorithm.algorithm_number))
             {
-                // пользователь ввёл число и может использовать алгоритмы: 1. 2. 3. 4. 7. 8. 10. 11. 12. с 18 по 24. 26. 28
+                // пользователь ввёл число и может использовать алгоритмы: 1. 2. 3. 4. 7. 8. 10. 11. 12. с 18 по 24. 28
                 if(flag)
                 {
                     switch(algorithm.algorithm_number)
@@ -275,19 +399,16 @@ namespace проект
                             output.Text = _20(number, 0).ToString();
                             break;
                         case 21:
-                            
+                            output.Text = _21(number, 0).ToString();
                             break;
                         case 22:
-                            
+                            output.Text = _22(number, 0).ToString();
                             break;
                         case 23:
-                            
+                            output.Text = _23(number, 0).ToString();
                             break;
                         case 24:
-                            
-                            break;
-                        case 26:
-                           
+                            output.Text = _24(number, "").ToString();
                             break;
                         case 28:
                             output.Text = _28(number).ToString();
@@ -301,7 +422,7 @@ namespace проект
             }
             else
             {
-                // пользователь ввёл строку и может использовать алгоритмы: 5. 6. 9. c 13 по 17. 25. 27. 29
+                // пользователь ввёл строку и может использовать алгоритмы: 5. 6. 9. c 13 по 17. 25. 26. 27. 29
                 switch (algorithm.algorithm_number)
                 {
                     case 5:
@@ -329,10 +450,13 @@ namespace проект
                         output.Text = _17(input.Text, "").ToString();
                         break;
                     case 25:
-                            
+                        output.Text = _25(input.Text, 0).ToString();
+                        break;
+                    case 26:
+                        output.Text = _26(input.Text, 0).ToString();
                         break;
                     case 27:
-
+                        output.Text = _27(input.Text, 0).ToString();
                         break;
                     case 29:
                         output.Text = _29(input.Text).ToString();

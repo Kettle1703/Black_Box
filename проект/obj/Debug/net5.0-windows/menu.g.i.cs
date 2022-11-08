@@ -93,7 +93,7 @@ namespace проект {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/проект;component/menu.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/проект;V1.0.0.0;component/menu.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\menu.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

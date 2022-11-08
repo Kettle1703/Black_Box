@@ -10,7 +10,7 @@
 
     <Grid x:Name="Buttonlist">
         <Grid.Background>
-            <ImageBrush ImageSource="background.jpg"> 
+            <ImageBrush ImageSource="Kalkulyator_bek.jpg"> 
             </ImageBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
