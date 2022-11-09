@@ -227,8 +227,9 @@ namespace проект
         }
         static int _22(int n, int N)
         {
-            while (n % 2 == 0)
-                N = n / 2;
+            N = n;
+            while (N % 2 == 0 && N != 1)
+                N = N / 2;
             return N;
         }
         static int _23(int n, int N)
@@ -267,14 +268,14 @@ namespace проект
             {
                 foreach (char ch in s)
                 {
-                    if (ch == 'Е')
+                    if (ch == 'Е' || ch == 'е')
                         kolEO++;
                 }
             }
             else
                 foreach (char ch in s)
                 {
-                    if (ch == 'О')
+                    if (ch == 'О' || ch == 'о')
                         kolEO++;
                 }
             N = kolEO;
