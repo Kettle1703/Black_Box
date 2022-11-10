@@ -29,7 +29,7 @@ namespace проект
             Update_diary();
         }
 
-        private void DiaryBack_Click(object sender, RoutedEventArgs e)
+        private void DairyBack_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new menu());
         }

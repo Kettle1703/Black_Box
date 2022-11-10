@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace проект
 {
-    /// <summary>
-    /// Логика взаимодействия для algorithm.xaml
-    /// </summary>
     public partial class algorithm : Page
     {
         public static int algorithm_number = 1;
@@ -36,6 +33,8 @@ namespace проект
                 {
                     algorithm_number = number;
                     output.Text = $"Номер выбранного алгоритма {number}";
+                    experience.all_text += $"Опыты алгоритма #{number}\n";
+                    MainWindow.first_change_algorithm = false;
                 }
                 else
                     output.Text = "Нет алгоритма с таким номером";

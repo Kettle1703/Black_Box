@@ -54,7 +54,7 @@ namespace проект
             N = 0;
             for (int i = 0; i < s.Length; i++)
             {
-                if (s[i] == 'О')
+                if (s[i] == 'О' || s[i] == 'о')
                     N++;
             }
             return N;
@@ -342,7 +342,7 @@ namespace проект
             return vowelArray.Length;
         }
 
-        private static bool Input_string(int n)  // у алгоритма с этим номером на вход строка ? 
+        public static bool Input_string(int n)  // у алгоритма с этим номером на вход строка ? 
         {
             if(n == 5 || n == 6 || n == 9 || (n >= 13 && n <= 17) || n == 25 || n == 27 || n == 29)
                 return true;
@@ -350,7 +350,80 @@ namespace проект
                 return false;
         }
 
-       
+        public static string Algorithm_with_number(int number)  // вызвать алгоритм, если он принимает число
+        {
+            switch (algorithm.algorithm_number)
+            {
+                case 1:
+                    return _1(number, 0).ToString();
+                case 2:
+                    return _2(number, 0).ToString();
+                case 3:
+                    return _3(number, 0).ToString();
+                case 4:
+                    return _4(number, 0).ToString();
+                case 7:
+                    return _7(number, 0).ToString();
+                case 8:
+                    return _8(number, 0).ToString();
+                case 10:
+                    return _10(number, 0).ToString();
+                case 11:
+                    return _11(number, 0).ToString();
+                case 12:
+                    return _12(number, 0).ToString();
+                case 18:
+                    return _18(number, 0).ToString();
+                case 19:
+                    return _19(number, 0).ToString();
+                case 20:
+                    return _20(number, 0).ToString();
+                case 21:
+                    return _21(number, 0).ToString();
+                case 22:
+                    return _22(number, 0).ToString();
+                case 23:
+                    return _23(number, 0).ToString();
+                case 24:
+                    return _24(number, "").ToString();
+                case 28:
+                    return _28(number).ToString();
+            }
+            return "Error";
+        }
+
+        public static string Algorithm_with_string(string str)  // вызвать алгоритм, если он принимает строку
+        {
+            switch (algorithm.algorithm_number)
+            {
+                case 5:
+                    return _5(str, 0).ToString();
+                case 6:
+                    return _6(str, 0).ToString();
+                case 9:
+                    return _9(str, 0).ToString();
+                case 13:
+                    return _13(str, "").ToString();
+                case 14:
+                    return _14(str, 0).ToString();
+                case 15:
+                    return _15(str, '0').ToString();
+                case 16:
+                    return _16(str, '0').ToString();
+                case 17:
+                    return _17(str, "").ToString();
+                case 25:
+                    return _25(str, 0).ToString();
+                case 26:
+                    return _26(str, 0).ToString();
+                case 27:
+                    return _27(str, 0).ToString();
+                case 29:
+                    return _29(str).ToString();
+            }
+            return "Error";
+        }
+
         private void Check_input()
         {
             
@@ -361,60 +434,7 @@ namespace проект
                 // пользователь ввёл число и может использовать алгоритмы: 1. 2. 3. 4. 7. 8. 10. 11. 12. с 18 по 24. 28
                 if(flag)
                 {
-                    switch(algorithm.algorithm_number)
-                    {
-                        case 1:
-                            output.Text = _1(number, 0).ToString();
-                            break;
-                        case 2:
-                            output.Text = _2(number, 0).ToString();
-                            break;
-                        case 3:
-                            output.Text = _3(number, 0).ToString();
-                            break;
-                        case 4:
-                            output.Text = _4(number, 0).ToString();
-                            break;
-                        case 7:
-                            output.Text = _7(number, 0).ToString();
-                            break;
-                        case 8:
-                            output.Text = _8(number, 0).ToString();
-                            break;
-                        case 10:
-                            output.Text = _10(number, 0).ToString();
-                            break;
-                        case 11:
-                            output.Text = _11(number, 0).ToString();
-                            break;
-                        case 12:
-                            output.Text = _12(number, 0).ToString();
-                            break;
-                        case 18:
-                            output.Text = _18(number, 0).ToString();
-                            break;
-                        case 19:
-                            output.Text = _19(number, 0).ToString();
-                            break;
-                        case 20:
-                            output.Text = _20(number, 0).ToString();
-                            break;
-                        case 21:
-                            output.Text = _21(number, 0).ToString();
-                            break;
-                        case 22:
-                            output.Text = _22(number, 0).ToString();
-                            break;
-                        case 23:
-                            output.Text = _23(number, 0).ToString();
-                            break;
-                        case 24:
-                            output.Text = _24(number, "").ToString();
-                            break;
-                        case 28:
-                            output.Text = _28(number).ToString();
-                            break;
-                    }
+                    output.Text = Algorithm_with_number(number);
                 }
                 else
                 {
@@ -424,45 +444,7 @@ namespace проект
             else
             {
                 // пользователь ввёл строку и может использовать алгоритмы: 5. 6. 9. c 13 по 17. 25. 26. 27. 29
-                switch (algorithm.algorithm_number)
-                {
-                    case 5:
-                        output.Text = _5(input.Text, 0).ToString();
-                        break;
-                    case 6:
-                        output.Text = _6(input.Text, 0).ToString();
-                        break;
-                    case 9:
-                        output.Text = _9(input.Text, 0).ToString();
-                        break;
-                    case 13:
-                        output.Text = _13(input.Text, "").ToString();
-                        break;
-                    case 14:
-                        output.Text = _14(input.Text, 0).ToString();
-                        break;
-                    case 15:
-                        output.Text = _15(input.Text, '0').ToString();
-                        break;
-                    case 16:
-                        output.Text = _16(input.Text, '0').ToString();
-                        break;
-                    case 17:
-                        output.Text = _17(input.Text, "").ToString();
-                        break;
-                    case 25:
-                        output.Text = _25(input.Text, 0).ToString();
-                        break;
-                    case 26:
-                        output.Text = _26(input.Text, 0).ToString();
-                        break;
-                    case 27:
-                        output.Text = _27(input.Text, 0).ToString();
-                        break;
-                    case 29:
-                        output.Text = _29(input.Text).ToString();
-                        break;
-                }
+                output.Text = Algorithm_with_string(input.Text);
                 
             }
         }
@@ -476,6 +458,11 @@ namespace проект
             if (e.Key == Key.Enter)
             {
                 Check_input();
+                if (MainWindow.first_change_algorithm)
+                {
+                    MainWindow.first_change_algorithm = false;
+                    all_text += "Опыты алгоритма #1\n";
+                }
                 all_text += $"{input.Text} - {output.Text}\n";
             }
             if (e.Key == Key.Escape)

@@ -9,10 +9,15 @@
       Title="exam">
 
     <Grid Background="white">
-        <TextBlock x:Name="test" FontSize="20" HorizontalAlignment="Center" Margin="140" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-        <TextBlock FontSize="20" HorizontalAlignment="Center" Margin="170" TextWrapping="Wrap" Text="Ваш ответ" VerticalAlignment="Top"/>
-        <TextBox x:Name="input_exam" FontSize="20" HorizontalAlignment="Center" Margin="200" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="259" Height="29"/>
-        <TextBlock x:Name="info" FontSize="20" HorizontalAlignment="Center" Margin="170" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom"/>
+        <Button FontSize="20" Content="Назад" HorizontalAlignment="Left" Margin="31,31,0,0" VerticalAlignment="Top" Height="40" Width="64" Click="ExamBack_Click"/>
+        <TextBlock x:Name="test" FontSize="20" HorizontalAlignment="Center" Margin="0,115,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="260"/>
+        <TextBlock FontSize="20" HorizontalAlignment="Center" Margin="0,162,0,0" TextWrapping="Wrap" Text="Ваш ответ" VerticalAlignment="Top" Height="28"/>
+        <TextBox x:Name="input_exam" FontSize="20" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="260" Height="30"/>
+        <Button Content="Прошлый тест" FontSize="20" HorizontalAlignment="Left" Margin="270,311,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.026,0.568" Click="Last_test"/>
+        <Button Content="Следующий тест" FontSize="20" HorizontalAlignment="Left" Margin="422,311,0,0" VerticalAlignment="Top" Click="Next_test"/>
+        <Button Content="Завершить" FontSize="20" HorizontalAlignment="Left" Margin="644,380,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="info" FontSize="20" HorizontalAlignment="Center" Margin="0,253,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="263"/>
+
 
 
 

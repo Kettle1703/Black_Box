@@ -20,8 +20,7 @@ namespace проект
     
     public partial class calculator : Page
     {
-        //private bool have_syntactic_mistake = false;  // поле хранящее информацию о начилии синтактической ошибки 
-
+        
         private void Click_AC(object sender, RoutedEventArgs e)
         {
             input.Text = "";
@@ -136,7 +135,7 @@ namespace проект
                 for (int i = 0; i < str.Length; i++)
                 {
                     int n = str[i];
-                    if ((n < 35) || (n == 36) || (37 < n && n < 40) || (n == 44) || (n == 46) || (57 < n && n < 1072) || (n == 1104) || (n > 1105))
+                    if ((n < 35) || (n == 36) || (37 < n && n < 40) || (n == 44) || (n == 46) || (57 < n && n < 1025) || (1025 < n && n < 1040) || (n == 1104) || (n > 1105))
                         return false; // в строке только числа, символы и русские буквы
                 }
                 return true;
@@ -209,7 +208,7 @@ namespace проект
             return true;
         }
 
-        private static bool Ban_operation(string str, int index)
+        private static bool Ban_operation(string str, int index)  // делим на ноль или нет ?
         {
             if (str[index + 1] == '0')
                 return true;
@@ -242,9 +241,130 @@ namespace проект
             }
             return false;
         }
-        
-        private static bool General_inspection(ref string str, ref bool division_by_zero)
+
+        private static int Find_bracket(string str, int index, bool before)  // поиск скобки того же уровня слева или справо от вхождения
         {
+            if (before)
+            {
+                int res = 1;
+                for (int i = index; i >= 0; i--)
+                {
+                    if (str[i] == ')')
+                        res++;
+                    if (str[i] == '(')
+                        res--;
+                    if (res == 0)
+                        return i;
+                }
+            }
+            else
+            {
+                int res = 1;
+                for (int i = index; i < str.Length; i++)
+                {
+                    if (str[i] == '(')
+                        res++;
+                    if (str[i] == ')')
+                        res--;
+                    if (res == 0)
+                        return i;
+                }
+            }
+            return -1;
+        }
+
+        private static int Find_number(string str, int index, bool before)  // поиск начала или конца числа
+        {
+            int len = str.Length;
+            if (before)
+            {
+                for (int i = index; i >= 0; i--)
+                    if (!char.IsDigit(str[i]))
+                        return i + 1;
+                return 0;
+            }
+            else
+            {
+                for (int i = index; i < len; i++)
+                    if (!char.IsDigit(str[i]))
+                        return i - 1;
+                return len - 1;
+            }
+        }
+
+        private static string Substring_selection(string str, int index)  // выделение подстроки из str в index передаётся индекс деления или умножения
+        {
+            string result = "";
+            int start;
+            if (str[index - 1] == ')')
+                start = Find_bracket(str, index - 2, true);
+            else
+                start = Find_number(str, index - 1, true);
+            int end;
+            if (str[index + 1] == '(')
+                end = Find_bracket(str, index + 2, false);
+            else
+                end = Find_number(str, index + 1, false);
+
+            for (int j = start; j <= end; j++)
+                result += str[j];
+            return result;
+        }
+
+        public static string Computing(string input, bool division)  // считает выражение в строке
+        {
+            string value = new DataTable().Compute(input, null).ToString();
+            if (division)
+            {
+                float helper = float.Parse(value);
+                return ((int)helper).ToString();  // деление нацело, то есть отбрасывание десятичной части
+            }
+            else
+                return value;
+        }
+
+        public static void Multiplication_and_division(ref string str)  // отдельно считаются и заносятся в эту эе строку операции умножения и деления
+        {
+            int i_1 = str.IndexOf('*');
+            int i_2 = str.IndexOf('/');
+            while (i_1 != -1 || i_2 != -1)  // пока есть умножение или деление
+            {
+                if (i_1 == -1 && i_2 != -1) // в строке только операции деления
+                {
+                    string calc = Substring_selection(str, i_2);
+                    str = str.Replace(calc, Computing(calc, true));
+                }
+
+                if (i_1 != -1 && i_2 == -1)  // в строке остались только умножения
+                {
+                    string calc = Substring_selection(str, i_1);
+                    str = str.Replace(calc, Computing(calc, false));
+                }
+
+                if (i_1 != -1 && i_2 != -1)  // выбираем операцию, которая идёт раньше
+                {
+                    int index_before;
+                    bool oper;
+                    if (i_1 < i_2)
+                    {
+                        index_before = i_1;
+                        oper = false;
+                    }
+                    else
+                    {
+                        index_before = i_2;
+                        oper = true;
+                    }
+                    string calc = Substring_selection(str, index_before);
+                    str = str.Replace(calc, Computing(calc, oper));
+                }
+                i_1 = str.IndexOf('*');
+                i_2 = str.IndexOf('/');
+            }
+        }
+
+        private static bool General_inspection(ref string str, ref bool division_by_zero)  // общая проверка поступившей строки
+        {                                                                                 // проще было бы использовать try catch, но это не сильно упростит задачу
             if (str == "")
                 return false;  // если строка пустая
             if (!Valid_simbol(str, true))
@@ -267,6 +387,7 @@ namespace проект
                         division_by_zero = true;
                         return false;
                     }
+            Multiplication_and_division(ref str);  // все деления нацело
             return true;
         }
         private void Click_equality(object sender, RoutedEventArgs e)
@@ -274,32 +395,28 @@ namespace проект
             bool division_by_zero = false;
             string after = input.Text;
             if (General_inspection(ref after, ref division_by_zero))
-            {
-                input.Text = after;
-                string value = new DataTable().Compute(input.Text, null).ToString();
-                float result = float.Parse(value);
-                output.Text = ((int)result).ToString();  // деление нацело
-                
-            }
+                output.Text = new DataTable().Compute(after, null).ToString();
             else
                 if(division_by_zero)
                     output.Text = "Деление на ноль";
                 else
                     output.Text = "Синтактическая ошибка";
         }
-        
+
+        public void Update_calculator()
+        {
+            input.Text = MainWindow.save_input_in_calc;
+            output.Text = MainWindow.save_output_in_calc;
+        }
+
         public calculator()
         {
             InitializeComponent();
-           
+            Update_calculator();
             
         }
         private void Window_KeyUp(object sender, KeyEventArgs e)
         {
-            
-
-            //label.Content = e.Key.ToString();
-            
             if (e.Key == Key.Enter)
             {
                 Click_equality(sender, e);
@@ -308,11 +425,12 @@ namespace проект
             {
                 CalculatorBack_Click(sender, e);
             }
-            
         }
 
         private void CalculatorBack_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow.save_input_in_calc = input.Text;
+            MainWindow.save_output_in_calc = output.Text;
             NavigationService.Navigate(new menu());
         }
 
