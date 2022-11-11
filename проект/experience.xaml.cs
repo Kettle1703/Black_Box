@@ -485,6 +485,9 @@ namespace проект
         {
             NavigationService.Navigate(new menu());
         }
-        
+        private void ExperienceExit_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new menu());
+        }
     }
 }

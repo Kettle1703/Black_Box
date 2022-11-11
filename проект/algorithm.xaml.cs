@@ -55,5 +55,9 @@ namespace проект
         {
             NavigationService.Navigate(new menu());
         }
+        private void AlgorihmExit_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new menu());
+        }
     }
 }

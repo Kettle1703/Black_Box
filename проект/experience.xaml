@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="experience" KeyUp="Page_KeyUp">
 
-    <Grid>
+    <Grid Margin="-2,0,2,0">
         <Grid.Background>
             <ImageBrush ImageSource="opyty_bek.jpg"></ImageBrush>
         </Grid.Background>
@@ -17,6 +17,18 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="0.5*"/>
         </Grid.ColumnDefinitions>
+        <Button x:Name="ExperienceExit" Click="ExperienceExit_Click" 
+                            Content="Назад" 
+                            HorizontalAlignment="Left"
+                            FontSize="20"
+                            FontFamily="Century Gothic"
+                            Background="White"
+                            BorderBrush="#C17779"
+                            BorderThickness="1.5"
+                            Foreground="#C17779"
+                            FontWeight="Bold"
+                            Margin="0 0 15 380">
+        </Button>
         <Grid Grid.Column="1">
             <Border
                 Background="white" 
