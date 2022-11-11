@@ -49,7 +49,6 @@ C:\Users\HP\Documents\GitHub\Black_Box\проект\bin\Debug\net5.0-windows\п�
 C:\Users\HP\Documents\GitHub\Black_Box\проект\bin\Debug\net5.0-windows\проект.dll
 C:\Users\HP\Documents\GitHub\Black_Box\проект\bin\Debug\net5.0-windows\ref\проект.dll
 C:\Users\HP\Documents\GitHub\Black_Box\проект\bin\Debug\net5.0-windows\проект.pdb
-C:\Users\HP\Documents\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\проект.csproj.AssemblyReference.cache
 C:\Users\HP\Documents\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\MainWindow.g.cs
 C:\Users\HP\Documents\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\App.g.cs
 C:\Users\HP\Documents\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\проект_MarkupCompile.cache
@@ -92,3 +91,4 @@ C:\Users\HP\Documents\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\men
 C:\Users\HP\Documents\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\menu.baml
 C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\menu.g.cs
 C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\menu.baml
+C:\Users\HP\Documents\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\проект.csproj.AssemblyReference.cache

@@ -21,40 +21,40 @@
             <Border
                 Background="white" 
                 CornerRadius="50" 
-                Margin="20">
+                Margin="55 120">
                 <StackPanel>
                     <Label 
-                        Content="Введите номер алгоритма:" 
+                        Content="Введите номер алгоритма" 
                         FontSize="25" 
                         HorizontalAlignment="Center" 
-                        Margin="0,110,0,15"       
+                        Margin="0 20 0 15"       
                         VerticalAlignment="Center"
                         FontWeight="Bold" 
                         FontFamily="Century Gothic"
-                        Foreground="#60BFC1"/>
+                        Foreground="#C17779"/>
                     <TextBox x:Name="input" 
                              FontSize="20" 
                              HorizontalAlignment="Center" 
                              TextWrapping="Wrap" Text="" 
-                             Width="250" 
+                             Width="260" 
                              FontFamily="Century Gothic" 
                              Background="White"
-                             BorderBrush="#C17779"
+                             BorderBrush="#60BFC1"
                              BorderThickness="1.5"
                              Foreground="#C17779"
                              FontWeight="Bold"
                              Margin="0 0 0 15"/>
                     <TextBlock 
-                        FontSize="25" 
+                        FontSize="20" 
                         x:Name="output" 
                         Text="" 
                         Height="40" 
-                        Width="450" 
+                        Width="400" 
                         TextAlignment="Center" 
-                        Margin="0 0 0 15"
+                        Margin="0 0 0 20"
                         FontWeight="Bold" 
                         FontFamily="Century Gothic"
-                        Foreground="#60BFC1"/>
+                        Foreground="#C17779"/>
                 </StackPanel>
             </Border>
         </Grid>

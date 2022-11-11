@@ -72,18 +72,23 @@ namespace проект
         public static int _9(string s, int N)
         {
             N = 0;
-            for (int i = 0; i < s.Length - 1; i++)
+            for (int i = 0; i < s.Length - 1;)
             {
+                if (i < 0)
+                    i = 0;
                 if (s.Length == 1)
-                    return 0;
-                if (i == 0)
+                    return N;
+                else
                 {
                     if (s[i] == s[i + 1] && char.IsLetter(s[i]))
+                    {
                         N++;
+                        s = s.Remove(i, 2);
+                        i--;
+                    }
+                    else
+                        i++;
                 }
-                else
-                if (s[i] == s[i + 1] && char.IsLetter(s[i]) || s[i] == s[i - 1] && char.IsLetter(s[i]))
-                    N++;
             }
             return N;
         }
@@ -109,25 +114,29 @@ namespace проект
             for (i = 'я'; i >= 'a'; i--)
             {
                 if (i == 'я') Text = Text.Replace((char)i, '_');
-                if (i == 'z') Text = Text.Replace((char)i, '-');
                 Text = Text.Replace((char)i, (char)(i + 1));
             }
             for (i = 0; i < Text.Length; i++)
             {
                 if (Text[i] == '_') Text.Replace(Text[i], 'а');
-                if (Text[i] == '-') Text.Replace(Text[i], 'a');
             }
             S = Convert.ToString(Text);
             return S;
         }
         public static double _14(string s, double N)
         {
-            N = s.Length / 2;
+            N = 0;
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (char.IsLetter(s[i]))
+                    N++;
+            }
+            N /= 2;
             return N;
         }
         public static char _15(string s, char S)
         {
-            s = s.ToLower();  // строка "AA" становиться "аа" и с английскими так же работает
+            s = s.ToLower();
             char str = 'а';
             foreach (char ch in s)
             {
@@ -139,6 +148,7 @@ namespace проект
         }
         public static char _16(string s, char S)
         {
+            s = s.ToLower();
             char str = 'я';
             foreach (char ch in s)
             {
@@ -150,6 +160,7 @@ namespace проект
         }
         public static string _17(string s, string S)
         {
+            s = s.ToLower();
             char str1 = 'а';
             foreach (char ch in s)
             {
@@ -240,10 +251,11 @@ namespace проект
                 N = n * 2;
             return N;
         }
-        static string _24(int n, string str)
+        static int _24(int n, int N)
         {
             string s;
-            str = "";
+            string str = "";
+            n = int.Parse(Console.ReadLine());
             s = n.ToString();
             for (int i = 0; i < s.Length; i++)
             {
@@ -254,7 +266,8 @@ namespace проект
                     str = $"{str}" + $"{(int)s[i] - 49}";
                 }
             }
-            return str;
+            N = Convert.ToInt32(str);
+            return N;
         }
         static int _25(string s, int N)
         {
@@ -338,7 +351,7 @@ namespace проект
 
         public static int _29(string str)
         {
-            var vowelArray = str.Where(c => "aeiouyAEIOUYаоуэыяёюеиАОУЭЫЯЁЮЕИ".Contains(c)).ToArray();
+            var vowelArray = str.Where(c => "аоуэыяёюеиАОУЭЫЯЁЮЕИ".Contains(c)).ToArray();
             return vowelArray.Length;
         }
 
@@ -385,7 +398,7 @@ namespace проект
                 case 23:
                     return _23(number, 0).ToString();
                 case 24:
-                    return _24(number, "").ToString();
+                    return _24(number, 0).ToString();
                 case 28:
                     return _28(number).ToString();
             }
