@@ -77,7 +77,7 @@ namespace проект {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/проект;V1.0.0.0;component/experience.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/проект;component/experience.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\experience.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

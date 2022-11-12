@@ -61,7 +61,7 @@ namespace проект {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/проект;V1.0.0.0;component/diary.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/проект;component/diary.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\diary.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

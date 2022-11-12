@@ -19,6 +19,7 @@ namespace проект
     public partial class experience : Page
     {
         public static string all_text;
+
         public static int _1(int n, int N)
         {
             N = n + 1;
@@ -92,17 +93,17 @@ namespace проект
             }
             return N;
         }
-        public static double _10(double n, double N)
+        public static int _10(int n, int N)
         {
             N = n / 2;
             return N;
         }
-        public static double _11(double n, double N)
+        public static int _11(int n, int N)
         {
             N = n / 3;
             return N;
         }
-        public static double _12(double n, double N)
+        public static int _12(int n, int N)
         {
             N = n / 2 - 1;
             return N;
@@ -113,17 +114,21 @@ namespace проект
             StringBuilder Text = new StringBuilder(s);
             for (i = 'я'; i >= 'a'; i--)
             {
+                if (i == 'е') Text = Text.Replace((char)i, '/');
                 if (i == 'я') Text = Text.Replace((char)i, '_');
                 Text = Text.Replace((char)i, (char)(i + 1));
             }
+            Text = Text.Replace('ё', '-');
             for (i = 0; i < Text.Length; i++)
             {
+                if (Text[i] == '/') Text.Replace(Text[i], 'ё');
+                if (Text[i] == '-') Text.Replace(Text[i], 'ж');
                 if (Text[i] == '_') Text.Replace(Text[i], 'а');
             }
             S = Convert.ToString(Text);
             return S;
         }
-        public static double _14(string s, double N)
+        public static int _14(string s, int N)
         {
             N = 0;
             for (int i = 0; i < s.Length; i++)
@@ -140,8 +145,21 @@ namespace проект
             char str = 'а';
             foreach (char ch in s)
             {
-                if (ch > str)
+                if (ch > str && ch != 'ё' && str != 'ё')
                     str = ch;
+                else
+                {
+                    if (ch == 'ё')
+                    {
+                        if ((int)str <= 1077)
+                            str = ch;
+                    }
+                    if (str == 'ё')
+                    {
+                        if ((int)ch >= 1078)
+                            str = ch;
+                    }
+                }
             }
             S = str;
             return S;
@@ -152,8 +170,21 @@ namespace проект
             char str = 'я';
             foreach (char ch in s)
             {
-                if (ch < str)
+                if (ch < str && ch != 'ё' && str != 'ё')
                     str = ch;
+                else
+                {
+                    if (ch == 'ё')
+                    {
+                        if ((int)str >= 1078)
+                            str = ch;
+                    }
+                    if (str == 'ё')
+                    {
+                        if ((int)ch <= 1077)
+                            str = ch;
+                    }
+                }
             }
             S = str;
             return S;
@@ -164,14 +195,40 @@ namespace проект
             char str1 = 'а';
             foreach (char ch in s)
             {
-                if (ch > str1)
+                if (ch > str1 && ch != 'ё' && str1 != 'ё')
                     str1 = ch;
+                else
+                {
+                    if (ch == 'ё')
+                    {
+                        if ((int)str1 <= 1077)
+                            str1 = ch;
+                    }
+                    if (str1 == 'ё')
+                    {
+                        if ((int)ch >= 1078)
+                            str1 = ch;
+                    }
+                }
             }
             char str2 = 'я';
             foreach (char ch in s)
             {
-                if (ch < str2)
+                if (ch < str2 && ch != 'ё' && str2 != 'ё')
                     str2 = ch;
+                else
+                {
+                    if (ch == 'ё')
+                    {
+                        if ((int)str2 >= 1078)
+                            str2 = ch;
+                    }
+                    if (str2 == 'ё')
+                    {
+                        if ((int)ch <= 1077)
+                            str2 = ch;
+                    }
+                }
             }
             S = $"{str2}" + $"{str1}";
             return S;
@@ -179,6 +236,7 @@ namespace проект
         public static int _18(int n, int N)
         {
             N = 0;
+            n = Math.Abs(n);
             while (n > 9)
             {
                 n /= 10;
@@ -190,6 +248,7 @@ namespace проект
         public static int _19(int n, int N)
         {
             N = 0;
+            n = Math.Abs(n);
             while (n > 9)
             {
                 N = N + n % 10;
@@ -200,6 +259,7 @@ namespace проект
         }
         public static int _20(int n, int N)
         {
+            n = Math.Abs(n);
             int min = 9;
             int max = 0;
             while (n > 9)
@@ -219,6 +279,7 @@ namespace проект
         }
         static int _21(int n, int N)
         {
+            n = Math.Abs(n);
             int min = 9;
             int max = 0;
             while (n > 9)
@@ -239,6 +300,8 @@ namespace проект
         static int _22(int n, int N)
         {
             N = n;
+            if (n == 0)
+                return 0;
             while (N % 2 == 0 && N != 1)
                 N = N / 2;
             return N;
@@ -255,7 +318,6 @@ namespace проект
         {
             string s;
             string str = "";
-            n = int.Parse(Console.ReadLine());
             s = n.ToString();
             for (int i = 0; i < s.Length; i++)
             {
@@ -354,6 +416,7 @@ namespace проект
             var vowelArray = str.Where(c => "аоуэыяёюеиАОУЭЫЯЁЮЕИ".Contains(c)).ToArray();
             return vowelArray.Length;
         }
+
 
         public static bool Input_string(int n)  // у алгоритма с этим номером на вход строка ? 
         {
