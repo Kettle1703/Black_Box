@@ -33,5 +33,7 @@ namespace проект
         {
             NavigationService.Navigate(new menu());
         }
+
+        
     }
 }

@@ -29,7 +29,7 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="" FontSize="35" FontWeight="Bold" FontFamily="Century Gothic" Grid.ColumnSpan="6" x:Name="output" VerticalAlignment="Stretch" Margin="2,0,2,0" TextAlignment="Right"/>
+        <TextBox IsReadOnly="True" Grid.Row="1" Grid.Column="0" Text="" FontSize="35" FontWeight="Bold" FontFamily="Century Gothic" Grid.ColumnSpan="6" x:Name="output" VerticalAlignment="Stretch" Margin="2,0,2,0" TextAlignment="Right" SelectionTextBrush="#FF969494" BorderBrush="#FF969494" SelectionBrush="#FF969494" Background="{x:Null}" Foreground="Black"/>
             <TextBox Grid.Row="0" Grid.Column="0" FontSize="35" x:Name="input" FontWeight="Bold" FontFamily="Century Gothic" Text="" Grid.ColumnSpan="6" Margin="2,0,2,0" TextAlignment="Left" SelectionTextBrush="#FF969494" BorderBrush="#FF969494" SelectionBrush="#FF969494" Background="{x:Null}" Foreground="Black" ></TextBox>
             <Button Grid.Row="2" Grid.Column="0" FontSize="35" Background="White" BorderBrush="#C17779" FontFamily="Century Gothic" BorderThickness="1.5" Foreground="#C17779" FontWeight="Bold" Margin="2" Click="Button_Click" >1</Button>
             <Button Grid.Row="2" Grid.Column="1" FontSize="35" Background="White" BorderBrush="#C17779" FontFamily="Century Gothic" BorderThickness="1.5" Foreground="#C17779" FontWeight="Bold" Margin="2" Click="Button_Click">2</Button>

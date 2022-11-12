@@ -17,10 +17,11 @@ namespace проект
 {
     public partial class exam : Page
     {
-        private static object[] arr;
-        private static bool[] result;
-        private static int now;
-        private static string[] answer;
+        private static object[] arr = new object[5];  
+        private static bool[] result = new bool[5];
+        private static int now;  // поле, которое нужно сохранять
+        private static string[] answer = new string[5];
+        
         private static string[] quantifier =
         {
             "все", "некоторые", "многие", "определённые", "всякие", "редкие", "часто", "эти", "те же", "вот эти", "какие"
@@ -42,16 +43,32 @@ namespace проект
         private static int len_2 = subject.Length - 1;
         private static int len_3 = bundle.Length - 1;
         private static int len_4 = adjectives.Length - 1;
+        
+        /*
+        public static void Copy_array(object[] what,ref object[] where)  // второй массив заполняется первым
+        {
+            for(int i = 0; i < where.Length; i++)
+                where[i] = what[i];
+        }
 
+        public static void Copy_array(bool[] what, ref bool[] where)  // второй массив заполняется первым
+        {
+            for (int i = 0; i < where.Length; i++)
+                where[i] = what[i];
+        }
+
+        public static void Copy_array(string[] what, ref string[] where)  // второй массив заполняется первым
+        {
+            for (int i = 0; i < where.Length; i++)
+                where[i] = what[i];
+        }
+        */
         private void Initial_generation()  // начальная генерация 
         {
-            arr = new object[5];
             if (experience.Input_string(algorithm.algorithm_number))
                 Fill_string(ref arr);
             else
                 Fill_int(ref arr);
-            result = new bool[5];
-            answer = new string[5];
             for (int i = 0; i < 5; i++)
             {
                 result[i] = false;
@@ -59,6 +76,13 @@ namespace проект
             }
             now = 0;
             test.Text = Convert(arr[0]);
+        }
+
+        private void Update_exam()
+        {
+            now = MainWindow.copy_now;
+            test.Text = Convert(arr[now]);
+            input_exam.Text = answer[now];
         }
 
         private static string Generation_string()  // 1, 2, 3,   1-2, 3-4
@@ -109,7 +133,7 @@ namespace проект
         private static void Fill_int(ref object[] arr)  // тест заполняется числами
         {
             Random rnd = new Random();
-            arr[0] = rnd.Next(0, 40);
+            arr[0] = rnd.Next(6, 40);
             arr[1] = rnd.Next(100, 400);
             arr[2] = rnd.Next(401, 9999);
             arr[3] = rnd.Next(15000, 25000);
@@ -129,16 +153,23 @@ namespace проект
         public exam()
         {
             InitializeComponent();
-            Initial_generation();
+            if(MainWindow.first_in_exam)
+            {
+                Initial_generation();
+                MainWindow.first_in_exam = false;
+            }
+            else
+                Update_exam();
         }
 
 
         private void ExamBack_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow.copy_now = now;
             NavigationService.Navigate(new menu());
         }
 
-        private void Checking_the_input(int now)
+        private void Checking_the_input(int now)  // проверка правильности ответа
         {
             if (experience.Input_string(algorithm.algorithm_number))
             {
@@ -152,6 +183,7 @@ namespace проект
             }
             else
             {
+                // алгоритм на вход требует число
                 string true_result = experience.Algorithm_with_number(int.Parse(test.Text));
                 if (true_result == input_exam.Text)
                     result[now] = true;
@@ -169,7 +201,7 @@ namespace проект
                     info.Text += "0 ";
             }
         }
-        private void Updating_fields(int now)
+        private void Updating_fields(int now)  // обновление полей вывожа информации при нажатии кнопок
         {
             test.Text = Convert(arr[now]);
             input_exam.Text = answer[now];
@@ -190,6 +222,37 @@ namespace проект
             if (now < 4)
                 now++;
             Updating_fields(now);
+        }
+        private void Make_solution(object sender, RoutedEventArgs e)
+        {
+            Checking_the_input(now);  // последний ввод проверить, если пользователь не нажал 
+            int counter = 0; 
+            for(int i = 0; i < 5; i++)
+                if(result[i])
+                    counter++;
+            string conclusion;
+            if (counter >= 3)
+                conclusion = $"Экзамен по {algorithm.algorithm_number} алгоритму сдан";
+            else
+                conclusion = $"Экзамен по {algorithm.algorithm_number} алгоритму не сдан";
+            info.Text = conclusion;
+            MainWindow.first_in_exam = true;  // генерация нового экзамена
+            experience.all_text += $"{conclusion}\n";
+            for(int i = 0; i < 5; i++)
+            {
+                experience.all_text += $"{i + 1}) {arr[i]}  ->  {answer[i]}:  {((result[i])? "Правильно": "Неверно")}\n";
+            }
+        }
+
+        private void Calculator_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new calculator());
+        }
+
+        private void input_exam_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+                Next_test(sender, e);
         }
     }
 

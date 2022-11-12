@@ -9,8 +9,26 @@
       Title="diary">
 
     <Grid Background="white">
-        <TextBlock x:Name="story" FontSize="20" Text="" VerticalAlignment="Top" Width="760" Height="366" TextAlignment="Left" Margin="0,61,0,0"/>
-        <Button FontSize="20" Content="Назад" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" Height="36" Width="65" Click="DairyBack_Click"/>
+        <ScrollViewer>
+            <TextBox 
+                x:Name="story" 
+                Margin="20,62,20,10" 
+                FontSize="20" 
+                Text="" 
+                IsReadOnly="True"   
+                TextAlignment="Left"  
+                Width="Auto" 
+                TextWrapping="Wrap"/>
+        </ScrollViewer>
+        <Button 
+            FontSize="20" 
+            Content="Назад" 
+            HorizontalAlignment="Left" 
+            Margin="20,20,0,0" 
+            VerticalAlignment="Top" 
+            Height="36" 
+            Width="65" 
+            Click="DairyBack_Click"/>
 
     </Grid>
 </Page>

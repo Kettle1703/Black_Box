@@ -364,7 +364,7 @@ namespace проект
         }
 
         private static bool General_inspection(ref string str, ref bool division_by_zero)  // общая проверка поступившей строки
-        {                                                                                 // проще было бы использовать try catch, но это не сильно упростит задачу
+        {                                                                                 
             if (str == "")
                 return false;  // если строка пустая
             if (!Valid_simbol(str, true))
@@ -395,12 +395,19 @@ namespace проект
             bool division_by_zero = false;
             string after = input.Text;
             if (General_inspection(ref after, ref division_by_zero))
-                output.Text = new DataTable().Compute(after, null).ToString();
+                try 
+                {
+                    output.Text = new DataTable().Compute(after, null).ToString();
+                }
+                catch (Exception)
+                {
+                    output.Text = "Синтактическая ошибка";  // отлавливание оставшихся ошибок
+                }
             else
-                if(division_by_zero)
-                    output.Text = "Деление на ноль";
-                else
-                    output.Text = "Синтактическая ошибка";
+                if (division_by_zero)
+                output.Text = "Деление на ноль";
+            else
+                output.Text = "Синтактическая ошибка";
         }
 
         public void Update_calculator()

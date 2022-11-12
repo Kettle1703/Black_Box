@@ -476,7 +476,8 @@ namespace проект
                     MainWindow.first_change_algorithm = false;
                     all_text += "Опыты алгоритма #1\n";
                 }
-                all_text += $"{input.Text} - {output.Text}\n";
+                all_text += $"{MainWindow.counter_exp}) {input.Text}  ->  {output.Text}\n";
+                MainWindow.counter_exp++;
             }
             if (e.Key == Key.Escape)
                 ExperienceBack_Click(sender, e);
