@@ -35,7 +35,6 @@ namespace проект
                     algorithm_number = number;
                     output.Text = $"Номер выбранного алгоритма {number}";
                     MainWindow.save_ouput_algoritm = output.Text;
-                    experience.all_text += $"Опыты алгоритма #{number}\n";
                     MainWindow.first_in_exam = true;  // так как алгоритм поменяли
                     MainWindow.counter_exp = 1;  // поменяли алгоритм, сбросили счётчик
                 }

@@ -20,7 +20,7 @@ namespace проект
     
     public partial class calculator : Page
     {
-        
+        public static bool numbers_long = false;
         private void Click_AC(object sender, RoutedEventArgs e)
         {
             input.Text = "";
@@ -311,9 +311,19 @@ namespace проект
             return result;
         }
 
-        public static string Computing(string input, bool division)  // считает выражение в строке
+        public string Computing(string input, bool division)  // считает выражение в строке
         {
-            string value = new DataTable().Compute(input, null).ToString();
+            string value = "";
+            try
+            {
+                value = new DataTable().Compute(input, null).ToString();
+            }
+            catch(Exception)
+            {
+                value = "Длишком длинные числа";
+                numbers_long = true;
+                
+            }
             if (division)
             {
                 float helper = float.Parse(value);
@@ -323,7 +333,7 @@ namespace проект
                 return value;
         }
 
-        public static void Multiplication_and_division(ref string str)  // отдельно считаются и заносятся в эту эе строку операции умножения и деления
+        public void Multiplication_and_division(ref string str)  // отдельно считаются и заносятся в эту эе строку операции умножения и деления
         {
             int i_1 = str.IndexOf('*');
             int i_2 = str.IndexOf('/');
@@ -363,7 +373,7 @@ namespace проект
             }
         }
 
-        private static bool General_inspection(ref string str, ref bool division_by_zero)  // общая проверка поступившей строки
+        private bool General_inspection(ref string str, ref bool division_by_zero)  // общая проверка поступившей строки
         {                                                                                 
             if (str == "")
                 return false;  // если строка пустая
@@ -401,15 +411,18 @@ namespace проект
                 }
                 catch (Exception)
                 {
-                    output.Text = "Синтактическая ошибка";  // отлавливание оставшихся ошибок
+                    if (numbers_long)
+                        output.Text = "Слишком длинные числа";
+                    else
+                        output.Text = "Синтактическая ошибка";  // отлавливание оставшихся ошибок
                 }
             else
                 if (division_by_zero)
-                output.Text = "Деление на ноль";
-            else
-                output.Text = "Синтактическая ошибка";
+                    output.Text = "Деление на ноль";
+                else
+                    output.Text = "Синтактическая ошибка";
         }
-
+         
         public void Update_calculator()
         {
             input.Text = MainWindow.save_input_in_calc;

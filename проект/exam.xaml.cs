@@ -21,48 +21,61 @@ namespace проект
         private static bool[] result = new bool[5];
         private static int now;  // поле, которое нужно сохранять
         private static string[] answer = new string[5];
-        
-        private static string[] quantifier =
+
+        private static string[] _0 =
         {
-            "все", "некоторые", "многие", "определённые", "всякие", "редкие", "часто", "эти", "те же", "вот эти", "какие"
+            "сон", "дом", "рот", "том", "ток", "бак", "кит", "сыр", "кон", "бык", "пик", "рай", "да", "нет", "о", "лес", "яма", "як", "век", "я", "он", "мы", "они", "она", "ёж", "её", "его", "ил", "ум", "юг", "яд", "год", "мой", "два", "три", "мак", "душ", "бас", "луг", "фен", "имя", "мех", "око", "йог", "шаг", "фея", "оса", "юла", "уют", "вид"
         };
-        private static string[] subject =
+        private static string[] _1 =
         {
-            "машины", "люди", "звери", "животные", "растения", "программы", "совы", "фигуры", "дети", "студенты", "ученики", "круги"
+            "ритм", "стог", "куст", "стол", "стул", "мрак", "врач", "метр", "шкаф", "лист", "тигр", "ложь", "ночь", "волк", "град", "гром", "снег", "хлеб", "свет", "пар", "чай", "ключ", "сто", "кот", "фен", "шар", "муха", "ваза", "жар", "год", "щука", "чудо", "часы", "буря", "таз", "пояс", "труд", "конь", "небо", "волос", "кулон", "слово", "зло", "цирк", "пыль", "трюк", "стог", "цель", "семь", "гном"
         };
-        private static string[] bundle =
+        private static string[] _2 =
         {
-            "являются", "получаются", "становятся", "не являются", "не получаются", "не становятся", "будут", "не будут"
+            "писк", "роль", "вода", "плечо", "станок", "стакан", "дворец", "мешок", "клоун", "пиджак", "пальто", "кофта", "вилка", "кружка", "зебра", "комар", "пчела", "осина", "груша", "банан", "яблоко", "поезд", "букет", "сапог", "пламя", "кабан", "лень", "печь", "слива", "полоса", "машина", "назад", "голос", "урок", "палка", "атака", "валун", "горка", "добро", "жираф", "жильё", "зефир", "загон", "крыша", "ковёр", "лампа", "кошка", "фильм", "ровно", "игрок"
         };
-        private static string[] adjectives =
+        private static string[] _3 =
         {
-            "хорошими", "плохими", "работающими", "неработающими", "класными", "привлекательными", "яркими", "солнечными", "эффективными", "увлекательными", "растущими",
+            "линия", "масло", "мойка", "обход", "окунь", "орган", "отель", "очный", "плита", "почта", "юрист", "эпоха", "аромат", "апрель", "алтарь", "выступ", "грусть", "долина", "ёлочка", "единый", "еловый", "юность", "эпилог", "щетина", "шахтёр", "шутник", "чудище", "ценить", "хлопья", "хищник", "фиаско", "фарфор", "футбол", "фермер", "хрюшка", "ураган", "пример", "гектар", "перила", "карниз", "педаль", "талант", "лагерь", "огород", "магазин", "малина", "костёр", "океан", "мебель", "яблоня"
+        };
+        private static string[] _4 =
+        {
+            "умение", "тряпка", "сейчас", "сланец", "рудник", "регион", "рецепт", "роман", "пузырь", "острый", "наверх", "нектар", "мостик", "рубашка", "кастрюля", "тюльпан", "ромашка", "лошадь", "кенгуру", "стрекоза", "снегирь", "кузнечик", "помидор", "виноград", "автобус", "пароход", "скрепка", "скрипка", "схватка", "вставка", "награда", "напиток", "начисто", "надежда", "напротив", "напрокат", "учитель", "ученица", "девочка", "октябрь", "суббота", "картина", "рисунок", "капуста", "человек", "мальчик", "деревня", "воробей", "субъект", "подъезд"
         };
 
-        private static int len_1 = quantifier.Length - 1;
-        private static int len_2 = subject.Length - 1;
-        private static int len_3 = bundle.Length - 1;
-        private static int len_4 = adjectives.Length - 1;
-        
-        /*
-        public static void Copy_array(object[] what,ref object[] where)  // второй массив заполняется первым
+        private static string Generation_string(int hard)
         {
-            for(int i = 0; i < where.Length; i++)
-                where[i] = what[i];
+            Random rnd = new Random();
+            switch (hard)
+            {
+                case 0:
+                    return _0[rnd.Next(0, 49)];
+                case 1:
+                    return _1[rnd.Next(0, 49)];
+                case 2:
+                    return _2[rnd.Next(0, 49)];
+                case 3:
+                    return _3[rnd.Next(0, 49)];
+                case 4:
+                    return _4[rnd.Next(0, 49)];
+            }
+            return "Error";
         }
 
-        public static void Copy_array(bool[] what, ref bool[] where)  // второй массив заполняется первым
+        private static void Fill_string(ref object[] arr)  // тест заполняется строками
         {
-            for (int i = 0; i < where.Length; i++)
-                where[i] = what[i];
+            for (int i = 0; i < arr.Length; i++)
+                arr[i] = Generation_string(i);
         }
-
-        public static void Copy_array(string[] what, ref string[] where)  // второй массив заполняется первым
+        private static void Fill_int(ref object[] arr)  // тест заполняется числами
         {
-            for (int i = 0; i < where.Length; i++)
-                where[i] = what[i];
+            Random rnd = new Random();
+            arr[0] = rnd.Next(6, 40);
+            arr[1] = rnd.Next(100, 500);
+            arr[2] = rnd.Next(1000, 8000);
+            arr[3] = rnd.Next(12000, 25000);
+            arr[4] = rnd.Next(30000, 50000);
         }
-        */
         private void Initial_generation()  // начальная генерация 
         {
             if (experience.Input_string(algorithm.algorithm_number))
@@ -83,61 +96,6 @@ namespace проект
             now = MainWindow.copy_now;
             test.Text = Convert(arr[now]);
             input_exam.Text = answer[now];
-        }
-
-        private static string Generation_string()  // 1, 2, 3,   1-2, 3-4
-        {
-            Random rand = new Random();
-            string res = "";
-            string str_1 = quantifier[rand.Next(0, len_1)];
-            string str_2 = subject[rand.Next(0, len_2)];
-            string str_3 = bundle[rand.Next(0, len_3)];
-            int role = rand.Next(1, 12);
-            if (role % 2 == 1)
-            {
-                role = rand.Next(1, 12);
-                switch (role % 3)
-                {
-                    case 0:
-                        res = str_1;
-                        break;
-                    case 1:
-                        res = str_2;
-                        break;
-                    case 2:
-                        res = str_3;
-                        break;
-                }
-            }
-            else
-            {
-                role = rand.Next(1, 12);
-                switch (role % 2)
-                {
-                    case 0:
-                        res = str_1 + " " + str_2;
-                        break;
-                    case 1:
-                        res = str_3 + " " + adjectives[rand.Next(0, len_4)];
-                        break;
-                }
-            }
-            return res;
-        }
-
-        private static void Fill_string(ref object[] arr)  // тест заполняется строками
-        {
-            for (int i = 0; i < arr.Length; i++)
-                arr[i] = Generation_string();
-        }
-        private static void Fill_int(ref object[] arr)  // тест заполняется числами
-        {
-            Random rnd = new Random();
-            arr[0] = rnd.Next(6, 40);
-            arr[1] = rnd.Next(100, 400);
-            arr[2] = rnd.Next(401, 9999);
-            arr[3] = rnd.Next(15000, 25000);
-            arr[4] = rnd.Next(50001, 100000);
         }
 
         public static string Convert(object res) // принимает object переделывает его в string
@@ -240,7 +198,7 @@ namespace проект
             experience.all_text += $"{conclusion}\n";
             for(int i = 0; i < 5; i++)
             {
-                experience.all_text += $"{i + 1}) {arr[i]}  ->  {answer[i]}:  {((result[i])? "Правильно": "Неверно")}\n";
+                experience.all_text += $"{i + 1}) {arr[i], -55}{answer[i]}:  {((result[i])? "Правильно": "Неверно")}\n";
             }
         }
 

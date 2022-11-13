@@ -279,7 +279,7 @@ namespace проект
         }
         static int _21(int n, int N)
         {
-            n = Math.Abs(n);
+            n = Math.Abs(n);  
             int min = 9;
             int max = 0;
             while (n > 9)
@@ -420,7 +420,7 @@ namespace проект
 
         public static bool Input_string(int n)  // у алгоритма с этим номером на вход строка ? 
         {
-            if(n == 5 || n == 6 || n == 9 || (n >= 13 && n <= 17) || n == 25 || n == 27 || n == 29)
+            if(n == 5 || n == 6 || n == 9 || (n >= 13 && n <= 17) || n == 25 || n == 26 || n == 27 || n == 29)
                 return true;
             else 
                 return false;
@@ -510,7 +510,11 @@ namespace проект
                 // пользователь ввёл число и может использовать алгоритмы: 1. 2. 3. 4. 7. 8. 10. 11. 12. с 18 по 24. 28
                 if(flag)
                 {
-                    output.Text = Algorithm_with_number(number);
+                    input.Text = number.ToString();
+                    if (number <= 536870900 && number >= -536870900)
+                        output.Text = Algorithm_with_number(number);
+                    else
+                        output.Text = "Слишком большое число";
                 }
                 else
                 {
@@ -534,13 +538,17 @@ namespace проект
             if (e.Key == Key.Enter)
             {
                 Check_input();
-                if (MainWindow.first_change_algorithm)
+                if (MainWindow.counter_exp == 1)
                 {
-                    MainWindow.first_change_algorithm = false;
-                    all_text += "Опыты алгоритма #1\n";
+                    all_text += $"Опыты алгоритма #{algorithm.algorithm_number}\n";
                 }
-                all_text += $"{MainWindow.counter_exp}) {input.Text}  ->  {output.Text}\n";
-                MainWindow.counter_exp++;
+                string new_string = $"{input.Text, -55}{output.Text}\n";
+                if(new_string != MainWindow.last_str_in_dairy)
+                {
+                    MainWindow.last_str_in_dairy = new_string;
+                    all_text += $"{MainWindow.counter_exp++}) {new_string}";
+                }
+                
             }
             if (e.Key == Key.Escape)
                 ExperienceBack_Click(sender, e);

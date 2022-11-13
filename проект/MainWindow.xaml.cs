@@ -15,15 +15,11 @@ namespace проект
     {
         public static string save_input_in_calc;
         public static string save_output_in_calc;
-        public static bool first_change_algorithm = true;
         public static string save_ouput_algoritm = "";
         public static int counter_exp = 1;  // номер опыта в опытах (для дневника)
         public static bool first_in_exam = true;  // первый раз зашли в экзамен. true - сгенерировать новый экзамен, false - загрузить начатый экзамен
-
-        //public static object[] copy_arr = new object[5];  // копии полей экзамена
-        //public static bool[] copy_result = new bool[5];
         public static int copy_now;  // видимо, это единственная нужная копия для экзамена, остальные можно удалить
-        //public static string[] copy_answer = new string[5];
+        public static string last_str_in_dairy = "";
         public MainWindow()
         {
             InitializeComponent();
