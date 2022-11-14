@@ -37,6 +37,7 @@ namespace проект
                     MainWindow.save_ouput_algoritm = output.Text;
                     MainWindow.first_in_exam = true;  // так как алгоритм поменяли
                     MainWindow.counter_exp = 1;  // поменяли алгоритм, сбросили счётчик
+                    
                 }
                 else
                     output.Text = "Нет алгоритма с таким номером";

@@ -113,11 +113,11 @@ namespace проект
             InitializeComponent();
             if(MainWindow.first_in_exam)
             {
-                Initial_generation();
+                Initial_generation();  // сгенерироват новый экзамен
                 MainWindow.first_in_exam = false;
             }
             else
-                Update_exam();
+                Update_exam();  // вернулись в экзамен, который не закончили следовательно это надо подшрузить
         }
 
 
@@ -168,6 +168,8 @@ namespace проект
 
         private void Last_test(object sender, RoutedEventArgs e)
         {
+            if (MainWindow.lock_exam)
+                return;
             Checking_the_input(now);
             if (now > 0)
                 now--;
@@ -176,13 +178,38 @@ namespace проект
 
         private void Next_test(object sender, RoutedEventArgs e)
         {
+            if (MainWindow.lock_exam)
+                return;
             Checking_the_input(now);
             if (now < 4)
                 now++;
             Updating_fields(now);
         }
-        private void Make_solution(object sender, RoutedEventArgs e)
+
+        private void Add_in_diary()  // добавление экзамена в дневник
         {
+            
+            for (int i = 0; i < 5; i++)
+            {
+                experience.all_text += $"  {i + 1}) {arr[i]}";
+                string arr_conver = Convert(arr[i]);
+                for (int j = 0; j < 45 - 2 * arr_conver.Length; j++)
+                    experience.all_text += " ";
+                experience.all_text += answer[i];
+                for (int j = 0; j < 45 - 2 * answer[i].Length; j++)
+                    experience.all_text += " ";
+                experience.all_text += $"{((result[i]) ? "Правильно" : "Неверно")}\n";
+            }
+            experience.all_text += '\n';
+        }
+
+        private void Make_solution(object sender, RoutedEventArgs e)  // нажали на кнопку завершить экзамен 
+        {
+            if (MainWindow.lock_exam)
+            {
+                info.Text = "Экзамен завершён, начните новый";
+                return;
+            }
             Checking_the_input(now);  // последний ввод проверить, если пользователь не нажал 
             int counter = 0; 
             for(int i = 0; i < 5; i++)
@@ -195,15 +222,16 @@ namespace проект
                 conclusion = $"Экзамен по {algorithm.algorithm_number} алгоритму не сдан";
             info.Text = conclusion;
             MainWindow.first_in_exam = true;  // генерация нового экзамена
-            experience.all_text += $"{conclusion}\n";
-            for(int i = 0; i < 5; i++)
-            {
-                experience.all_text += $"{i + 1}) {arr[i], -55}{answer[i]}:  {((result[i])? "Правильно": "Неверно")}\n";
-            }
+            experience.all_text += $"\n{conclusion}\n";
+            Add_in_diary();
+            MainWindow.counter_exp = 1;  // если осталиь после экзамена в том же алгоритме, то счётчик начинается сначала
+            MainWindow.last_str_in_dairy = "";
+            MainWindow.lock_exam = true;
         }
 
         private void Calculator_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow.copy_now = now;
             NavigationService.Navigate(new calculator());
         }
 
@@ -211,6 +239,14 @@ namespace проект
         {
             if(e.Key == Key.Enter)
                 Next_test(sender, e);
+        }
+
+        private void New_exam(object sender, RoutedEventArgs e)
+        {
+            Initial_generation();  // сгенерироват новый экзамен
+            MainWindow.first_in_exam = false;
+            MainWindow.lock_exam = false; // разблокировать кнопки в экзамене
+            input_exam.Text = "";  // очисть поле ввода ответа, так как его значение уже не важно
         }
     }
 

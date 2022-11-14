@@ -81,6 +81,13 @@
             Margin="63,372,0,0"
             VerticalAlignment="Top"
             Click="Calculator_Click"/>
+        <Button 
+            Content="Новый экзамен" 
+            FontSize="20"
+            HorizontalAlignment="Left" 
+            Margin="602,336,0,0" 
+            VerticalAlignment="Top" 
+            Click="New_exam"/>
 
     </Grid>
 </Page>

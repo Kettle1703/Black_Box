@@ -19,7 +19,16 @@ namespace проект
     public partial class experience : Page
     {
         public static string all_text;
-
+        public static bool Is_Russian_Letter(char letter)  // метод определяющий русская буква или нет
+        {
+            string helper = letter.ToString();
+            helper = helper.ToLower();
+            int n = (helper[0]);
+            if ((n >= 1072 && n <= 1103) || n == 1105)
+                return true;
+            else
+                return false;
+        }
         public static int _1(int n, int N)
         {
             N = n + 1;
@@ -45,7 +54,7 @@ namespace проект
             N = 0;
             for (int i = 0; i < s.Length; i++)
             {
-                if (char.IsLetter(s[i]))
+                if (Is_Russian_Letter(s[i]))
                     N++;
             }
             return N;
@@ -81,11 +90,10 @@ namespace проект
                     return N;
                 else
                 {
-                    if (s[i] == s[i + 1] && char.IsLetter(s[i]))
+                    if (s[i] == s[i + 1] && Is_Russian_Letter(s[i]))
                     {
                         N++;
                         s = s.Remove(i, 2);
-                        i--;
                     }
                     else
                         i++;
@@ -133,7 +141,7 @@ namespace проект
             N = 0;
             for (int i = 0; i < s.Length; i++)
             {
-                if (char.IsLetter(s[i]))
+                if (Is_Russian_Letter(s[i]))
                     N++;
             }
             N /= 2;
@@ -336,7 +344,7 @@ namespace проект
             int kol = 0, kolEO = 0;
             for (int i = 0; i < s.Length; i++)
             {
-                if (char.IsLetter(s[i]))
+                if (Is_Russian_Letter(s[i]))
                     kol++;
             }
             if (kol % 2 == 0)
@@ -361,7 +369,7 @@ namespace проект
             int kol = 0;
             for (int i = 0; i < s.Length; i++)
             {
-                if (char.IsLetter(s[i]))
+                if (Is_Russian_Letter(s[i]))
                 {
                     if ((int)s[i] == 1025 || (int)s[i] == 1105)
                         kol += 7;
@@ -386,7 +394,7 @@ namespace проект
             int kol = 0;
             for (int i = 0; i < s.Length; i++)
             {
-                if (char.IsLetter(s[i]))
+                if (Is_Russian_Letter(s[i]))
                 {
                     if ((int)s[i] == 1025 || (int)s[i] == 1105)
                         kol += 7;
@@ -533,7 +541,7 @@ namespace проект
             InitializeComponent();
         }
 
-        private string My_format()
+        private string My_format()  // собственный метод выравнивая строк (чтобы столбики были ровные)
         {
             string result = "";
             string helper = MainWindow.counter_exp.ToString();
@@ -541,13 +549,20 @@ namespace проект
                 result += " ";
             result += helper;
             result += (") " + input.Text);
-            for (int i = 0; i < 75 - 2*input.Text.Length; i++)
-                result += " ";
+            if (input.Text.Length > 22)
+                result += "   ";
+            else
+            {
+                for (int i = 0; i < 45 - 2 * input.Text.Length; i++)
+                    result += " ";
+                if(MainWindow.counter_exp > 9)
+                    result += " ";
+            }
             result += $"{output.Text}\n";
             return result;
         }
 
-        private void Page_KeyUp(object sender, KeyEventArgs e)
+        private void Page_KeyUp(object sender, KeyEventArgs e)  // обработка поднятия клавиши
         {
             if (e.Key == Key.Enter)
             {
@@ -560,9 +575,6 @@ namespace проект
                 if(new_string != MainWindow.last_str_in_dairy)
                 {
                     MainWindow.last_str_in_dairy = new_string;
-                    //all_text += $"{MainWindow.counter_exp++, 3}) {new_string}";
-
-                    //all_text += (string.Format("{0, 3}) {1, -55}{2}\n", MainWindow.counter_exp, input.Text, output.Text));
                     all_text += My_format();
                     MainWindow.counter_exp++;
                 }
