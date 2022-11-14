@@ -17,17 +17,44 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="0.5*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="ExperienceExit" Click="ExperienceExit_Click" 
-                            Content="Назад" 
-                            HorizontalAlignment="Left"
-                            FontSize="20"
-                            FontFamily="Century Gothic"
-                            Background="White"
-                            BorderBrush="#C17779"
-                            BorderThickness="1.5"
-                            Foreground="#C17779"
-                            FontWeight="Bold"
-                            Margin="0 0 15 380">
+        <Button 
+            Click="Go_to_diary" 
+            Content="Дневник" 
+            HorizontalAlignment="Left"
+            FontSize="20"
+            FontFamily="Century Gothic"
+            Background="White"
+            BorderBrush="#C17779"
+            BorderThickness="1.5"
+            Foreground="#C17779"
+            FontWeight="Bold"
+            Margin="462,0,0,380" Grid.Column="1" Grid.ColumnSpan="2">
+        </Button>
+        <Button 
+            Click="Go_to_exam" 
+            Content="Экзамен" 
+            HorizontalAlignment="Left"
+            FontSize="20"
+            FontFamily="Century Gothic"
+            Background="White"
+            BorderBrush="#C17779"
+            BorderThickness="1.5"
+            Foreground="#C17779"
+            FontWeight="Bold"
+            Margin="39,0,0,380" Grid.Column="2">
+        </Button>
+        <Button  
+            Click="ExperienceExit_Click" 
+            Content="Назад" 
+            HorizontalAlignment="Left"
+            FontSize="20"
+            FontFamily="Century Gothic"
+            Background="White"
+            BorderBrush="#C17779"
+            BorderThickness="1.5"
+            Foreground="#C17779"
+            FontWeight="Bold"
+            Margin="0 0 15 380">
         </Button>
         <Grid Grid.Column="1">
             <Border

@@ -591,5 +591,15 @@ namespace проект
         {
             NavigationService.Navigate(new menu());
         }
+
+        private void Go_to_exam(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new exam());
+        }
+
+        private void Go_to_diary(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new diary());
+        }
     }
 }

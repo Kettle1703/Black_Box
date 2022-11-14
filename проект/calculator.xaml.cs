@@ -458,5 +458,10 @@ namespace проект
         {
             NavigationService.Navigate(new exam());
         }
+
+        private void Go_to_experience(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new experience());
+        }
     }
 }

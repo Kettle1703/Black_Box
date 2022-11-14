@@ -248,6 +248,11 @@ namespace проект
             MainWindow.lock_exam = false; // разблокировать кнопки в экзамене
             input_exam.Text = "";  // очисть поле ввода ответа, так как его значение уже не важно
         }
+
+        private void Go_to_algorihm(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new algorithm());
+        }
     }
 
     

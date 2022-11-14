@@ -11,6 +11,7 @@
     <None Remove="background.jpg" />
     <None Remove="calc_background.jpg" />
     <None Remove="Kalkulyator_bek.jpg" />
+    <None Remove="Kalkulyator_bek_2.jpg" />
     <None Remove="Opyty_bek.jpg" />
   </ItemGroup>
 
@@ -23,6 +24,7 @@
     <Resource Include="background.jpg" />
     <Resource Include="calc_background.jpg" />
     <Resource Include="kalkulyator_bek.jpg" />
+    <Resource Include="Kalkulyator_bek_2.jpg" />
     <Resource Include="opyty_bek.jpg" />
   </ItemGroup>
 

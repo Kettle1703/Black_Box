@@ -17,17 +17,32 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="0.5*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="AlgorithmExit" Click="AlgorihmExit_Click" 
-                            Content="Назад" 
-                            HorizontalAlignment="Left"
-                            FontSize="20"
-                            FontFamily="Century Gothic"
-                            Background="White"
-                            BorderBrush="#C17779"
-                            BorderThickness="1.5"
-                            Foreground="#C17779"
-                            FontWeight="Bold"
-                            Margin="0 0 15 380">
+        <Button 
+            x:Name="AlgorithmExit" 
+            Click="AlgorihmExit_Click" 
+            Content="Назад" 
+            HorizontalAlignment="Left"
+            FontSize="20"
+            FontFamily="Century Gothic"
+            Background="White"
+            BorderBrush="#C17779"
+            BorderThickness="1.5"
+            Foreground="#C17779"
+            FontWeight="Bold"
+            Margin="0 0 15 380">
+        </Button>
+        <Button  
+            Click="Go_to_experience" 
+            Content="Опыты" 
+            HorizontalAlignment="Left"
+            FontSize="20"
+            FontFamily="Century Gothic"
+            Background="White"
+            BorderBrush="#C17779"
+            BorderThickness="1.5"
+            Foreground="#C17779"
+            FontWeight="Bold"
+            Margin="58,0,0,380" Grid.Column="2">
         </Button>
         <Grid Grid.Column="1">
             <Border
@@ -45,17 +60,17 @@
                         FontFamily="Century Gothic"
                         Foreground="#C17779"/>
                     <TextBox x:Name="input" 
-                             FontSize="20" 
-                             HorizontalAlignment="Center" 
-                             TextWrapping="Wrap" Text="" 
-                             Width="260" 
-                             FontFamily="Century Gothic" 
-                             Background="White"
-                             BorderBrush="#60BFC1"
-                             BorderThickness="1.5"
-                             Foreground="#C17779"
-                             FontWeight="Bold"
-                             Margin="0 0 0 15"/>
+                        FontSize="20" 
+                        HorizontalAlignment="Center" 
+                        TextWrapping="Wrap" Text="" 
+                        Width="260" 
+                        FontFamily="Century Gothic" 
+                        Background="White"
+                        BorderBrush="#60BFC1"
+                        BorderThickness="1.5"
+                        Foreground="#C17779"
+                        FontWeight="Bold"
+                        Margin="0 0 0 15"/>
                     <TextBlock 
                         FontSize="20" 
                         x:Name="output" 

@@ -10,7 +10,7 @@
 
     <Grid x:Name="Buttonlist">
         <Grid.Background>
-            <ImageBrush ImageSource="kalkulyator_bek.jpg">
+            <ImageBrush ImageSource="Kalkulyator_bek_2.jpg">
             </ImageBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
@@ -55,5 +55,6 @@
         <!--<Label Grid.Column="4" Content="j" x:Name="label" HorizontalAlignment="Left" FontSize="35" Margin="0,0,0,0" Grid.Row="5" VerticalAlignment="Center"/>-->
         <Button Grid.Row="5" Grid.Column="5" FontSize="25" Background="White" BorderBrush="#60BFC1" FontFamily="Century Gothic" BorderThickness="1.5" Foreground="#C17779" FontWeight="Bold" Margin="2" x:Name="CalculatorBack" Click="CalculatorBack_Click">Назад</Button>
         <Button Grid.Row="5" Grid.Column="4" FontSize="25" Background="White" BorderBrush="#60BFC1" FontFamily="Century Gothic" BorderThickness="1.5" Foreground="#C17779" FontWeight="Bold" Margin="2" x:Name="CalculatorExam" Click="CalculatorExam_Click">Экзамен</Button>
+        <Button Grid.Row="5" Grid.Column="0" FontSize="25" Background="White" BorderBrush="#60BFC1" FontFamily="Century Gothic" BorderThickness="1.5" Foreground="#C17779" FontWeight="Bold" Margin="2" Click="Go_to_experience">Опыты</Button>
     </Grid>
 </Page>

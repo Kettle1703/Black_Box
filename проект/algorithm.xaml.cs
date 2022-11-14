@@ -62,5 +62,10 @@ namespace проект
         {
             NavigationService.Navigate(new menu());
         }
+
+        private void Go_to_experience(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new experience());
+        }
     }
 }
