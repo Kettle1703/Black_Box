@@ -533,6 +533,20 @@ namespace проект
             InitializeComponent();
         }
 
+        private string My_format()
+        {
+            string result = "";
+            string helper = MainWindow.counter_exp.ToString();
+            for (int i = 0; i < 4 - 2 * helper.Length; i++)
+                result += " ";
+            result += helper;
+            result += (") " + input.Text);
+            for (int i = 0; i < 75 - 2*input.Text.Length; i++)
+                result += " ";
+            result += $"{output.Text}\n";
+            return result;
+        }
+
         private void Page_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
@@ -546,7 +560,11 @@ namespace проект
                 if(new_string != MainWindow.last_str_in_dairy)
                 {
                     MainWindow.last_str_in_dairy = new_string;
-                    all_text += $"{MainWindow.counter_exp++}) {new_string}";
+                    //all_text += $"{MainWindow.counter_exp++, 3}) {new_string}";
+
+                    //all_text += (string.Format("{0, 3}) {1, -55}{2}\n", MainWindow.counter_exp, input.Text, output.Text));
+                    all_text += My_format();
+                    MainWindow.counter_exp++;
                 }
                 
             }
