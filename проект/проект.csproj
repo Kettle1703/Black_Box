@@ -10,6 +10,8 @@
     <None Remove="Algoritmy_bek.jpg" />
     <None Remove="background.jpg" />
     <None Remove="calc_background.jpg" />
+    <None Remove="dnevnik.jpg" />
+    <None Remove="ekzamen.jpg" />
     <None Remove="Kalkulyator_bek.jpg" />
     <None Remove="Kalkulyator_bek_2.jpg" />
     <None Remove="Opyty_bek.jpg" />
@@ -23,6 +25,8 @@
     <Resource Include="algoritmy_bek.jpg" />
     <Resource Include="background.jpg" />
     <Resource Include="calc_background.jpg" />
+    <Resource Include="dnevnik.jpg" />
+    <Resource Include="ekzamen.jpg" />
     <Resource Include="kalkulyator_bek.jpg" />
     <Resource Include="Kalkulyator_bek_2.jpg" />
     <Resource Include="opyty_bek.jpg" />

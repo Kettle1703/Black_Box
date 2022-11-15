@@ -8,93 +8,171 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="exam">
 
-    <Grid Background="white">
-        <Button 
-            FontSize="20" 
-            Content="Назад" 
-            HorizontalAlignment="Left" 
-            Margin="31,31,0,0" 
-            VerticalAlignment="Top" 
-            Height="40" Width="64" 
-            Click="ExamBack_Click"/>
-        <TextBlock 
-            x:Name="test" 
-            FontSize="20" 
-            HorizontalAlignment="Center"
-            Margin="0,115,0,0"
-            TextWrapping="Wrap"
-            Text=""
-            VerticalAlignment="Top"
-            Width="260"/>
-        <TextBlock 
-            FontSize="20"
-            HorizontalAlignment="Center" 
-            Margin="0,162,0,0" 
-            TextWrapping="Wrap" 
-            Text="Ваш ответ" 
-            VerticalAlignment="Top" 
-            Height="28"/>
-        <TextBox 
-            x:Name="input_exam" 
-            FontSize="20" 
-            HorizontalAlignment="Center" 
-            TextWrapping="Wrap" 
-            Text="" 
-            VerticalAlignment="Center" 
-            Width="260" Height="30" 
-            KeyUp="input_exam_KeyUp"/>
-        <Button 
-            Content="Прошлый тест"
-            FontSize="20" 
-            HorizontalAlignment="Left"
-            Margin="215,264,0,0"
-            VerticalAlignment="Top"
-            RenderTransformOrigin="1.026,0.568"
-            Click="Last_test"/>
-        <Button 
-            Content="Следующий тест"
-            FontSize="20"
-            HorizontalAlignment="Left"
-            Margin="424,264,0,0"
-            VerticalAlignment="Top"
-            Click="Next_test"/>
-        <Button 
-            Content="Завершить"
-            FontSize="20" 
-            HorizontalAlignment="Left"
-            Margin="644,380,0,0"
-            VerticalAlignment="Top"
-            Click="Make_solution"/>
-        <TextBlock 
-            x:Name="info" 
-            FontSize="20" 
-            HorizontalAlignment="Center"
-            Margin="0,323,0,0"
-            TextWrapping="Wrap"
-            Text=""
-            VerticalAlignment="Top" 
-            Width="344"/>
-        <Button 
-            Content="Калькулятор"
-            FontSize="20"
-            HorizontalAlignment="Left"
-            Margin="63,372,0,0"
-            VerticalAlignment="Top"
-            Click="Calculator_Click"/>
-        <Button 
-            Content="Новый экзамен" 
-            FontSize="20"
-            HorizontalAlignment="Left" 
-            Margin="602,336,0,0" 
-            VerticalAlignment="Top" 
-            Click="New_exam"/>
-        <Button 
-            Content="Алгоритмы"
-            FontSize="20" 
-            HorizontalAlignment="Left"
-            Margin="675,36,0,0"
-            VerticalAlignment="Top"
-            RenderTransformOrigin="1.026,0.568"
-            Click="Go_to_algorihm"/>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="ekzamen.jpg"></ImageBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <StackPanel Orientation="Horizontal">
+                <Button 
+                FontSize="20" 
+                Content="Назад" 
+                Margin="10 10 0 5" 
+                VerticalAlignment="Top" 
+                Width="150" 
+                Click="ExamBack_Click"
+                FontFamily="Century Gothic"
+                Background="White"
+                BorderBrush="#C17779"
+                BorderThickness="1.5"
+                Foreground="#C17779"
+                FontWeight="Bold"/>
+                <Button 
+                FontSize="20" 
+                Content="Алгоритмы" 
+                Margin="305 10 0 5" 
+                VerticalAlignment="Top" 
+                Width="150" 
+                RenderTransformOrigin="1.026,0.568"
+                Click="Go_to_algorihm"
+                FontFamily="Century Gothic"
+                Background="White"
+                BorderBrush="#C17779"
+                BorderThickness="1.5"
+                Foreground="#C17779"
+                FontWeight="Bold"/>
+                <Button 
+                FontSize="20" 
+                Content="Калькулятор" 
+                Margin="10 10 0 5" 
+                VerticalAlignment="Top" 
+                Width="150" 
+                Click="Calculator_Click"
+                FontFamily="Century Gothic"
+                Background="White"
+                BorderBrush="#C17779"
+                BorderThickness="1.5"
+                Foreground="#C17779"
+                FontWeight="Bold"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Border Background="White"
+                    Margin="140 0 140 70"
+                    CornerRadius="50">
+                <StackPanel>
+                    <TextBlock x:Name="test" 
+                    FontSize="25" 
+                    HorizontalAlignment="Center"
+                    Margin="0 10 0 8"
+                    TextWrapping="Wrap"
+                    Text=""
+                    VerticalAlignment="Top"
+                    Width="300"
+                    TextAlignment="Center"
+                    FontWeight="Bold" 
+                    FontFamily="Century Gothic"
+                    Foreground="#C17779"/>
+                    <TextBlock 
+                    FontSize="30"
+                    HorizontalAlignment="Center" 
+                    Margin="0,0,0,15" 
+                    TextWrapping="Wrap" 
+                    Text="Ваш ответ:" 
+                    VerticalAlignment="Top"
+                    FontWeight="Bold" 
+                    FontFamily="Century Gothic"
+                    Foreground="#C17779"/>
+                    <TextBox 
+                    x:Name="input_exam" 
+                    FontSize="20" 
+                    HorizontalAlignment="Center" 
+                    TextWrapping="Wrap" 
+                    Text="" 
+                    VerticalAlignment="Center" 
+                    Width="260" 
+                    KeyUp="input_exam_KeyUp"
+                    FontFamily="Century Gothic" 
+                    Background="White"
+                    BorderBrush="#60BFC1"
+                    BorderThickness="1.5"
+                    Foreground="#C17779"
+                    FontWeight="Bold"
+                    Margin="0 0 0 15"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="Прошлый тест"
+                        FontSize="20" 
+                        Margin="80 0 0 5"
+                        VerticalAlignment="Top"
+                        RenderTransformOrigin="1.026,0.568"
+                        Click="Last_test"
+                        Width="190"
+                        FontFamily="Century Gothic"
+                        Background="White"
+                        BorderBrush="#C17779"
+                        BorderThickness="1.5"
+                        Foreground="#C17779"
+                        FontWeight="Bold"/>
+                        <Button 
+                        Content="Следующий тест"
+                        FontSize="20"
+                        Margin="5 0 0 5"
+                        VerticalAlignment="Top"
+                        Click="Next_test"
+                        Width="190"
+                        FontFamily="Century Gothic"
+                        Background="White"
+                        BorderBrush="#C17779"
+                        BorderThickness="1.5"
+                        Foreground="#C17779"
+                        FontWeight="Bold"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="Новый экзамен"
+                        FontSize="20" 
+                        Margin="80 0 0 8"
+                        VerticalAlignment="Top"
+                        RenderTransformOrigin="1.026,0.568"
+                        Click="New_exam"
+                        Width="190"
+                        FontFamily="Century Gothic"
+                        Background="White"
+                        BorderBrush="#C17779"
+                        BorderThickness="1.5"
+                        Foreground="#C17779"
+                        FontWeight="Bold"/>
+                        <Button 
+                        Content="Завершить"
+                        FontSize="20"
+                        Margin="5 0 0 8"
+                        VerticalAlignment="Top"
+                        Click="Make_solution"
+                        Width="190"
+                        FontFamily="Century Gothic"
+                        Background="White"
+                        BorderBrush="#C17779"
+                        BorderThickness="1.5"
+                        Foreground="#C17779"
+                        FontWeight="Bold"/>
+                    </StackPanel>
+                    <TextBlock x:Name="info" 
+                    FontSize="25" 
+                    HorizontalAlignment="Center"
+                    Margin="0 0 0 20"
+                    TextWrapping="Wrap"
+                    Text=""
+                    VerticalAlignment="Top"
+                    TextAlignment="Center"
+                    Width="450"
+                    FontWeight="Bold" 
+                    FontFamily="Century Gothic"
+                    Foreground="#C17779"/>
+                </StackPanel>
+            </Border>
+        </Grid>
     </Grid>
 </Page>

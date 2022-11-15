@@ -8,43 +8,71 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="diary">
 
-    <Grid Background="white">
-        <ScrollViewer Margin="0,61,0,10" HorizontalScrollBarVisibility ="Visible">
-            <TextBox 
-                x:Name="story"  
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="dnevnik.jpg"></ImageBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <StackPanel Orientation="Horizontal">
+                <Button 
+                FontSize="20" 
+                Content="Назад" 
+                Margin="10 10 0 5" 
+                VerticalAlignment="Top" 
+                Width="150" 
+                Click="DairyBack_Click"
+                FontFamily="Century Gothic"
+                Background="White"
+                BorderBrush="#C17779"
+                BorderThickness="1.5"
+                Foreground="#C17779"
+                FontWeight="Bold"/>
+                <Button 
+                FontSize="20" 
+                Content="Экзамен" 
+                Margin="305 10 0 5" 
+                VerticalAlignment="Top" 
+                Width="150" 
+                Click="Go_to_exam"
+                FontFamily="Century Gothic"
+                Background="White"
+                BorderBrush="#C17779"
+                BorderThickness="1.5"
+                Foreground="#C17779"
+                FontWeight="Bold"/>
+                <Button 
+                FontSize="20" 
+                Content="Опыты" 
+                Margin="10 10 0 5" 
+                VerticalAlignment="Top" 
+                Width="150" 
+                Click="Go_to_experience"
+                FontFamily="Century Gothic"
+                Background="White"
+                BorderBrush="#C17779"
+                BorderThickness="1.5"
+                Foreground="#C17779"
+                FontWeight="Bold"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <ScrollViewer HorizontalScrollBarVisibility ="Visible">
+                <TextBox x:Name="story"
+                Background="#badfd7"
                 FontSize="24" 
                 Text="1)Я пример шрифта () 1 2 3344 5 6 7 8 9 0" 
                 IsReadOnly="True"
                 TextAlignment="Left"  
-                Width="756"  
-                Height="359" 
+                Width="750"  
+                Height="350" 
                 FontFamily="Courier New" 
-                FontWeight="Bold"  
-                />
-            <!-- У этого текстового поля только моноширотный шрифт (например Courier New) + сейчас включён жирный шрифт-->
-        </ScrollViewer>
-        <Button 
-            FontSize="20" 
-            Content="Назад" 
-            HorizontalAlignment="Left" 
-            Margin="20,20,0,0" 
-            VerticalAlignment="Top" 
-            Height="36" 
-            Width="65" 
-            Click="DairyBack_Click"/>
-        <Button 
-            FontSize="20" 
-            Content="Экзамен" 
-            HorizontalAlignment="Left" 
-            Margin="695,20,0,0" 
-            VerticalAlignment="Top" 
-            Click="Go_to_exam"/>
-        <Button 
-            FontSize="20" 
-            Content="Опыты" 
-            HorizontalAlignment="Left" 
-            Margin="604,20,0,0" 
-            VerticalAlignment="Top" 
-            Click="Go_to_experience"/>
+                FontWeight="Bold"
+                Foreground="#C17779"/>
+            </ScrollViewer>
+        </Grid>
     </Grid>
 </Page>

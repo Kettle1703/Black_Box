@@ -12,60 +12,63 @@
         <Grid.Background>
             <ImageBrush ImageSource="opyty_bek.jpg"></ImageBrush>
         </Grid.Background>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.5*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="0.5*"/>
-        </Grid.ColumnDefinitions>
-        <Button 
-            Click="Go_to_diary" 
-            Content="Дневник" 
-            HorizontalAlignment="Left"
-            FontSize="20"
-            FontFamily="Century Gothic"
-            Background="White"
-            BorderBrush="#C17779"
-            BorderThickness="1.5"
-            Foreground="#C17779"
-            FontWeight="Bold"
-            Margin="462,0,0,380" Grid.Column="1" Grid.ColumnSpan="2">
-        </Button>
-        <Button 
-            Click="Go_to_exam" 
-            Content="Экзамен" 
-            HorizontalAlignment="Left"
-            FontSize="20"
-            FontFamily="Century Gothic"
-            Background="White"
-            BorderBrush="#C17779"
-            BorderThickness="1.5"
-            Foreground="#C17779"
-            FontWeight="Bold"
-            Margin="39,0,0,380" Grid.Column="2">
-        </Button>
-        <Button  
-            Click="ExperienceExit_Click" 
-            Content="Назад" 
-            HorizontalAlignment="Left"
-            FontSize="20"
-            FontFamily="Century Gothic"
-            Background="White"
-            BorderBrush="#C17779"
-            BorderThickness="1.5"
-            Foreground="#C17779"
-            FontWeight="Bold"
-            Margin="0 0 15 380">
-        </Button>
-        <Grid Grid.Column="1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <StackPanel Orientation="Horizontal">
+                <Button 
+                FontSize="20" 
+                Content="Назад" 
+                Margin="10 10 0 5" 
+                VerticalAlignment="Top" 
+                Width="150" 
+                Click="ExperienceExit_Click"
+                FontFamily="Century Gothic"
+                Background="White"
+                BorderBrush="#C17779"
+                BorderThickness="1.5"
+                Foreground="#C17779"
+                FontWeight="Bold"/>
+                <Button 
+                FontSize="20" 
+                Content="Дневник" 
+                Margin="305 10 0 5" 
+                VerticalAlignment="Top" 
+                Width="150"
+                Click="Go_to_diary"
+                FontFamily="Century Gothic"
+                Background="White"
+                BorderBrush="#C17779"
+                BorderThickness="1.5"
+                Foreground="#C17779"
+                FontWeight="Bold"/>
+                <Button 
+                FontSize="20" 
+                Content="Экзамен" 
+                Margin="10 10 0 5" 
+                VerticalAlignment="Top" 
+                Width="150" 
+                Click="Go_to_exam"
+                FontFamily="Century Gothic"
+                Background="White"
+                BorderBrush="#C17779"
+                BorderThickness="1.5"
+                Foreground="#C17779"
+                FontWeight="Bold"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
             <Border
                 Background="white" 
                 CornerRadius="50" 
-                Margin="60 100">
+                Margin="140 0 140 70">
                 <StackPanel>
                     <Label Content="Введите входные данные:" 
                FontSize="25" 
                         HorizontalAlignment="Center" 
-                        Margin="0 15 0 15"       
+                        Margin="0 50 0 15"       
                         VerticalAlignment="Center"
                         FontWeight="Bold" 
                         FontFamily="Century Gothic"
