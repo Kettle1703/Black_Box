@@ -541,27 +541,6 @@ namespace проект
             InitializeComponent();
         }
 
-        private string My_format()  // собственный метод выравнивая строк (чтобы столбики были ровные)
-        {
-            string result = "";
-            string helper = MainWindow.counter_exp.ToString();
-            for (int i = 0; i < 4 - 2 * helper.Length; i++)
-                result += " ";
-            result += helper;
-            result += (") " + input.Text);
-            if (input.Text.Length > 22)
-                result += "   ";
-            else
-            {
-                for (int i = 0; i < 45 - 2 * input.Text.Length; i++)
-                    result += " ";
-                if(MainWindow.counter_exp > 9)
-                    result += " ";
-            }
-            result += $"{output.Text}\n";
-            return result;
-        }
-
         private void Page_KeyUp(object sender, KeyEventArgs e)  // обработка поднятия клавиши
         {
             if (e.Key == Key.Enter)
@@ -575,8 +554,8 @@ namespace проект
                 if(new_string != MainWindow.last_str_in_dairy)
                 {
                     MainWindow.last_str_in_dairy = new_string;
-                    all_text += My_format();
-                    MainWindow.counter_exp++;
+                    all_text += $"{MainWindow.counter_exp++, 2}){input.Text, -15} {output.Text}\n";
+                    //MainWindow.counter_exp++;
                 }
                 
             }

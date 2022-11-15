@@ -169,7 +169,10 @@ namespace проект
         private void Last_test(object sender, RoutedEventArgs e)
         {
             if (MainWindow.lock_exam)
+            {
+                info.Text = "Экзамен завершён, начните новый";
                 return;
+            }
             Checking_the_input(now);
             if (now > 0)
                 now--;
@@ -179,28 +182,14 @@ namespace проект
         private void Next_test(object sender, RoutedEventArgs e)
         {
             if (MainWindow.lock_exam)
+            {
+                info.Text = "Экзамен завершён, начните новый";
                 return;
+            }
             Checking_the_input(now);
             if (now < 4)
                 now++;
             Updating_fields(now);
-        }
-
-        private void Add_in_diary()  // добавление экзамена в дневник
-        {
-            
-            for (int i = 0; i < 5; i++)
-            {
-                experience.all_text += $"  {i + 1}) {arr[i]}";
-                string arr_conver = Convert(arr[i]);
-                for (int j = 0; j < 45 - 2 * arr_conver.Length; j++)
-                    experience.all_text += " ";
-                experience.all_text += answer[i];
-                for (int j = 0; j < 45 - 2 * answer[i].Length; j++)
-                    experience.all_text += " ";
-                experience.all_text += $"{((result[i]) ? "Правильно" : "Неверно")}\n";
-            }
-            experience.all_text += '\n';
         }
 
         private void Make_solution(object sender, RoutedEventArgs e)  // нажали на кнопку завершить экзамен 
@@ -223,7 +212,11 @@ namespace проект
             info.Text = conclusion;
             MainWindow.first_in_exam = true;  // генерация нового экзамена
             experience.all_text += $"\n{conclusion}\n";
-            Add_in_diary();
+            for (int i = 0; i < 5; i++)
+            {
+                experience.all_text += $"{i + 1, 2}){arr[i], -15} {answer[i], -15} {((result[i]) ? "Правильно" : "Неверно")}\n";
+            }
+            experience.all_text += '\n';
             MainWindow.counter_exp = 1;  // если осталиь после экзамена в том же алгоритме, то счётчик начинается сначала
             MainWindow.last_str_in_dairy = "";
             MainWindow.lock_exam = true;

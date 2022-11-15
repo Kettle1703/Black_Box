@@ -11,14 +11,17 @@
     <Grid Background="white">
         <ScrollViewer Margin="0,61,0,10" HorizontalScrollBarVisibility ="Visible">
             <TextBox 
-                x:Name="story" 
-                Margin="10,0,0,0" 
-                FontSize="20" 
-                Text="" 
-                IsReadOnly="True"   
+                x:Name="story"  
+                FontSize="24" 
+                Text="1)Я пример шрифта () 1 2 3344 5 6 7 8 9 0" 
+                IsReadOnly="True"
                 TextAlignment="Left"  
-                Width="Auto" 
-                TextWrapping="Wrap" Height="359"/>
+                Width="756"  
+                Height="359" 
+                FontFamily="Courier New" 
+                FontWeight="Bold"  
+                />
+            <!-- У этого текстового поля только моноширотный шрифт (например Courier New) + сейчас включён жирный шрифт-->
         </ScrollViewer>
         <Button 
             FontSize="20" 
