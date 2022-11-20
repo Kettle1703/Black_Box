@@ -580,5 +580,11 @@ namespace проект
         {
             NavigationService.Navigate(new diary());
         }
+
+        private void table_click(object sender, RoutedEventArgs e)
+        {
+            table tableWindow = new table();
+            tableWindow.Show();
+        }
     }
 }

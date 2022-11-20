@@ -25,6 +25,9 @@
     <Compile Update="menu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="table.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="algorithm.xaml">
@@ -46,6 +49,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="menu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="table.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

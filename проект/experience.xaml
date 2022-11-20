@@ -26,11 +26,11 @@
                 Width="150" 
                 Click="ExperienceExit_Click"
                 FontFamily="Century Gothic"
-                Background="White"
                 BorderBrush="#C17779"
                 BorderThickness="1.5"
                 Foreground="#C17779"
-                FontWeight="Bold"/>
+                FontWeight="Bold"
+                Background="#F6E3DC"/>
                 <Button 
                 FontSize="20" 
                 Content="Дневник" 
@@ -39,11 +39,11 @@
                 Width="150"
                 Click="Go_to_diary"
                 FontFamily="Century Gothic"
-                Background="White"
                 BorderBrush="#C17779"
                 BorderThickness="1.5"
                 Foreground="#C17779"
-                FontWeight="Bold"/>
+                FontWeight="Bold"
+                Background="#F6E3DC"/>
                 <Button 
                 FontSize="20" 
                 Content="Экзамен" 
@@ -52,7 +52,7 @@
                 Width="150" 
                 Click="Go_to_exam"
                 FontFamily="Century Gothic"
-                Background="White"
+                Background="#F6E3DC"
                 BorderBrush="#C17779"
                 BorderThickness="1.5"
                 Foreground="#C17779"
@@ -106,6 +106,20 @@
                              Margin="0 0 0 15"/>
                 </StackPanel>
             </Border>
+            <Button 
+                FontSize="20" 
+                Content="Таблица" 
+                Margin="0 10 20 10" 
+                VerticalAlignment="Bottom" 
+                HorizontalAlignment="Right"
+                Width="150" 
+                Click="table_click"
+                FontFamily="Century Gothic"
+                Background="#F6E3DC"
+                BorderBrush="#C17779"
+                BorderThickness="1.5"
+                Foreground="#C17779"
+                FontWeight="Bold"/>
         </Grid>
     </Grid>
 </Page>

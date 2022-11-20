@@ -63,6 +63,16 @@ namespace проект.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        internal static byte[] Alfavit {
+            get {
+                object obj = ResourceManager.GetObject("Alfavit", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         internal static byte[] algoritmy_bek {
             get {
                 object obj = ResourceManager.GetObject("algoritmy_bek", resourceCulture);
@@ -96,6 +106,16 @@ namespace проект.Properties {
         internal static byte[] ekzamen {
             get {
                 object obj = ResourceManager.GetObject("ekzamen", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] Ekzamen2 {
+            get {
+                object obj = ResourceManager.GetObject("Ekzamen2", resourceCulture);
                 return ((byte[])(obj));
             }
         }

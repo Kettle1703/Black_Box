@@ -26,11 +26,11 @@
                 Width="150" 
                 Click="AlgorihmExit_Click"
                 FontFamily="Century Gothic"
-                Background="White"
                 BorderBrush="#C17779"
                 BorderThickness="1.5"
                 Foreground="#C17779"
-                FontWeight="Bold"/>
+                FontWeight="Bold"
+                Background="#F6E3DC"/>
                 <Button 
                 FontSize="20" 
                 Content="Опыты" 
@@ -39,11 +39,11 @@
                 Width="150"
                 Click="Go_to_experience"
                 FontFamily="Century Gothic"
-                Background="White"
                 BorderBrush="#C17779"
                 BorderThickness="1.5"
                 Foreground="#C17779"
-                FontWeight="Bold"/>
+                FontWeight="Bold"
+                Background="#F6E3DC"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1">

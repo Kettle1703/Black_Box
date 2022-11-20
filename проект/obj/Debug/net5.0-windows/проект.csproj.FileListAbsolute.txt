@@ -92,3 +92,5 @@ C:\Users\HP\Documents\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\men
 C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\menu.g.cs
 C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\menu.baml
 C:\Users\HP\Documents\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\проект.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\table.g.cs
+C:\Users\HP\Documents\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\table.baml
