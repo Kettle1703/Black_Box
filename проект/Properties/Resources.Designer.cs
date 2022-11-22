@@ -113,6 +113,16 @@ namespace проект.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        internal static byte[] Icon {
+            get {
+                object obj = ResourceManager.GetObject("Icon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         internal static byte[] Kalkulyator_bek_2 {
             get {
                 object obj = ResourceManager.GetObject("Kalkulyator_bek_2", resourceCulture);

@@ -14,6 +14,7 @@
     <None Remove="calc_background.jpg" />
     <None Remove="dnevnik.jpg" />
     <None Remove="Ekzamen2.jpg" />
+    <None Remove="Icon.ico" />
     <None Remove="Kalkulyator_bek.jpg" />
     <None Remove="Kalkulyator_bek_2.jpg" />
     <None Remove="Opyty_bek.jpg" />
@@ -29,6 +30,7 @@
     <Resource Include="background.jpg" />
     <Resource Include="dnevnik.jpg" />
     <Resource Include="Ekzamen2.jpg" />
+    <Resource Include="Icon.ico" />
     <Resource Include="Kalkulyator_bek_2.jpg" />
     <Resource Include="opyty_bek.jpg" />
   </ItemGroup>
