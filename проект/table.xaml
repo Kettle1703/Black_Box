@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:проект"
         mc:Ignorable="d"
-        Title="Таблица" Height="450" Width="800">
+        Title="Алфавит" Height="450" Width="800" Closing="Window_Closing">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="Alfavit.jpg"></ImageBrush>
+            <ImageBrush ImageSource="alfavit_2.jpg"></ImageBrush>
         </Grid.Background>
     </Grid>
 </Window>

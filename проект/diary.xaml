@@ -19,59 +19,60 @@
         <Grid Grid.Row="0">
             <StackPanel Orientation="Horizontal">
                 <Button 
-                FontSize="20" 
-                Content="Назад" 
-                Margin="10 10 0 5" 
-                VerticalAlignment="Top" 
-                Width="150" 
-                Click="DairyBack_Click"
-                FontFamily="Century Gothic"
-                Background="#F6E3DC"
-                BorderBrush="#C17779"
-                BorderThickness="1.5"
-                Foreground="#C17779"
-                FontWeight="Bold"/>
+                    FontSize="20" 
+                    Content="Назад" 
+                    Margin="10 10 0 5" 
+                    VerticalAlignment="Top" 
+                    Width="150" 
+                    Click="DairyBack_Click"
+                    FontFamily="Century Gothic"
+                    Background="#F6E3DC"
+                    BorderBrush="#C17779"
+                    BorderThickness="1.5"
+                    Foreground="#C17779"
+                    FontWeight="Bold"/>
                 <Button 
-                FontSize="20" 
-                Content="Экзамен" 
-                Margin="305 10 0 5" 
-                VerticalAlignment="Top" 
-                Width="150" 
-                Click="Go_to_exam"
-                FontFamily="Century Gothic"
-                Background="#F6E3DC"
-                BorderBrush="#C17779"
-                BorderThickness="1.5"
-                Foreground="#C17779"
-                FontWeight="Bold"/>
+                    FontSize="20" 
+                    Content="Экзамен" 
+                    Margin="305 10 0 5" 
+                    VerticalAlignment="Top" 
+                    Width="150" 
+                    Click="Go_to_exam"
+                    FontFamily="Century Gothic"
+                    Background="#F6E3DC"
+                    BorderBrush="#C17779"
+                    BorderThickness="1.5"
+                    Foreground="#C17779"
+                    FontWeight="Bold"/>
                 <Button 
-                FontSize="20" 
-                Content="Опыты" 
-                Margin="10 10 0 5" 
-                VerticalAlignment="Top" 
-                Width="150" 
-                Click="Go_to_experience"
-                FontFamily="Century Gothic"
-                Background="#F6E3DC"
-                BorderBrush="#C17779"
-                BorderThickness="1.5"
-                Foreground="#C17779"
-                FontWeight="Bold"/>
+                    FontSize="20" 
+                    Content="Опыты" 
+                    Margin="10 10 0 5" 
+                    VerticalAlignment="Top" 
+                    Width="150" 
+                    Click="Go_to_experience"
+                    FontFamily="Century Gothic"
+                    Background="#F6E3DC"
+                    BorderBrush="#C17779"
+                    BorderThickness="1.5"
+                    Foreground="#C17779"
+                    FontWeight="Bold"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1">
             <ScrollViewer HorizontalScrollBarVisibility ="Visible">
-                <TextBox x:Name="story"
-                Background="#badfd7"
-                FontSize="24" 
-                Text="1)Я пример шрифта () 1 2 3344 5 6 7 8 9 0" 
-                IsReadOnly="True"
-                TextAlignment="Left"  
-                Width="750"  
-                Height="350" 
-                FontFamily="Courier New" 
-                FontWeight="Bold"
-                Foreground="#C17779"/>
+                <TextBox 
+                    x:Name="story"
+                    Background="#badfd7"
+                    FontSize="24" 
+                    Text="" 
+                    IsReadOnly="True"
+                    TextAlignment="Left"  
+                    Width="750"  
+                    Height="350" 
+                    FontFamily="Courier New" 
+                    FontWeight="Bold"
+                    Foreground="#C17779"/>
             </ScrollViewer>
         </Grid>
     </Grid>

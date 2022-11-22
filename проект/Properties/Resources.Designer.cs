@@ -19,7 +19,7 @@ namespace проект.Properties {
     // с помощью такого средства, как ResGen или Visual Studio.
     // Чтобы добавить или удалить член, измените файл .ResX и снова запустите ResGen
     // с параметром /str или перестройте свой проект VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -63,9 +63,9 @@ namespace проект.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] Alfavit {
+        internal static byte[] alfavit_2 {
             get {
-                object obj = ResourceManager.GetObject("Alfavit", resourceCulture);
+                object obj = ResourceManager.GetObject("alfavit_2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -103,29 +103,9 @@ namespace проект.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] ekzamen {
-            get {
-                object obj = ResourceManager.GetObject("ekzamen", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
         internal static byte[] Ekzamen2 {
             get {
                 object obj = ResourceManager.GetObject("Ekzamen2", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        internal static byte[] kalkulyator_bek {
-            get {
-                object obj = ResourceManager.GetObject("kalkulyator_bek", resourceCulture);
                 return ((byte[])(obj));
             }
         }

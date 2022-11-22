@@ -49,9 +49,9 @@ namespace проект
             N = n * 2 - 1;
             return N;
         }
-        public static int _5(string s, int N)
+        public static int _5(string s)
         {
-            N = 0;
+            int N = 0;
             for (int i = 0; i < s.Length; i++)
             {
                 if (Is_Russian_Letter(s[i]))
@@ -101,20 +101,26 @@ namespace проект
             }
             return N;
         }
-        public static int _10(int n, int N)
+        public static string _10(int n)
         {
-            N = n / 2;
-            return N;
+            if (n % 2 == 0)
+                return (n / 2).ToString();
+            else
+                return "Не могу";
         }
-        public static int _11(int n, int N)
+        public static string _11(int n)
         {
-            N = n / 3;
-            return N;
+            if (n % 3 == 0)
+                return (n / 3).ToString();
+            else
+                return "Не могу";
         }
-        public static int _12(int n, int N)
+        public static string _12(int n)
         {
-            N = n / 2 - 1;
-            return N;
+            if (n % 2 == 0)
+                return (n / 2 - 1).ToString();
+            else
+                return "Не могу";
         }
         public static string _13(string s, string S)
         {
@@ -136,20 +142,17 @@ namespace проект
             S = Convert.ToString(Text);
             return S;
         }
-        public static int _14(string s, int N)
+        public static string _14(string s)
         {
-            N = 0;
-            for (int i = 0; i < s.Length; i++)
-            {
-                if (Is_Russian_Letter(s[i]))
-                    N++;
-            }
-            N /= 2;
-            return N;
+            int len = _5(s);
+            if (len % 2 == 0)
+                return (len / 2).ToString();
+            else
+                return "Не могу";
         }
         public static char _15(string s, char S)
         {
-            s = s.ToLower();
+            //s = s.ToLower();
             char str = 'а';
             foreach (char ch in s)
             {
@@ -174,7 +177,7 @@ namespace проект
         }
         public static char _16(string s, char S)
         {
-            s = s.ToLower();
+            //s = s.ToLower();
             char str = 'я';
             foreach (char ch in s)
             {
@@ -199,7 +202,7 @@ namespace проект
         }
         public static string _17(string s, string S)
         {
-            s = s.ToLower();
+            //s = s.ToLower();
             char str1 = 'а';
             foreach (char ch in s)
             {
@@ -451,11 +454,11 @@ namespace проект
                 case 8:
                     return _8(number, 0).ToString();
                 case 10:
-                    return _10(number, 0).ToString();
+                    return _10(number);
                 case 11:
-                    return _11(number, 0).ToString();
+                    return _11(number);
                 case 12:
-                    return _12(number, 0).ToString();
+                    return _12(number);
                 case 18:
                     return _18(number, 0).ToString();
                 case 19:
@@ -478,10 +481,11 @@ namespace проект
 
         public static string Algorithm_with_string(string str)  // вызвать алгоритм, если он принимает строку
         {
+            str = str.ToLower();
             switch (algorithm.algorithm_number)
             {
                 case 5:
-                    return _5(str, 0).ToString();
+                    return _5(str).ToString();
                 case 6:
                     return _6(str, 0).ToString();
                 case 9:
@@ -489,7 +493,7 @@ namespace проект
                 case 13:
                     return _13(str, "").ToString();
                 case 14:
-                    return _14(str, 0).ToString();
+                    return _14(str);
                 case 15:
                     return _15(str, '0').ToString();
                 case 16:
@@ -520,7 +524,7 @@ namespace проект
                 {
                     input.Text = number.ToString();
                     if (number <= 536870900 && number >= -536870900)
-                        output.Text = Algorithm_with_number(number);
+                        output.Text = Algorithm_with_number(number);  
                     else
                         output.Text = "Слишком большое число";
                 }
@@ -539,27 +543,41 @@ namespace проект
         public experience()
         {
             InitializeComponent();
+            if(algorithm.algorithm_number == 9)  // подгрузка подсказки, у определённых алгоритмов
+            {
+                input.Text = "соответственно";
+                output.Text = "2";
+            }
+            if(algorithm.algorithm_number == 25)
+            {
+                input.Text = "длинношеее";
+                output.Text = "3";
+            }
         }
 
         private void Page_KeyUp(object sender, KeyEventArgs e)  // обработка поднятия клавиши
         {
-            if (e.Key == Key.Enter)
+            if (e.Key == Key.Enter && MainWindow.experience_work)
             {
                 Check_input();
                 if (MainWindow.counter_exp == 1)
                 {
                     all_text += $"Опыты алгоритма #{algorithm.algorithm_number}\n";
                 }
-                string new_string = $"{input.Text, -55}{output.Text}\n";
+                string new_string = $"{input.Text, -20}{output.Text}\n";
                 if(new_string != MainWindow.last_str_in_dairy)
                 {
                     MainWindow.last_str_in_dairy = new_string;
-                    all_text += $"{MainWindow.counter_exp++, 2}){input.Text, -15} {output.Text}\n";
+                    all_text += $"{MainWindow.counter_exp++, 2}){input.Text, -20} {output.Text}\n";
                     //MainWindow.counter_exp++;
                 }
                 
             }
-            if (e.Key == Key.Escape)
+            if (e.Key == Key.Enter && !MainWindow.experience_work)
+            {
+                output.Text = "[Начат экзамен]";
+            }
+                if (e.Key == Key.Escape)
                 ExperienceBack_Click(sender, e);
         }
         private void ExperienceBack_Click(object sender, RoutedEventArgs e)
@@ -581,10 +599,28 @@ namespace проект
             NavigationService.Navigate(new diary());
         }
 
+        public static bool IsWindowOpen<T>(string name = "") where T : Window
+        {
+            return string.IsNullOrEmpty(name)
+               ? Application.Current.Windows.OfType<T>().Any()
+               : Application.Current.Windows.OfType<T>().Any(w => w.Name.Equals(name));
+        }
+
         private void table_click(object sender, RoutedEventArgs e)
         {
-            table tableWindow = new table();
-            tableWindow.Show();
+            if(!MainWindow.alfavit_is_open)
+            {
+                table tableWindow = new table();
+                tableWindow.Show();
+                MainWindow.alfavit_is_open = true;
+            }
+            
+        }
+
+        private void Clear(object sender, RoutedEventArgs e)
+        {
+            input.Text = "";
+            output.Text = "";
         }
     }
 }

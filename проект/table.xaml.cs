@@ -14,14 +14,16 @@ using System.Windows.Shapes;
 
 namespace проект
 {
-    /// <summary>
-    /// Логика взаимодействия для table.xaml
-    /// </summary>
     public partial class table : Window
     {
         public table()
         {
             InitializeComponent();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MainWindow.alfavit_is_open = false;
         }
     }
 }
