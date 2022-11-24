@@ -432,6 +432,12 @@ namespace проект
             Unlock_exam();
             NavigationService.Navigate(new algorithm());
         }
+
+        private void Page_Unloaded(object sender, RoutedEventArgs e)
+        {
+            MainWindow.copy_now = now;
+            Save_all_info();
+        }
     }
 
     

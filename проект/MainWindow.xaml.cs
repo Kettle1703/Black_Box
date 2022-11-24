@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Navigation;
 using System.Windows.Input;
+using System.Windows.Controls;
 
 namespace проект
 {
@@ -18,6 +19,7 @@ namespace проект
         public static bool alfavit_is_open = false;  // открыто окно алфавита или нет? true - открыто, false - закрыто
         public static bool experience_work = true;  // опыты работают или нет? (блоктровка опытов, во время экзамена) true - опыты работают, false - опыты заблокированы
         public static bool information_is_open = false;  // окно информации открыто или нет?
+        public static int chapter = 0; // в каком разделе мы сейчас находимся 
         public MainWindow()
         {
             InitializeComponent();
@@ -34,7 +36,7 @@ namespace проект
         {
             if(e.Key == Key.Escape)
                 MainPage.Content = new menu();
-            //MessageBox.Show((e.Key).ToString());
+            //MessageBox.Show((e.Key).ToString() + "  " + MainWindow.chapter);
             //ModifierKeys combCtrSh = ModifierKeys.Control | ModifierKeys.Shift;
             if (e.Key == Key.D1)
             {
@@ -60,6 +62,11 @@ namespace проект
             {
                 if ((e.KeyboardDevice.Modifiers & ModifierKeys.Shift) == ModifierKeys.Shift)
                     MainPage.Content = new calculator();
+            }
+            if(e.Key == Key.Up && chapter == 4)
+            {
+                // в дневнике
+                //MainPage.Content.ScrollViewer.LineUp();
             }
             
         }

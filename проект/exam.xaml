@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:проект"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="exam">
+      Title="exam" Unloaded="Page_Unloaded" >
 
     <Grid>
         <Grid.Background>

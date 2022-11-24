@@ -447,10 +447,15 @@ namespace проект
             }
         }
 
-        private void CalculatorBack_Click(object sender, RoutedEventArgs e)
+        private void Save_info()
         {
             MainWindow.save_input_in_calc = input.Text;
             MainWindow.save_output_in_calc = output.Text;
+        }
+
+        private void CalculatorBack_Click(object sender, RoutedEventArgs e)
+        {
+            
             NavigationService.Navigate(new menu());
         }
 
@@ -462,6 +467,11 @@ namespace проект
         private void Go_to_experience(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new experience());
+        }
+
+        private void Page_Unloaded(object sender, RoutedEventArgs e)
+        {
+            Save_info();
         }
     }
 }

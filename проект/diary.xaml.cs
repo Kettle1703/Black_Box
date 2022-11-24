@@ -27,6 +27,7 @@ namespace проект
         public diary()
         {
             InitializeComponent();
+            MainWindow.chapter = 4;
             Update_diary();
         }
 
@@ -42,6 +43,16 @@ namespace проект
         private void Go_to_experience(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new experience());
+        }
+
+        private void Page_KeyDown(object sender, KeyEventArgs e)
+        {
+            MessageBox.Show((e.Key).ToString());
+        }
+
+        private void Page_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            MessageBox.Show((e.Key).ToString());
         }
     }
 }

@@ -36,3 +36,5 @@ C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\
 C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Release\net5.0-windows\проект.pdb
 C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Release\net5.0-windows\проект.genruntimeconfig.cache
 C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Release\net5.0-windows\ref\проект.dll
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Release\net5.0-windows\information.g.cs
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Release\net5.0-windows\information.baml

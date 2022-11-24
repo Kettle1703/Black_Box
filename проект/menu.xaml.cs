@@ -21,6 +21,7 @@ namespace проект
         public menu()
         {
             InitializeComponent();
+            MainWindow.chapter = 0;
         }
 
         private void Algorithm_Click(object sender, RoutedEventArgs e)
