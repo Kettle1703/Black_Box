@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
@@ -15,6 +15,10 @@
     <None Remove="dnevnik.jpg" />
     <None Remove="Ekzamen2.jpg" />
     <None Remove="Icon.ico" />
+    <None Remove="Icon_2.ico" />
+    <None Remove="Icon_3.ico" />
+    <None Remove="Icon_4.ico" />
+    <None Remove="Icon_5.ico" />
     <None Remove="Kalkulyator_bek.jpg" />
     <None Remove="Kalkulyator_bek_2.jpg" />
     <None Remove="Opyty_bek.jpg" />
@@ -31,6 +35,10 @@
     <Resource Include="dnevnik.jpg" />
     <Resource Include="Ekzamen2.jpg" />
     <Resource Include="Icon.ico" />
+    <Resource Include="Icon_2.ico" />
+    <Resource Include="Icon_3.ico" />
+    <Resource Include="Icon_4.ico" />
+    <Resource Include="Icon_5.ico" />
     <Resource Include="Kalkulyator_bek_2.jpg" />
     <Resource Include="opyty_bek.jpg" />
   </ItemGroup>

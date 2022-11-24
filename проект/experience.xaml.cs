@@ -512,9 +512,13 @@ namespace проект
             return "Error";
         }
 
-        private void Check_input()
+        private void Check_input()  // строка пользователя преобрахуется алгоритмами + добавление опыта в дневник
         {
-            
+            if(input.Text.Length >= 21)  // чтобы в дневнике не ломались столбики
+            {
+                output.Text = "Слишком длинный ввод";
+                return;
+            }
             int number;
             bool flag = int.TryParse(input.Text, out number);
             if(!Input_string(algorithm.algorithm_number))
@@ -539,6 +543,17 @@ namespace проект
                 output.Text = Algorithm_with_string(input.Text);
                 
             }
+
+            if (MainWindow.counter_exp == 1)  // добавление опыта в дневник 
+            {
+                all_text += $"Опыты алгоритма #{algorithm.algorithm_number}\n";
+            }
+            string new_string = $"{input.Text,-20}{output.Text}\n";
+            if (new_string != MainWindow.last_str_in_dairy)
+            {
+                MainWindow.last_str_in_dairy = new_string;
+                all_text += $"{MainWindow.counter_exp++,2}){input.Text,-20} {output.Text}\n";
+            }
         }
         public experience()
         {
@@ -560,24 +575,12 @@ namespace проект
             if (e.Key == Key.Enter && MainWindow.experience_work)
             {
                 Check_input();
-                if (MainWindow.counter_exp == 1)
-                {
-                    all_text += $"Опыты алгоритма #{algorithm.algorithm_number}\n";
-                }
-                string new_string = $"{input.Text, -20}{output.Text}\n";
-                if(new_string != MainWindow.last_str_in_dairy)
-                {
-                    MainWindow.last_str_in_dairy = new_string;
-                    all_text += $"{MainWindow.counter_exp++, 2}){input.Text, -20} {output.Text}\n";
-                    //MainWindow.counter_exp++;
-                }
-                
             }
             if (e.Key == Key.Enter && !MainWindow.experience_work)
             {
                 output.Text = "[Начат экзамен]";
             }
-                if (e.Key == Key.Escape)
+            if (e.Key == Key.Escape)
                 ExperienceBack_Click(sender, e);
         }
         private void ExperienceBack_Click(object sender, RoutedEventArgs e)
@@ -597,13 +600,6 @@ namespace проект
         private void Go_to_diary(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new diary());
-        }
-
-        public static bool IsWindowOpen<T>(string name = "") where T : Window
-        {
-            return string.IsNullOrEmpty(name)
-               ? Application.Current.Windows.OfType<T>().Any()
-               : Application.Current.Windows.OfType<T>().Any(w => w.Name.Equals(name));
         }
 
         private void table_click(object sender, RoutedEventArgs e)

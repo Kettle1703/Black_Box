@@ -1,5 +1,7 @@
 ﻿using System.Windows;
 using System;
+using System.Windows.Navigation;
+using System.Windows.Input;
 
 namespace проект
 {
@@ -13,12 +15,53 @@ namespace проект
         public static int copy_now;  // видимо, это единственная нужная копия для экзамена, остальные можно удалить
         public static string last_str_in_dairy = "";  // последняя строка в дневнике (чтобы не спами в дневник одинаковой строкой)
         public static bool lock_exam = false;  // заблокировать действия в экзамене ? true - заблокировать кнопки Следующий и Предыдуший тест и саму Кнопку Завершить, false - все кнопки в Экзаменен работают
-        public static bool alfavit_is_open = false;
-        public static bool experience_work = true;
+        public static bool alfavit_is_open = false;  // открыто окно алфавита или нет? true - открыто, false - закрыто
+        public static bool experience_work = true;  // опыты работают или нет? (блоктровка опытов, во время экзамена) true - опыты работают, false - опыты заблокированы
+        public static bool information_is_open = false;  // окно информации открыто или нет?
         public MainWindow()
         {
             InitializeComponent();
             MainPage.Content = new menu();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Escape)
+                MainPage.Content = new menu();
+            //MessageBox.Show((e.Key).ToString());
+            //ModifierKeys combCtrSh = ModifierKeys.Control | ModifierKeys.Shift;
+            if (e.Key == Key.D1)
+            {
+                if ((e.KeyboardDevice.Modifiers & ModifierKeys.Shift) == ModifierKeys.Shift)
+                    MainPage.Content = new algorithm();
+            }
+            if (e.Key == Key.D2)
+            {
+                if ((e.KeyboardDevice.Modifiers & ModifierKeys.Shift) == ModifierKeys.Shift)
+                    MainPage.Content = new experience();
+            }
+            if (e.Key == Key.D3)
+            {
+                if ((e.KeyboardDevice.Modifiers & ModifierKeys.Shift) == ModifierKeys.Shift)
+                    MainPage.Content = new exam();
+            }
+            if (e.Key == Key.D4)
+            {
+                if ((e.KeyboardDevice.Modifiers & ModifierKeys.Shift) == ModifierKeys.Shift)
+                    MainPage.Content = new diary();
+            }
+            if (e.Key == Key.D5)
+            {
+                if ((e.KeyboardDevice.Modifiers & ModifierKeys.Shift) == ModifierKeys.Shift)
+                    MainPage.Content = new calculator();
+            }
+            
         }
     }
 }

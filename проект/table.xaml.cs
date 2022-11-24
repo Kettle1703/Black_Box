@@ -25,5 +25,7 @@ namespace проект
         {
             MainWindow.alfavit_is_open = false;
         }
+
+        
     }
 }

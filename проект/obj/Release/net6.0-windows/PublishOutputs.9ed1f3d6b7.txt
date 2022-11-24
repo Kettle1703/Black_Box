@@ -1,0 +1,5 @@
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\bin\Release\net6.0-windows\publish\проект.exe
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\bin\Release\net6.0-windows\publish\проект.dll
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\bin\Release\net6.0-windows\publish\проект.deps.json
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\bin\Release\net6.0-windows\publish\проект.runtimeconfig.json
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\bin\Release\net6.0-windows\publish\проект.pdb

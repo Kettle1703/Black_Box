@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:проект"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="algorithm" KeyUp="Page_KeyUp">
+      Title="algorithm" KeyUp="Page_KeyUp" >
 
     <Grid>
         <Grid.Background>
@@ -24,7 +24,20 @@
                 Margin="10 10 0 5" 
                 VerticalAlignment="Top" 
                 Width="150" 
-                Click="AlgorihmExit_Click"
+                Click="AlgorihmBack_Click"
+                FontFamily="Century Gothic"
+                BorderBrush="#C17779"
+                BorderThickness="1.5"
+                Foreground="#C17779"
+                FontWeight="Bold"
+                Background="#F6E3DC"/>
+                <Button 
+                FontSize="20" 
+                Content="Информация" 
+                Margin="305 10 0 5" 
+                VerticalAlignment="Top" 
+                Width="150"
+                Click="Information"
                 FontFamily="Century Gothic"
                 BorderBrush="#C17779"
                 BorderThickness="1.5"
@@ -34,7 +47,7 @@
                 <Button 
                 FontSize="20" 
                 Content="Опыты" 
-                Margin="460 10 0 5" 
+                Margin="10 10 0 5" 
                 VerticalAlignment="Top" 
                 Width="150"
                 Click="Go_to_experience"
@@ -61,10 +74,13 @@
                         FontWeight="Bold" 
                         FontFamily="Century Gothic"
                         Foreground="#C17779"/>
-                    <TextBox x:Name="input" 
+                    <TextBox 
+                        x:Name="input"
+                        Height="29"
                         FontSize="20" 
                         HorizontalAlignment="Center" 
-                        TextWrapping="Wrap" Text="" 
+                        TextWrapping="Wrap" 
+                        Text="" 
                         Width="260" 
                         FontFamily="Century Gothic" 
                         Background="White"

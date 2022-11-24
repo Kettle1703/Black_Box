@@ -21,6 +21,7 @@ namespace проект
         public void Update_diary()
         {
             story.Text = experience.all_text;
+            ScrollViewer.ScrollToEnd();
         }
 
         public diary()

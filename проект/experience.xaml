@@ -32,9 +32,22 @@
                     FontWeight="Bold"
                     Background="#F6E3DC"/>
                 <Button 
+                    Margin="147 10 0 43"
+                    FontSize="20" 
+                    Content="Алфавит"
+                    Width="150" 
+                    Click="table_click"
+                    FontFamily="Century Gothic"
+                    Background="#F6E3DC"
+                    BorderBrush="#C17779"
+                    BorderThickness="1.5"
+                    Foreground="#C17779"
+                    FontWeight="Bold" 
+                    />
+                <Button 
                     FontSize="20" 
                     Content="Дневник" 
-                    Margin="305 10 0 5" 
+                    Margin="10 10 0 5" 
                     VerticalAlignment="Top" 
                     Width="150"
                     Click="Go_to_diary"
@@ -57,18 +70,7 @@
                     BorderThickness="1.5"
                     Foreground="#C17779"
                     FontWeight="Bold"/>
-                <Button 
-                    Margin="-791 10 0 43"
-                    FontSize="20" 
-                    Content="Алфавит"
-                    Width="150" 
-                    Click="table_click"
-                    FontFamily="Century Gothic"
-                    Background="#F6E3DC"
-                    BorderBrush="#C17779"
-                    BorderThickness="1.5"
-                    Foreground="#C17779"
-                    FontWeight="Bold"/>
+                
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1">

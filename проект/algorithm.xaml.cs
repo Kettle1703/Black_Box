@@ -38,7 +38,7 @@ namespace проект
                     MainWindow.first_in_exam = true;  // так как алгоритм поменяли
                     MainWindow.counter_exp = 1;  // поменяли алгоритм, сбросили счётчик
                     MainWindow.lock_exam = false;  // так как алгоритм поменяли, экзамен не заблокирован и по нему можно переходить
-                    
+                    MainWindow.experience_work = true;  // опыты разблокированы
                 }
                 else
                     output.Text = "Нет алгоритма с таким номером";
@@ -59,14 +59,21 @@ namespace проект
         {
             NavigationService.Navigate(new menu());
         }
-        private void AlgorihmExit_Click(object sender, RoutedEventArgs e)
+        private void Information(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new menu());
+            if (!MainWindow.information_is_open)
+            {
+                information informationWindow = new information();
+                informationWindow.Show();
+                MainWindow.information_is_open = true;
+            }
         }
 
         private void Go_to_experience(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new experience());
         }
+
+        
     }
 }

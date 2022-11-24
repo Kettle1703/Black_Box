@@ -91,18 +91,19 @@
                         FontWeight="Bold" 
                         FontFamily="Century Gothic"
                         Foreground="#C17779"/>
-                    <TextBlock x:Name="test" 
-                    FontSize="20" 
-                    HorizontalAlignment="Center"
-                    Margin="0 0 0 10"
-                    TextWrapping="Wrap"
-                    Text=""
-                    VerticalAlignment="Top"
-                    Width="300"
-                    TextAlignment="Center"
-                    FontWeight="Bold" 
-                    FontFamily="Century Gothic"
-                    Foreground="#C17779"/>
+                    <TextBlock 
+                        x:Name="test" 
+                        FontSize="20" 
+                        HorizontalAlignment="Center"
+                        Margin="0 0 0 10"
+                        TextWrapping="Wrap"
+                        Text=""
+                        VerticalAlignment="Top"
+                        Width="300"
+                        TextAlignment="Center"
+                        FontWeight="Bold" 
+                        FontFamily="Century Gothic"
+                        Foreground="#FF499196"/>
                     <TextBlock 
                     FontSize="25"
                     HorizontalAlignment="Center" 
