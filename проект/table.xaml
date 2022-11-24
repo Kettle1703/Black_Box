@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:проект"
         mc:Ignorable="d"
         x:Name="alphabet"
-        Icon = "Icon.ico"
+        Icon = "Icon_6.ico"
         Title="Алфавит" Height="450" Width="800" Closing="Window_Closing">
     <Grid>
         <Grid.Background>

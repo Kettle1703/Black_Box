@@ -103,7 +103,7 @@
                         TextAlignment="Center"
                         FontWeight="Bold" 
                         FontFamily="Century Gothic"
-                        Foreground="#FF499196"/>
+                        Foreground="#FF469C9E"/>
                     <TextBlock 
                     FontSize="25"
                     HorizontalAlignment="Center" 
@@ -127,7 +127,7 @@
                     Background="White"
                     BorderBrush="#60BFC1"
                     BorderThickness="1.5"
-                    Foreground="#C17779"
+                    Foreground="#FF469C9E"
                     FontWeight="Bold"
                     Margin="0 0 0 10"/>
                     <StackPanel Orientation="Horizontal">

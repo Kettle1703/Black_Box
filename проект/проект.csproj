@@ -35,11 +35,6 @@
     <Resource Include="background.jpg" />
     <Resource Include="dnevnik.jpg" />
     <Resource Include="Ekzamen2.jpg" />
-    <Resource Include="Icon.ico" />
-    <Resource Include="Icon_2.ico" />
-    <Resource Include="Icon_3.ico" />
-    <Resource Include="Icon_4.ico" />
-    <Resource Include="Icon_5.ico" />
     <Resource Include="Icon_6.ico" />
     <Resource Include="Kalkulyator_bek_2.jpg" />
     <Resource Include="opyty_bek.jpg" />

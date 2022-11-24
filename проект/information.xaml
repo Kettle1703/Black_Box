@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:проект"
         mc:Ignorable="d"
-        Title="Информация" Height="450" Width="800" Closing="Window_Closing">
+        Icon = "Icon_6.ico"
+        Title="Информация" Height="450" Width="800" Closing="Window_Closing" Background="#BADFD7">
     <Grid>
         <ScrollViewer 
             x:Name="ScrollViewer"
@@ -15,7 +16,7 @@
 
             <TextBox 
                 x:Name="inform"
-                
+                Background="#BADFD7"
                 FontSize="24" 
                 Text="" 
                 IsReadOnly="True"
