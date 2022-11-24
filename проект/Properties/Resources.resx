@@ -148,6 +148,9 @@
   <data name="Icon_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon_5.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Icon_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon_6.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="Kalkulyator_bek_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\kalkulyator_bek_2.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

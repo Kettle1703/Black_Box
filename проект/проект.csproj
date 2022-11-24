@@ -19,6 +19,7 @@
     <None Remove="Icon_3.ico" />
     <None Remove="Icon_4.ico" />
     <None Remove="Icon_5.ico" />
+    <None Remove="Icon_6.ico" />
     <None Remove="Kalkulyator_bek.jpg" />
     <None Remove="Kalkulyator_bek_2.jpg" />
     <None Remove="Opyty_bek.jpg" />
@@ -39,6 +40,7 @@
     <Resource Include="Icon_3.ico" />
     <Resource Include="Icon_4.ico" />
     <Resource Include="Icon_5.ico" />
+    <Resource Include="Icon_6.ico" />
     <Resource Include="Kalkulyator_bek_2.jpg" />
     <Resource Include="opyty_bek.jpg" />
   </ItemGroup>
