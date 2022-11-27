@@ -1,0 +1,11 @@
+C:\Users\HP\Documents\GitHub\Black_Box\проект.pdb
+C:\Users\HP\Documents\GitHub\Black_Box\clrcompression.dll
+C:\Users\HP\Documents\GitHub\Black_Box\clrjit.dll
+C:\Users\HP\Documents\GitHub\Black_Box\coreclr.dll
+C:\Users\HP\Documents\GitHub\Black_Box\mscordaccore.dll
+C:\Users\HP\Documents\GitHub\Black_Box\D3DCompiler_47_cor3.dll
+C:\Users\HP\Documents\GitHub\Black_Box\PenImc_cor3.dll
+C:\Users\HP\Documents\GitHub\Black_Box\PresentationNative_cor3.dll
+C:\Users\HP\Documents\GitHub\Black_Box\vcruntime140_cor3.dll
+C:\Users\HP\Documents\GitHub\Black_Box\wpfgfx_cor3.dll
+C:\Users\HP\Documents\GitHub\Black_Box\проект.exe

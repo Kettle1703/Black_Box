@@ -96,3 +96,6 @@ C:\Users\HP\Documents\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\tab
 C:\Users\HP\Documents\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\table.baml
 C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\table.g.cs
 C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\table.baml
+C:\Users\HP\Documents\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\information.g.cs
+C:\Users\HP\Documents\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\information.baml
+C:\Users\HP\Documents\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\проект.csproj.Fody.CopyLocal.cache
