@@ -438,6 +438,17 @@ namespace проект
             MainWindow.copy_now = now;
             Save_all_info();
         }
+
+        private void table_click(object sender, RoutedEventArgs e)
+        {
+            if (!MainWindow.alfavit_is_open)
+            {
+                table tableWindow = new table();
+                tableWindow.Show();
+                MainWindow.alfavit_is_open = true;
+            }
+
+        }
     }
 
     

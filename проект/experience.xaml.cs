@@ -21,11 +21,16 @@ namespace проект
         public static string all_text;
         public static bool Is_Russian_Letter(char letter)  // метод определяющий русская буква или нет
         {
-            string helper = letter.ToString();
-            helper = helper.ToLower();
-            int n = (helper[0]);
-            if ((n >= 1072 && n <= 1103) || n == 1105)
-                return true;
+            if (char.IsLetter(letter))
+            {
+                string helper = letter.ToString();
+                helper = helper.ToLower();
+                int n = (helper[0]);
+                if ((n >= 1072 && n <= 1103) || n == 1105)
+                    return true;
+                else
+                    return false;
+            }
             else
                 return false;
         }
@@ -122,25 +127,45 @@ namespace проект
             else
                 return "Не могу";
         }
+
+        private static bool Only_ru(string str)
+        {
+            foreach(char i in str)
+            {
+                if(!Is_Russian_Letter(i)) 
+                    return false;
+            }
+            return true;
+        }
         public static string _13(string s, string S)
         {
-            int i;
-            StringBuilder Text = new StringBuilder(s);
-            for (i = 'я'; i >= 'a'; i--)
+            if (Only_ru(s))
             {
-                if (i == 'е') Text = Text.Replace((char)i, '/');
-                if (i == 'я') Text = Text.Replace((char)i, '_');
-                Text = Text.Replace((char)i, (char)(i + 1));
+                int i;
+                StringBuilder Text = new StringBuilder(s);
+                for (i = 'я'; i >= 'a'; i--)
+                {
+                    if (i == 'е')
+                        Text = Text.Replace((char)i, '/');
+                    if (i == 'я')
+                        Text = Text.Replace((char)i, '_');
+                    Text = Text.Replace((char)i, (char)(i + 1));
+                }
+                Text = Text.Replace('ё', '-');
+                for (i = 0; i < Text.Length; i++)
+                {
+                    if (Text[i] == '/')
+                        Text.Replace(Text[i], 'ё');
+                    if (Text[i] == '-')
+                        Text.Replace(Text[i], 'ж');
+                    if (Text[i] == '_')
+                        Text.Replace(Text[i], 'а');
+                }
+                S = Convert.ToString(Text);
+                return S;
             }
-            Text = Text.Replace('ё', '-');
-            for (i = 0; i < Text.Length; i++)
-            {
-                if (Text[i] == '/') Text.Replace(Text[i], 'ё');
-                if (Text[i] == '-') Text.Replace(Text[i], 'ж');
-                if (Text[i] == '_') Text.Replace(Text[i], 'а');
-            }
-            S = Convert.ToString(Text);
-            return S;
+            else
+                return "Не могу";
         }
         public static string _14(string s)
         {
@@ -150,99 +175,101 @@ namespace проект
             else
                 return "Не могу";
         }
-        public static char _15(string s, char S)
+        public static string _15(string s)
         {
-            //s = s.ToLower();
-            char str = 'а';
+            char str = ' ';
             foreach (char ch in s)
             {
-                if (ch > str && ch != 'ё' && str != 'ё')
-                    str = ch;
-                else
-                {
-                    if (ch == 'ё')
+                if(Is_Russian_Letter(ch))
+                    if (ch > str && ch != 'ё' && str != 'ё')
+                        str = ch;
+                    else
                     {
-                        if ((int)str <= 1077)
-                            str = ch;
+                        if (ch == 'ё')
+                        {
+                            if ((int)str <= 1077)
+                                str = ch;
+                        }
+                        if (str == 'ё')
+                        {
+                            if ((int)ch >= 1078)
+                                str = ch;
+                        }
                     }
-                    if (str == 'ё')
-                    {
-                        if ((int)ch >= 1078)
-                            str = ch;
-                    }
-                }
             }
-            S = str;
-            return S;
+            if (str == ' ')
+                return "[ничего]";
+            else
+                return str.ToString();
         }
-        public static char _16(string s, char S)
+        public static string _16(string s)
         {
-            //s = s.ToLower();
             char str = 'я';
+            int counter = 0;
             foreach (char ch in s)
             {
-                if (ch < str && ch != 'ё' && str != 'ё')
-                    str = ch;
-                else
+                if (Is_Russian_Letter(ch))
                 {
-                    if (ch == 'ё')
+                    if (ch < str && ch != 'ё' && str != 'ё')
+                        str = ch;
+                    else
                     {
-                        if ((int)str >= 1078)
-                            str = ch;
-                    }
-                    if (str == 'ё')
-                    {
-                        if ((int)ch <= 1077)
-                            str = ch;
+                        if (ch == 'ё')
+                        {
+                            if ((int)str >= 1078)
+                                str = ch;
+                        }
+                        if (str == 'ё')
+                        {
+                            if ((int)ch <= 1077)
+                                str = ch;
+                        }
                     }
                 }
+                else
+                {
+                    counter++;
+                }
             }
-            S = str;
-            return S;
+            if (counter == s.Length)
+                str = ' ';
+            if (str == ' ')
+                return "[ничего]";
+            else
+                return str.ToString();
         }
-        public static string _17(string s, string S)
+
+        private static bool Uniq(string s)
         {
-            //s = s.ToLower();
-            char str1 = 'а';
-            foreach (char ch in s)
+            char first = ' ';
+            foreach(char ch in s)
             {
-                if (ch > str1 && ch != 'ё' && str1 != 'ё')
-                    str1 = ch;
+                if(first == ' ' && Is_Russian_Letter(ch))
+                    first = ch;
                 else
                 {
-                    if (ch == 'ё')
-                    {
-                        if ((int)str1 <= 1077)
-                            str1 = ch;
-                    }
-                    if (str1 == 'ё')
-                    {
-                        if ((int)ch >= 1078)
-                            str1 = ch;
-                    }
+                    if (first != ' ' && Is_Russian_Letter(ch) && ch != first)
+                        return true;
                 }
             }
-            char str2 = 'я';
-            foreach (char ch in s)
+            return false;
+        }
+        public static string _17(string s)
+        {
+            if (Uniq(s))
             {
-                if (ch < str2 && ch != 'ё' && str2 != 'ё')
-                    str2 = ch;
+                /*
+                string first = _16(s);
+                string second = _15(s);
+                if (first.Length == 1 && second.Length == 1)
+                    return first + second;
                 else
-                {
-                    if (ch == 'ё')
-                    {
-                        if ((int)str2 >= 1078)
-                            str2 = ch;
-                    }
-                    if (str2 == 'ё')
-                    {
-                        if ((int)ch <= 1077)
-                            str2 = ch;
-                    }
-                }
+                    return "[ничего]";
+                */
+                return _16(s) + _15(s);
             }
-            S = $"{str2}" + $"{str1}";
-            return S;
+            else
+                return "Не могу";
         }
         public static int _18(int n, int N)
         {
@@ -367,7 +394,7 @@ namespace проект
             N = kolEO;
             return N;
         }
-        static int _26(string s, int N)
+        static int _26(string s)
         {
             int kol = 0;
             for (int i = 0; i < s.Length; i++)
@@ -389,33 +416,11 @@ namespace проект
                     }
                 }
             }
-            N = kol;
-            return N;
+            return kol;
         }
-        static int _27(string s, int N)
+        static int _27(string s)
         {
-            int kol = 0;
-            for (int i = 0; i < s.Length; i++)
-            {
-                if (Is_Russian_Letter(s[i]))
-                {
-                    if ((int)s[i] == 1025 || (int)s[i] == 1105)
-                        kol += 7;
-                    else
-                    {
-                        if ((int)s[i] < 1072 && (int)s[i] > 1045)
-                            kol += (int)s[i] - 1038;
-                        if ((int)s[i] <= 1045)
-                            kol += (int)s[i] - 1039;
-                        if ((int)s[i] > 1071 && (int)s[i] <= 1077)
-                            kol += ((int)s[i] - 1071);
-                        if ((int)s[i] > 1077)
-                            kol += ((int)s[i] - 1070);
-                    }
-                }
-            }
-            N = kol * 2;
-            return N;
+            return _26(s) * 2;
         }
         public static int _28(int number)
         {
@@ -495,17 +500,17 @@ namespace проект
                 case 14:
                     return _14(str);
                 case 15:
-                    return _15(str, '0').ToString();
+                    return _15(str);
                 case 16:
-                    return _16(str, '0').ToString();
+                    return _16(str);
                 case 17:
-                    return _17(str, "").ToString();
+                    return _17(str);
                 case 25:
                     return _25(str, 0).ToString();
                 case 26:
-                    return _26(str, 0).ToString();
+                    return _26(str).ToString();
                 case 27:
-                    return _27(str, 0).ToString();
+                    return _27(str).ToString();
                 case 29:
                     return _29(str).ToString();
             }

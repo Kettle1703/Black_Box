@@ -33,8 +33,21 @@
                 Background="#F6E3DC"/>
                 <Button 
                 FontSize="20" 
+                Content="Алфавит" 
+                Margin="145 10 0 5" 
+                VerticalAlignment="Top" 
+                Width="150" 
+                Click="table_click"
+                FontFamily="Century Gothic"
+                BorderBrush="#C17779"
+                BorderThickness="1.5"
+                Foreground="#C17779"
+                FontWeight="Bold"
+                Background="#F6E3DC"/>
+                <Button 
+                FontSize="20" 
                 Content="Алгоритмы" 
-                Margin="305 10 0 5" 
+                Margin="10 10 0 5" 
                 VerticalAlignment="Top" 
                 Width="150" 
                 RenderTransformOrigin="1.026,0.568"

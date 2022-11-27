@@ -38,29 +38,29 @@ namespace проект
                 MainPage.Content = new menu();
             //MessageBox.Show((e.Key).ToString() + "  " + MainWindow.chapter);
             //ModifierKeys combCtrSh = ModifierKeys.Control | ModifierKeys.Shift;
-            if (e.Key == Key.D1)
+            if (e.Key == Key.D1 || e.Key == Key.NumPad1)
             {
-                if ((e.KeyboardDevice.Modifiers & ModifierKeys.Shift) == ModifierKeys.Shift)
+                if ((e.KeyboardDevice.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
                     MainPage.Content = new algorithm();
             }
-            if (e.Key == Key.D2)
+            if (e.Key == Key.D2 || e.Key == Key.NumPad2)
             {
-                if ((e.KeyboardDevice.Modifiers & ModifierKeys.Shift) == ModifierKeys.Shift)
+                if ((e.KeyboardDevice.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
                     MainPage.Content = new experience();
             }
-            if (e.Key == Key.D3)
+            if (e.Key == Key.D3 || e.Key == Key.NumPad3)
             {
-                if ((e.KeyboardDevice.Modifiers & ModifierKeys.Shift) == ModifierKeys.Shift)
+                if ((e.KeyboardDevice.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
                     MainPage.Content = new exam();
             }
-            if (e.Key == Key.D4)
+            if (e.Key == Key.D4 || e.Key == Key.NumPad4)
             {
-                if ((e.KeyboardDevice.Modifiers & ModifierKeys.Shift) == ModifierKeys.Shift)
+                if ((e.KeyboardDevice.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
                     MainPage.Content = new diary();
             }
-            if (e.Key == Key.D5)
+            if (e.Key == Key.D5 || e.Key == Key.NumPad5)
             {
-                if ((e.KeyboardDevice.Modifiers & ModifierKeys.Shift) == ModifierKeys.Shift)
+                if ((e.KeyboardDevice.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
                     MainPage.Content = new calculator();
             }
             if(e.Key == Key.Up && chapter == 4)
