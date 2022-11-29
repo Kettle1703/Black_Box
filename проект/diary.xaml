@@ -49,7 +49,7 @@
             Foreground="#C17779"
             FontWeight="Bold"/>
 
-        <ScrollViewer 
+        <ScrollViewer
             x:Name="ScrollViewer"
             Margin="10 50 10 15"
             VerticalScrollBarVisibility="Auto"

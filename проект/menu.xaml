@@ -19,7 +19,7 @@
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="1">
-            <Border 
+            <Border
                 Background="white" 
                 CornerRadius="0 0 50 50" 
                 Margin="0 0 0 15">
@@ -52,7 +52,9 @@
                             BorderThickness="1.5"
                             Foreground="#C17779"
                             FontWeight="Bold"
-                            Margin="0 0 0 15"/>
+                            Margin="0 0 0 15"
+                            Focusable="True"
+                            TabIndex="0"/>
 
                     <Button x:Name="Experience" Click="Experience_Click" 
                             Content="Опыт"
@@ -65,7 +67,9 @@
                             BorderThickness="1.5"
                             Foreground="#C17779"
                             FontWeight="Bold"
-                            Margin="0 0 0 15"/>
+                            Margin="0 0 0 15"
+                            Focusable="True"
+                            TabIndex="1"/>
 
                     <Button x:Name="Exam" Click="Exam_Click" 
                             Content="Экзамен" 
@@ -78,7 +82,9 @@
                             BorderThickness="1.5"
                             Foreground="#C17779"
                             FontWeight="Bold"
-                            Margin="0 0 0 15"/>
+                            Margin="0 0 0 15"
+                            Focusable="True"
+                            TabIndex="2"/>
 
                     <Button x:Name="Diary" Click="Diary_Click" 
                             Content="Дневник" 
@@ -91,7 +97,9 @@
                             BorderThickness="1.5"
                             Foreground="#C17779"
                             FontWeight="Bold"
-                            Margin="0 0 0 15"/>
+                            Margin="0 0 0 15"
+                            Focusable="True"
+                            TabIndex="3"/>
 
                     <Button x:Name="Calculator" Click="Calculator_Click" 
                             Content="Калькулятор" 
@@ -104,7 +112,9 @@
                             BorderThickness="1.5"
                             Foreground="#C17779"
                             FontWeight="Bold"
-                            Margin="0 0 0 15"/>
+                            Margin="0 0 0 15"
+                            Focusable="True"
+                            TabIndex="4"/>
                 </StackPanel>
             </Border>
         </Grid>
