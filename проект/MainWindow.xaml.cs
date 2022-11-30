@@ -3,6 +3,8 @@ using System;
 using System.Windows.Navigation;
 using System.Windows.Input;
 using System.Windows.Controls;
+using System.Reflection.Metadata;
+using System.Runtime.InteropServices;
 
 namespace проект
 {
@@ -24,6 +26,19 @@ namespace проект
         {
             InitializeComponent();
             MainPage.Content = new menu();
+            // непонятная шляпа для закрытия консоли
+            /*
+            [DllImport("kernel32.dll")]
+            static extern IntPtr GetConsoleWindow();
+
+            [DllImport("user32.dll")]
+            static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
+            const int SW_HIDE = 0;
+           
+            var handle = GetConsoleWindow();
+            ShowWindow(handle, SW_HIDE);
+            */
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -62,11 +77,6 @@ namespace проект
             {
                 if ((e.KeyboardDevice.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
                     MainPage.Content = new calculator();
-            }
-            if(e.Key == Key.Up && chapter == 4)
-            {
-                // в дневнике
-                //MainPage.Content.ScrollViewer.LineUp();
             }
             
         }

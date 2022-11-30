@@ -29,6 +29,7 @@ namespace проект
             InitializeComponent();
             MainWindow.chapter = 4;
             Update_diary();
+            
         }
 
         private void DairyBack_Click(object sender, RoutedEventArgs e)
@@ -47,12 +48,18 @@ namespace проект
 
         private void Page_KeyDown(object sender, KeyEventArgs e)
         {
-            MessageBox.Show((e.Key).ToString());
+            ScrollViewer.Focus();
+            if (e.Key == Key.Up)
+            {
+                ScrollViewer.LineUp();
+            }
+           
+            if (e.Key == Key.Down)
+            { 
+                ScrollViewer.LineDown();
+            }
         }
 
-        private void Page_PreviewKeyDown(object sender, KeyEventArgs e)
-        {
-            MessageBox.Show((e.Key).ToString());
-        }
+        
     }
 }

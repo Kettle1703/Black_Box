@@ -6,8 +6,11 @@
       xmlns:local="clr-namespace:проект"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="diary">
-
+      Title="diary"
+      Focusable="False" 
+      KeyDown="Page_KeyDown"
+      x:Name="Diary_page" >
+      
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="dnevnik.jpg"></ImageBrush>
@@ -23,7 +26,8 @@
             BorderBrush="#C17779"
             BorderThickness="1.5"
             Foreground="#C17779"
-            FontWeight="Bold"/>
+            FontWeight="Bold"
+            Focusable="True" />
         <Button 
             FontSize="20" 
             Content="Экзамен" 
@@ -35,7 +39,8 @@
             BorderBrush="#C17779"
             BorderThickness="1.5"
             Foreground="#C17779"
-            FontWeight="Bold"/>
+            FontWeight="Bold"
+            Focusable="True" />
         <Button 
             FontSize="20" 
             Content="Опыты" 
@@ -47,14 +52,18 @@
             BorderBrush="#C17779"
             BorderThickness="1.5"
             Foreground="#C17779"
-            FontWeight="Bold"/>
+            FontWeight="Bold"
+            Focusable="True" />
 
         <ScrollViewer
             x:Name="ScrollViewer"
             Margin="10 50 10 15"
             VerticalScrollBarVisibility="Auto"
-            CanContentScroll="True">
-            
+            CanContentScroll="True"
+            Focusable="True"
+            TabIndex="1">
+
+
             <TextBox 
                 x:Name="story"
                 Background="#badfd7"
@@ -66,7 +75,9 @@
                 FontFamily="Courier New" 
                 FontWeight="Bold"
                 Foreground="#C17779"
-                Margin="2"/>
+                Margin="2"
+                Focusable="True"
+                TabIndex="0"/>
         </ScrollViewer>
 
 

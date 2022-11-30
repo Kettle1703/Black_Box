@@ -1,13 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
 	<PublishSingleFile>true</PublishSingleFile>
 	<SelfContained>true</SelfContained>
 	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
-	<PublishReadyToRun>true</PublishReadyToRun>  
+	<PublishReadyToRun>true</PublishReadyToRun>
+	<ApplicationIcon>Icon_6.ico</ApplicationIcon>
+	<StartupObject>проект.App</StartupObject>  
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,6 +29,10 @@
     <None Remove="Kalkulyator_bek.jpg" />
     <None Remove="Kalkulyator_bek_2.jpg" />
     <None Remove="Opyty_bek.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Icon_6.ico" />
   </ItemGroup>
 
   <ItemGroup>

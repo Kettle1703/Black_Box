@@ -1,0 +1,11 @@
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\буквоед\проект.pdb
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\буквоед\clrcompression.dll
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\буквоед\clrjit.dll
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\буквоед\coreclr.dll
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\буквоед\mscordaccore.dll
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\буквоед\D3DCompiler_47_cor3.dll
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\буквоед\PenImc_cor3.dll
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\буквоед\PresentationNative_cor3.dll
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\буквоед\vcruntime140_cor3.dll
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\буквоед\wpfgfx_cor3.dll
+C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\буквоед\проект.exe

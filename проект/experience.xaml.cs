@@ -34,6 +34,21 @@ namespace проект
             else
                 return false;
         }
+
+        private static bool Valid_str(string str)  // строка может содержать только русские буквы и пробелы
+        {
+            int counter_space = 0;
+            foreach (char i in str)
+            {
+                if (!Is_Russian_Letter(i) && i != ' ')
+                    return false;
+                if(i == ' ') 
+                    counter_space++;
+            }
+            if(counter_space == str.Length)  // не может быть строка только из пробелов
+                return false;                
+            return true;
+        }
         public static int _1(int n, int N)
         {
             N = n + 1;
@@ -54,25 +69,35 @@ namespace проект
             N = n * 2 - 1;
             return N;
         }
-        public static int _5(string s)
+        public static string _5(string s)
         {
-            int N = 0;
-            for (int i = 0; i < s.Length; i++)
+            if (Valid_str(s))
             {
-                if (Is_Russian_Letter(s[i]))
-                    N++;
+                int N = 0;
+                for (int i = 0; i < s.Length; i++)
+                {
+                    if (Is_Russian_Letter(s[i]))
+                        N++;
+                }
+                return N.ToString();
             }
-            return N;
+            else
+                return "Не могу";
         }
-        public static int _6(string s, int N)
+        public static string _6(string s)
         {
-            N = 0;
-            for (int i = 0; i < s.Length; i++)
+            if (Valid_str(s))
             {
-                if (s[i] == 'О' || s[i] == 'о')
-                    N++;
+                int N = 0;
+                for (int i = 0; i < s.Length; i++)
+                {
+                    if (s[i] == 'О' || s[i] == 'о')
+                        N++;
+                }
+                return N.ToString();
             }
-            return N;
+            else
+                return "Не могу";
         }
         public static int _7(int n, int N)
         {
@@ -84,27 +109,32 @@ namespace проект
             N = n * 4 - 1;
             return N;
         }
-        public static int _9(string s, int N)
+        public static string _9(string s)
         {
-            N = 0;
-            for (int i = 0; i < s.Length - 1;)
+            if (Valid_str(s))
             {
-                if (i < 0)
-                    i = 0;
-                if (s.Length == 1)
-                    return N;
-                else
+                int N = 0;
+                for (int i = 0; i < s.Length - 1;)
                 {
-                    if (s[i] == s[i + 1] && Is_Russian_Letter(s[i]))
-                    {
-                        N++;
-                        s = s.Remove(i, 2);
-                    }
+                    if (i < 0)
+                        i = 0;
+                    if (s.Length == 1)
+                        return N.ToString();
                     else
-                        i++;
+                    {
+                        if (s[i] == s[i + 1] && Is_Russian_Letter(s[i]))
+                        {
+                            N++;
+                            s = s.Remove(i, 2);
+                        }
+                        else
+                            i++;
+                    }
                 }
+                return N.ToString();
             }
-            return N;
+            else
+                return "Не могу";
         }
         public static string _10(int n)
         {
@@ -127,19 +157,9 @@ namespace проект
             else
                 return "Не могу";
         }
-
-        private static bool Only_ru(string str)
-        {
-            foreach(char i in str)
-            {
-                if(!Is_Russian_Letter(i)) 
-                    return false;
-            }
-            return true;
-        }
         public static string _13(string s, string S)
         {
-            if (Only_ru(s))
+            if (Valid_str(s))
             {
                 int i;
                 StringBuilder Text = new StringBuilder(s);
@@ -169,46 +189,53 @@ namespace проект
         }
         public static string _14(string s)
         {
-            int len = _5(s);
-            if (len % 2 == 0)
-                return (len / 2).ToString();
+            if (Valid_str(s))
+            {
+                int len = int.Parse(_5(s));
+                if (len % 2 == 0)
+                    return (len / 2).ToString();
+                else
+                    return "Не могу";
+            }
             else
                 return "Не могу";
+            
         }
         public static string _15(string s)
         {
-            char str = ' ';
-            foreach (char ch in s)
+            if (Valid_str(s))
             {
-                if(Is_Russian_Letter(ch))
-                    if (ch > str && ch != 'ё' && str != 'ё')
-                        str = ch;
-                    else
-                    {
-                        if (ch == 'ё')
+                char str = ' ';
+                foreach (char ch in s)
+                {
+                    if (Is_Russian_Letter(ch))
+                        if (ch > str && ch != 'ё' && str != 'ё')
+                            str = ch;
+                        else
                         {
-                            if ((int)str <= 1077)
-                                str = ch;
+                            if (ch == 'ё')
+                            {
+                                if ((int)str <= 1077)
+                                    str = ch;
+                            }
+                            if (str == 'ё')
+                            {
+                                if ((int)ch >= 1078)
+                                    str = ch;
+                            }
                         }
-                        if (str == 'ё')
-                        {
-                            if ((int)ch >= 1078)
-                                str = ch;
-                        }
-                    }
-            }
-            if (str == ' ')
-                return "[ничего]";
-            else
+                }
                 return str.ToString();
+            }
+            else
+                return "Не могу";
         }
         public static string _16(string s)
         {
-            char str = 'я';
-            int counter = 0;
-            foreach (char ch in s)
+            if (Valid_str(s))
             {
-                if (Is_Russian_Letter(ch))
+                char str = 'я';
+                foreach (char ch in s)
                 {
                     if (ch < str && ch != 'ё' && str != 'ё')
                         str = ch;
@@ -225,21 +252,15 @@ namespace проект
                                 str = ch;
                         }
                     }
+
                 }
-                else
-                {
-                    counter++;
-                }
-            }
-            if (counter == s.Length)
-                str = ' ';
-            if (str == ' ')
-                return "[ничего]";
-            else
                 return str.ToString();
+            }
+            else
+                return "Не могу";
         }
 
-        private static bool Uniq(string s)
+        private static bool Uniq(string s)  // в строке должны быть уникальные как минимум два уникальных символа
         {
             char first = ' ';
             foreach(char ch in s)
@@ -258,15 +279,10 @@ namespace проект
         {
             if (Uniq(s))
             {
-                /*
-                string first = _16(s);
-                string second = _15(s);
-                if (first.Length == 1 && second.Length == 1)
-                    return first + second;
+                if (Valid_str(s))  // возможно это лишняя проверка
+                    return _16(s) + _15(s);  
                 else
-                    return "[ничего]";
-                */
-                return _16(s) + _15(s);
+                    return "Не могу";
             }
             else
                 return "Не могу";
@@ -369,38 +385,43 @@ namespace проект
             N = Convert.ToInt32(str);
             return N;
         }
-        static int _25(string s, int N)
+        static string _25(string s)
         {
-            int kol = 0, kolEO = 0;
-            for (int i = 0; i < s.Length; i++)
+            if (Valid_str(s))
             {
-                if (Is_Russian_Letter(s[i]))
-                    kol++;
-            }
-            if (kol % 2 == 0)
-            {
-                foreach (char ch in s)
+                int kol = 0, kolEO = 0;
+                for (int i = 0; i < s.Length; i++)
                 {
-                    if (ch == 'Е' || ch == 'е')
-                        kolEO++;
+                    if (Is_Russian_Letter(s[i]))
+                        kol++;
                 }
+                if (kol % 2 == 0)
+                {
+                    foreach (char ch in s)
+                    {
+                        if (ch == 'Е' || ch == 'е')
+                            kolEO++;
+                    }
+                }
+                else
+                    foreach (char ch in s)
+                    {
+                        if (ch == 'О' || ch == 'о')
+                            kolEO++;
+                    }
+                return kolEO.ToString();
             }
             else
-                foreach (char ch in s)
-                {
-                    if (ch == 'О' || ch == 'о')
-                        kolEO++;
-                }
-            N = kolEO;
-            return N;
+                return "Не могу";
         }
-        static int _26(string s)
+        static string _26(string s)
         {
-            int kol = 0;
-            for (int i = 0; i < s.Length; i++)
+            if (Valid_str(s))
             {
-                if (Is_Russian_Letter(s[i]))
+                int kol = 0;
+                for (int i = 0; i < s.Length; i++)
                 {
+
                     if ((int)s[i] == 1025 || (int)s[i] == 1105)
                         kol += 7;
                     else
@@ -414,23 +435,36 @@ namespace проект
                         if ((int)s[i] > 1077)
                             kol += ((int)s[i] - 1070);
                     }
+
                 }
+                return kol.ToString();
             }
-            return kol;
+            else
+                return "Не могу";
         }
-        static int _27(string s)
+        static string _27(string s)
         {
-            return _26(s) * 2;
+            if (Valid_str(s))
+            {
+                return (int.Parse(_26(s)) * 2).ToString();
+            }
+            else
+                return "Не могу";
         }
         public static int _28(int number)
         {
             return number % 3;
         }
 
-        public static int _29(string str)
+        public static string _29(string str)
         {
-            var vowelArray = str.Where(c => "аоуэыяёюеиАОУЭЫЯЁЮЕИ".Contains(c)).ToArray();
-            return vowelArray.Length;
+            if (Valid_str(str))
+            {
+                var vowelArray = str.Where(c => "аоуэыяёюеиАОУЭЫЯЁЮЕИ".Contains(c)).ToArray();
+                return vowelArray.Length.ToString();
+            }
+            else
+                return "Не могу";
         }
 
 
@@ -490,13 +524,13 @@ namespace проект
             switch (algorithm.algorithm_number)
             {
                 case 5:
-                    return _5(str).ToString();
+                    return _5(str);
                 case 6:
-                    return _6(str, 0).ToString();
+                    return _6(str);
                 case 9:
-                    return _9(str, 0).ToString();
+                    return _9(str);
                 case 13:
-                    return _13(str, "").ToString();
+                    return _13(str, "");
                 case 14:
                     return _14(str);
                 case 15:
@@ -506,13 +540,13 @@ namespace проект
                 case 17:
                     return _17(str);
                 case 25:
-                    return _25(str, 0).ToString();
+                    return _25(str);
                 case 26:
-                    return _26(str).ToString();
+                    return _26(str);
                 case 27:
-                    return _27(str).ToString();
+                    return _27(str);
                 case 29:
-                    return _29(str).ToString();
+                    return _29(str);
             }
             return "Error";
         }

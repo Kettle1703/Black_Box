@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:проект"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="menu">
+      Title="menu"
+      Focusable="False">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="background.jpg"></ImageBrush>

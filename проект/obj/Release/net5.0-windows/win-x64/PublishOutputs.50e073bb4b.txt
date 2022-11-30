@@ -1,0 +1,11 @@
+E:\Буквоед\проект.pdb
+E:\Буквоед\clrcompression.dll
+E:\Буквоед\clrjit.dll
+E:\Буквоед\coreclr.dll
+E:\Буквоед\mscordaccore.dll
+E:\Буквоед\D3DCompiler_47_cor3.dll
+E:\Буквоед\PenImc_cor3.dll
+E:\Буквоед\PresentationNative_cor3.dll
+E:\Буквоед\vcruntime140_cor3.dll
+E:\Буквоед\wpfgfx_cor3.dll
+E:\Буквоед\проект.exe
