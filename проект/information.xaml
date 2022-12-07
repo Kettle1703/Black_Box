@@ -26,7 +26,9 @@
                 FontWeight="Bold"
                 Foreground="#C17779"
                 Margin="2"/>
+            
         </ScrollViewer>
+        
     </Grid>
 </Window>
     

@@ -307,16 +307,7 @@ namespace проект
                     result[now] = false;
                 answer[now] = input_exam.Text;
             }
-            /* 
-            info.Text = "";  // вывод правильности ответов в экзамене для тестировки (убрать в финальной версии)
-            for (int i = 0; i < 5; i++)
-            {
-                if (result[i])
-                    info.Text += "1 ";
-                else
-                    info.Text += "0 ";
-            }
-            */
+            
         }
         private void Updating_fields(int now)  // обновление полей вывожа информации при нажатии кнопок
         {
@@ -390,7 +381,7 @@ namespace проект
                 for (int i = 0; i < 5; i++)
                     experience.all_text += $"{i + 1,2}){arr[i],-20} {answer[i],-13} [Неизвестно]\n";
             experience.all_text += '\n';
-            MainWindow.counter_exp = 1;  // если осталиь после экзамена в том же алгоритме, то счётчик начинается сначала
+            MainWindow.counter_exp = 1;  // если осталиcь после экзамена в том же алгоритме, то счётчик начинается сначала
             MainWindow.last_str_in_dairy = "";
             MainWindow.lock_exam = true;  // нельзя изменять экзамен после изменения
             test.Text = "";
@@ -410,6 +401,17 @@ namespace проект
         {
             if(e.Key == Key.Enter)
                 Next_test(sender, e);
+            if (e.Key == Key.R)
+            {
+                if ((e.KeyboardDevice.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+                {
+                    info.Text = "Ответ: ";
+                    if (experience.Input_string(algorithm.algorithm_number))
+                        info.Text += experience.Algorithm_with_string(test.Text);
+                    else
+                        info.Text += experience.Algorithm_with_number(int.Parse(test.Text));
+                }
+            }
         }
 
         private void New_exam(object sender, RoutedEventArgs e)

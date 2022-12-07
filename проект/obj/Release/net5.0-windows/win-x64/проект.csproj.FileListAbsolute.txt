@@ -1075,4 +1075,3 @@ C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\
 C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Release\net5.0-windows\win-x64\проект.pdb
 C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Release\net5.0-windows\win-x64\проект.genruntimeconfig.cache
 C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Release\net5.0-windows\win-x64\ref\проект.dll
-C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Release\net5.0-windows\win-x64\проект_Content.g.cs

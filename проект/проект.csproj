@@ -32,10 +32,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Icon_6.ico" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="проект\" />
   </ItemGroup>
 

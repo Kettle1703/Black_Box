@@ -127,14 +127,14 @@
                         Foreground="#C17779"/>
                     <TextBlock 
                         x:Name="output" 
-                        FontSize="20" 
+                        FontSize="25" 
                         HorizontalAlignment="Center" 
                         TextWrapping="Wrap" Text=""
                         TextAlignment="Center"
-                        Width="260" 
+                        Width="333" 
                         FontFamily="Century Gothic" 
                         Background="White"
-                        Foreground="#C17779"
+                        Foreground="#FF469C9E"
                         FontWeight="Bold"
                         Margin="0 0 0 15"/>
                 </StackPanel>
