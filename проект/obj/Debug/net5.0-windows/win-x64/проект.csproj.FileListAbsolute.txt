@@ -1068,7 +1068,6 @@ C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\
 C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\win-x64\проект.AssemblyInfoInputs.cache
 C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\win-x64\проект.AssemblyInfo.cs
 C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\win-x64\проект.csproj.CoreCompileInputs.cache
-C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\win-x64\проект.csproj.Fody.CopyLocal.cache
 C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\win-x64\проект.csproj.CopyComplete
 C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\win-x64\проект.dll
 C:\Users\Михаил\OneDrive\Документы\GitHub\Black_Box\проект\obj\Debug\net5.0-windows\win-x64\refint\проект.dll

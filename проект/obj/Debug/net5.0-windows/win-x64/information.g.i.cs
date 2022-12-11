@@ -69,7 +69,7 @@ namespace проект {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/проект;component/information.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/проект;V1.0.0.0;component/information.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\information.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

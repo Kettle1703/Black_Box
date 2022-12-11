@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3WzzBiP/83nxhiJZdzxJ+MQ6SpFo2Qicg9yDekjTAbARW33oapLUjQte0QrF7CAd+TJWExtwNrtes0AJQ8i3mA==",
+  "dgSpecHash": "bhJ2vxemiz/k/Zgbyd1cp1y0gHv9bHJrUz9JW8GpCfzU4ohVcV4/UbtjoK9mlvQ1JEAC7FgMZzaWQlQIxJxXJw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Михаил\\OneDrive\\Документы\\GitHub\\Black_Box\\проект\\проект.csproj",
   "expectedPackageFiles": [
@@ -109,9 +109,10 @@
     "C:\\Users\\Михаил\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\Михаил\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Михаил\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Михаил\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\5.0.17\\microsoft.aspnetcore.app.runtime.win-x64.5.0.17.nupkg.sha512",
-    "C:\\Users\\Михаил\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\5.0.17\\microsoft.windowsdesktop.app.runtime.win-x64.5.0.17.nupkg.sha512",
-    "C:\\Users\\Михаил\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\5.0.17\\microsoft.netcore.app.runtime.win-x64.5.0.17.nupkg.sha512"
+    "C:\\Users\\Михаил\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\6.0.11\\microsoft.netcore.app.crossgen2.win-x64.6.0.11.nupkg.sha512",
+    "C:\\Users\\Михаил\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.11\\microsoft.aspnetcore.app.runtime.win-x64.6.0.11.nupkg.sha512",
+    "C:\\Users\\Михаил\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.11\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.11.nupkg.sha512",
+    "C:\\Users\\Михаил\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.11\\microsoft.netcore.app.runtime.win-x64.6.0.11.nupkg.sha512"
   ],
   "logs": []
 }

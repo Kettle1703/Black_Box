@@ -6,6 +6,6 @@
         xmlns:local="clr-namespace:проект"
         mc:Ignorable="d"
         Icon = "Icon_6.ico"
-    Title="Буквоед" Height="450" Width="800" ResizeMode="NoResize" Closing="Window_Closing" KeyDown="Window_KeyDown">
+    Title="Буквоед" Height="450" Width="800" ResizeMode="NoResize" Closing="Window_Closing" KeyDown="Window_KeyDown" Background="#BADFD7">
     <Frame x:Name="MainPage" NavigationUIVisibility="Hidden"></Frame>
 </Window>
