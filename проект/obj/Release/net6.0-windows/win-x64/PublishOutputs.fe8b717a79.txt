@@ -1,0 +1,7 @@
+C:\Users\Михаил\Downloads\проект.pdb
+C:\Users\Михаил\Downloads\D3DCompiler_47_cor3.dll
+C:\Users\Михаил\Downloads\PenImc_cor3.dll
+C:\Users\Михаил\Downloads\PresentationNative_cor3.dll
+C:\Users\Михаил\Downloads\vcruntime140_cor3.dll
+C:\Users\Михаил\Downloads\wpfgfx_cor3.dll
+C:\Users\Михаил\Downloads\проект.exe
